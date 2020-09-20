@@ -1,7 +1,7 @@
 const { DiscordAPIError } = require("discord.js");
 
 module.exports = {
-    name: 'info',
+    name: 'user-info',
     description: "displays user info",
     execute(message, args) {
         let mentionedMember = message.mentions.first();
