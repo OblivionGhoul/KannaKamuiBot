@@ -17,8 +17,7 @@ for(const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('I am ready!');
-    bot.user.setStatus('Online');
-    bot.user.setGame('Yay!');
+    bot.user.setActivity("Test", {type: 0});
 });
 
 client.on('message', message => {
