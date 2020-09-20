@@ -17,7 +17,7 @@ for(const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('I am ready!');
-    bot.user.setActivity("Test", {type: 0});
+    client.user.setActivity("Test", {type: 0});
 });
 
 client.on('message', message => {
@@ -34,6 +34,8 @@ client.on('message', message => {
         client.commands.get('kay').execute(message, args);
     } else if (command == 'bryce') {
         client.commands.get('bryce').execute(message, args);
+    } else if (command == 'ethan') {
+        client.commands.get('ethan').execute(message, args);
     }
 });
 
