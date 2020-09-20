@@ -38,6 +38,10 @@ client.on('message', message => {
         client.commands.get('ethan').execute(message, args);
     } else if (command == 'say') {
         client.commands.get('say').execute(message, args);
+    } else if (command == 'info') {
+        client.commands.get('info').execute(message, args);
+    } else if (command == 'josh') {
+        client.commands.get('josh').execute(message, args);
     }
 });
 
