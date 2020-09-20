@@ -14,10 +14,24 @@ for(const file of commandFiles) {
 
     client.commands.set(command.name, command);
 }
+bot
+client.once('ready', async() => {
+    try {
+        let serverIn = client.guilds.size;
+        console.log('I am ready!');
 
-client.once('ready', () => {
-    console.log('I am ready!');
-    client.user.setActivity("Simping for Minh");
+        function pickStatus() {
+            let status = ['Simping for Minh', 'Why is Minh so cute?', 'Welcome to the Inn'];
+            let Status = Math.floor(Math.random() * status.length);
+
+            client.user.setActivity(status[Status], {
+                type: "WATCHING"
+            });
+        };
+        setInterval(pickStatus, 5000);
+    } catch (err) {
+        console.log(error)
+    }
 });
 
 client.on('message', message => {
