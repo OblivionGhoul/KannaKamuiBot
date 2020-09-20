@@ -17,7 +17,8 @@ for(const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('I am ready!');
-    bot.user.setStatus('Simping for OblivionGhoul');
+    bot.user.setStatus('Online');
+    bot.user.setGame('Yay!');
 });
 
 client.on('message', message => {
