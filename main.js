@@ -36,6 +36,8 @@ client.on('message', message => {
         client.commands.get('bryce').execute(message, args);
     } else if (command == 'ethan') {
         client.commands.get('ethan').execute(message, args);
+    } else if (command == 'say') {
+        client.commands.get('say').execute(message, args);
     }
 });
 
