@@ -13,6 +13,6 @@ module.exports = {
         .addField('User ID: ', `${mentionedUser.id}`)
         .addField('Account Created: ', `${mentionedUser.createdAt}`)
         .addField('Joined the server at: ', `${mentionedMember.joinAt}`)
-        .addField('User status: ', `${mentionedUser.presense.status}`)
+        .addField('User status: ', `${mentionedUser.presence.status}`)
     }
 }
