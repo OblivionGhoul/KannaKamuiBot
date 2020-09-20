@@ -14,7 +14,6 @@ for(const file of commandFiles) {
 
     client.commands.set(command.name, command);
 }
-bot
 client.once('ready', async() => {
     try {
         let serverIn = client.guilds.size;
