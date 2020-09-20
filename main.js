@@ -17,7 +17,7 @@ for(const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity("Test", {type: 0});
+    client.user.setActivity("Simping for OblivionGhoul");
 });
 
 client.on('message', message => {
