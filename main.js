@@ -140,6 +140,10 @@ client.on('message', message => {
         client.commands.get('user-info').execute(message, args);
     } else if (command == 'josh') {
         client.commands.get('josh').execute(message, args);
+    } else if (command == 'hanna') {
+        client.commands.get('hanna').execute(message, args);
+    } else if (command == 'jake') {
+        client.commands.get('jake').execute(message, args);
     }
 });
 
