@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'user-info',
+    name: 'info',
     description: "displays user info",
     execute(message, args) {
         let mentionedMember = message.mentions.first();
