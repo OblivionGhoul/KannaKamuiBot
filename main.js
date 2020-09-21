@@ -145,8 +145,6 @@ client.on('message', message => {
 
 client.on('message', message => {
     let args = message.content.substring(prefix.length).split(" ");
-    
- 
     switch (args[0]) { 
         case 'help':
             message.author.send('Ask Minh');
