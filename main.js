@@ -55,8 +55,6 @@ client.on('message', message => {
         client.commands.get('user-info').execute(message, args);
     } else if (command == 'josh') {
         client.commands.get('josh').execute(message, args);
-    } else if (command == 'vote') {
-        client.commands.get('vote').execute(message, args);
     }
 });
 
