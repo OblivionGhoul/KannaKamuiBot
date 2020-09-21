@@ -61,6 +61,8 @@ client.on('message', message => {
         client.commands.get('jake').execute(message, args);
     } else if (command == 'info') {
         client.commands.get('info').execute(message, args);
+    } else if (command == 'cal') {
+        client.commands.get('cal').execute(message, args);
     }
 });
 
