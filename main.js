@@ -33,31 +33,6 @@ client.once('ready', async() => {
     }
 });
 
-client.on('message', message => {
-    if(!message.content.startsWith(prefix) || message.author.bot) return;
-
-    const args = message.content.slice(prefix.length).split(/ +/);
-    const command = args.shift().toLocaleLowerCase();
-
-    if(command === 'ping') {
-        client.commands.get('ping').execute(message, args);
-    } else if (command == 'minh') {
-        client.commands.get('minh').execute(message, args);
-    } else if (command == 'kay') {
-        client.commands.get('kay').execute(message, args);
-    } else if (command == 'bryce') {
-        client.commands.get('bryce').execute(message, args);
-    } else if (command == 'ethan') {
-        client.commands.get('ethan').execute(message, args);
-    } else if (command == 'say') {
-        client.commands.get('say').execute(message, args);
-    } else if (command == 'user-info') {
-        client.commands.get('user-info').execute(message, args);
-    } else if (command == 'josh') {
-        client.commands.get('josh').execute(message, args);
-    }
-});
-
 var queue = new Map();
 
 const ytdl = require('ytdl-core');
@@ -143,4 +118,28 @@ async function playSong(guild, song) {
     dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 }
 
+client.on('message', message => {
+    if(!message.content.startsWith(prefix) || message.author.bot) return;
+
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLocaleLowerCase();
+
+    if(command === 'ping') {
+        client.commands.get('ping').execute(message, args);
+    } else if (command == 'minh') {
+        client.commands.get('minh').execute(message, args);
+    } else if (command == 'kay') {
+        client.commands.get('kay').execute(message, args);
+    } else if (command == 'bryce') {
+        client.commands.get('bryce').execute(message, args);
+    } else if (command == 'ethan') {
+        client.commands.get('ethan').execute(message, args);
+    } else if (command == 'say') {
+        client.commands.get('say').execute(message, args);
+    } else if (command == 'user-info') {
+        client.commands.get('user-info').execute(message, args);
+    } else if (command == 'josh') {
+        client.commands.get('josh').execute(message, args);
+    }
+});
 client.login(process.env.token);

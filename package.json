@@ -9,6 +9,9 @@
   "author": "Minh Dinh",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.3.1"
+    "discord.js": "^12.2.0",
+    "ffmpeg-static": "^4.2.5",
+    "node-opus": "^0.3.3",
+    "ytdl-core": "^2.1.7"
   }
 }
