@@ -20,7 +20,7 @@ client.once('ready', async() => {
         console.log('I am ready!');
 
         function pickStatus() {
-            let status = ['Simping for Minh', 'Why is Minh so cute?', 'Welcome to the Inn', 'Minh is taken', 'YEET', 'Minh has a GF'];
+            let status = ['Simping for Minh', 'Why is Minh so cute?', 'Welcome to the Inn', 'Minh is taken', 'YEET', 'Minh has a GF', 'Hehe', ':smiling_face_with_3_hearts:'];
             let Status = Math.floor(Math.random() * status.length);
 
             client.user.setActivity(status[Status], {
