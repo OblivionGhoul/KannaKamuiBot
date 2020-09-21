@@ -142,4 +142,15 @@ client.on('message', message => {
         client.commands.get('josh').execute(message, args);
     }
 });
+
+client.on('message', message => {
+    let args = message.content.substring(PREFIX.length).split(" ");
+    
+ 
+    switch (args[0]) { 
+        case 'help':
+            message.author.send('Ask Minh');
+        break;
+    }
+});
 client.login(process.env.token);
