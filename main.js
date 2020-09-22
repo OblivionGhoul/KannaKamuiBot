@@ -20,7 +20,7 @@ client.once('ready', async() => {
         console.log('I am ready!');
 
         function pickStatus() {
-            let status = ['Simping for Minh', 'Why is Minh so cute?', 'Welcome to the Inn'];
+            let status = ['Welcome to the Inn', 'Simping for Minh'];
             let Status = Math.floor(Math.random() * status.length);
 
             client.user.setActivity(status[Status], {
@@ -63,6 +63,8 @@ client.on('message', message => {
         client.commands.get('info').execute(message, args);
     } else if (command == 'cal') {
         client.commands.get('cal').execute(message, args);
+    } else if (command == 'vote') {
+        client.commands.get('vote').execute(message, args);
     } else if (command == 'ban') {
         client.commands.get('ban').execute(message, args);
     } else if (command == 'kick') {
@@ -78,4 +80,5 @@ client.on('message', message => {
         break;
     }
 });
+
 client.login(process.env.token);
