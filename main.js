@@ -73,6 +73,8 @@ client.on('message', message => {
         client.commands.get('roast').execute(message, args);
     } else if (command == 'meme') {
         client.commands.get('meme').execute(message, args);
+    } else if (command == 'rules') {
+        client.commands.get('rules').execute(message, args);
     }
 });
 
