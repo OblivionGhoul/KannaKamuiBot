@@ -69,6 +69,10 @@ client.on('message', message => {
         client.commands.get('ban').execute(message, args);
     } else if (command == 'kick') {
         client.commands.get('kick').execute(message, args);
+    } else if (command == 'roast') {
+        client.commands.get('roast').execute(message, args);
+    } else if (command == 'meme') {
+        client.commands.get('meme').execute(message, args);
     }
 });
 
