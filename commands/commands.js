@@ -1,0 +1,29 @@
+const Discord = require('discord.js');
+
+module.exports = {
+    name: 'commands',
+    description: "sends the list of commands",
+    execute(message, args) {
+        const testEmbed = new Discord.MessageEmbed()
+          .setColor(0xedb1f2)
+          .setTitle('Bot Commands')
+          .setDescription('All the different commands for this bot.')
+          .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bat, Bryce, Ethan, Hanna, Jake, Josh, and Kay (ex: -minh)')
+          .addField('Ban', 'Bans a user (ex: -ban @usertag)')
+          .addField('Kick', 'Kicks a user (ex: -kick @usertag)')
+          .addField('Vote', 'Creates a poll (ex: -vote) [This command is very slow, please be patient.]')
+          .addField('Meme', 'Sends a meme in the chat (ex: -meme)')
+          .addField('Roast', 'Roasts a user (ex: -roast @usertag)')
+          .addField('Rules', 'Sends the list of rules (ex: -rules)')
+          .addField('Cal', 'Calculator (ex: -cal add 234232 234234))')
+          .addField('Info', 'Gets the info of a user (ex: -info @usertag)')
+          .setFooter('This bot is still a work in progress and new commands are going to be added. Please ask OblivionGhoul#5842 for further questions.')
+          .setThumbnail('https://i.imgur.com/Sp2cuZQ.png')
+          .setTimestamp()
+        try {
+            message.author.send({embed:testEmbed});
+        } catch {
+            message.reply('Unable to send command list, please make sure public DMs are on.')
+        }
+    } 
+}

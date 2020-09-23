@@ -77,6 +77,8 @@ client.on('message', message => {
         client.commands.get('rules').execute(message, args);
     } else if (command == 'bat') {
         client.commands.get('bat').execute(message, args);
+    } else if (command == 'commands') {
+        client.commands.get('commands').execute(message, args);
     }
 });
 
@@ -84,7 +86,7 @@ client.on('message', message => {
     let args = message.content.substring(prefix.length).split(" ");
     switch (args[0]) { 
         case 'help':
-            message.author.send('Ask Minh');
+            message.author.send('Do -commands to get the list of commands for this bot.');
         break;
     }
 });
