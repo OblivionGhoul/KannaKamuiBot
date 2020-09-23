@@ -75,6 +75,8 @@ client.on('message', message => {
         client.commands.get('meme').execute(message, args);
     } else if (command == 'rules') {
         client.commands.get('rules').execute(message, args);
+    } else if (command == 'bat') {
+        client.commands.get('bat').execute(message, args);
     }
 });
 
