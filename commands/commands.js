@@ -17,6 +17,7 @@ module.exports = {
           .addField('Rules', 'Sends the list of rules (ex: -rules)')
           .addField('Cal', 'Calculator (ex: -cal add 234232 234234))')
           .addField('Info', 'Gets the info of a user (ex: -info @usertag)')
+          .addField('Server Info', 'Gets the info of the server (ex: -server [members, boosts, joined])')
           .setFooter('This bot is still a work in progress and new commands are going to be added. Please ask OblivionGhoul#5842 for further questions.')
           .setThumbnail('https://i.imgur.com/Sp2cuZQ.png')
           .setTimestamp()

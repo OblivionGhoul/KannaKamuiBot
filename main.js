@@ -79,6 +79,8 @@ client.on('message', message => {
         client.commands.get('bat').execute(message, args);
     } else if (command == 'commands') {
         client.commands.get('commands').execute(message, args);
+    } else if (command == 'server') {
+        client.commands.get('server').execute(message, args);
     }
 });
 
