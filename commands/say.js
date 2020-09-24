@@ -7,6 +7,7 @@ module.exports = {
             message.delete().catch(err => console.log(err));
             message.channel.send(sayMessage);
         } else {
+            message.delete().catch(err => console.log(err));
             message.reply('You do not have permissions for that command.')
             return;
         }
