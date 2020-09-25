@@ -20,11 +20,11 @@ client.once('ready', async() => {
         console.log('I am ready!');
 
         function pickStatus() {
-            let status = ['Welcome to the Inn', 'Simping for Minh'];
+            let status = ['Mail'];
             let Status = Math.floor(Math.random() * status.length);
 
             client.user.setActivity(status[Status], {
-                type: "WATCHING"
+                type: "PLAYING"
             });
         };
         setInterval(pickStatus, 5000);
