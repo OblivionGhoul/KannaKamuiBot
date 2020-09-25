@@ -33,6 +33,23 @@ client.once('ready', async() => {
     }
 });
 
+client.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
+    if (!channel) return;
+    channel.send(`Welcome to the Inn, ${member}! Please react in game roles and read the rules.`)
+
+    const autoRole = member.guild.roles.cache.get('705475155782008936');
+    if(!autoRole) return;
+    member.roles.add(autoRole.id);
+})
+
+client.on('guildMemberRemove', member => {
+    const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
+    if (!channel) return;
+
+    channel.send(`Hope you enjoyed you stay, ${member}! :(`)
+})
+
 client.on('message', message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
