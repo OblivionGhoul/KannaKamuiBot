@@ -11,7 +11,7 @@ module.exports = {
           .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bat, Bryce, Ethan, Hanna, Jake, Josh, and Kay (ex: -minh)')
           .addField('Ban', 'Bans a user (ex: -ban @usertag)')
           .addField('Kick', 'Kicks a user (ex: -kick @usertag)')
-          .addField('Temp Mute [Work in progress]', 'Temporarily mutes a user (ex: -tempmute [@usertag] [time(s, m, h)])')
+          .addField('Temp Mute', 'Temporarily mutes a user (ex: -tempmute [@usertag][time(s, m, h)])')
           .addField('Poll', 'Creates a poll (ex: -poll [#channelname] [Question])')
           .addField('Meme', 'Sends a meme in the chat (ex: -meme)')
           .addField('Roast', 'Roasts a user (ex: -roast @usertag)')
