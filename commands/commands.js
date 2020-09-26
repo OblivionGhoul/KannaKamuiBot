@@ -7,7 +7,7 @@ module.exports = {
         const testEmbed = new Discord.MessageEmbed()
           .setColor(0xedb1f2)
           .setTitle('Bot Commands')
-          .setDescription('All the different commands for this bot.')
+          .setDescription('My prefix is (-).')
           .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bat, Bryce, Ethan, Hanna, Jake, Josh, and Kay (ex: -minh)')
           .addField('Ban', 'Bans a user (ex: -ban @usertag)')
           .addField('Kick', 'Kicks a user (ex: -kick @usertag)')
