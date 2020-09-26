@@ -100,6 +100,12 @@ client.on('message', message => {
         client.commands.get('server').execute(message, args);
     } else if (command == 'insta') {
         client.commands.get('insta').execute(message, args);
+    } else if (command == 'purge') {
+        client.commands.get('purge').execute(message, args);
+    } else if (command == 'poll') {
+        client.commands.get('poll').execute(message, args);
+    } else if (command == 'tempmute') {
+        client.commands.get('tempmute').execute(message, args);
     }
 });
 
