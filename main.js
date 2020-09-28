@@ -47,7 +47,7 @@ client.on('guildMemberRemove', member => {
     const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
     if (!channel) return;
 
-    channel.send(`Hope you enjoyed you stay, ${member}! :(`)
+    channel.send(`Hope you enjoyed your stay, ${member}! :(`)
 })
 
 client.on('message', message => {
