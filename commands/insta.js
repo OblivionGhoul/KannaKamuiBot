@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'insta',
-    description: "sends the list of insta usernames",
+    description: "sends insta",
     execute(message, args) {
         const testEmbed = new Discord.MessageEmbed()
           .setColor(0x8fa9ff)
@@ -10,7 +10,7 @@ module.exports = {
           .setDescription('Follow OblivionGhoul on Insta')
           .setURL('https://www.instagram.com/minh.kien.dinh/')
           .setFooter('@lovemaster_ofcl on snap')
-          .setThumbnail('https://i.imgur.com/Sp2cuZQ.png')
+          .setThumbnail('https://imgur.com/a/91pNTdM')
           .setTimestamp()
         try {
             message.reply(testEmbed);

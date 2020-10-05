@@ -106,6 +106,10 @@ client.on('message', message => {
         client.commands.get('poll').execute(message, args);
     } else if (command == 'tempmute') {
         client.commands.get('tempmute').execute(message, args);
+    } else if (command == 'ticket') {
+        client.commands.get('ticket').execute(message, args);
+    } else if (command == 'close') {
+        client.commands.get('close').execute(message, args);
     }
 });
 
