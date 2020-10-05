@@ -56,8 +56,8 @@ client.on('message', message => {
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLocaleLowerCase();
 
-    if(command === 'ping') {
-        client.commands.get('ping').execute(message, args);
+    if(command === 'weather') {
+        client.commands.get('weather').execute(message, args);
     } else if (command == 'minh') {
         client.commands.get('minh').execute(message, args);
     } else if (command == 'kay') {
@@ -110,6 +110,10 @@ client.on('message', message => {
         client.commands.get('close').execute(message, args);
     } else if (command == 'fremont') {
         client.commands.get('fremont').execute(message, args);
+    } else if (command == 'avatar') {
+        client.commands.get('avatar').execute(message, args);
+    } else if (command == 'ascii') {
+        client.commands.get('ascii').execute(message, args);
     }
 });
 

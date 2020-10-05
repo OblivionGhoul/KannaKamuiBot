@@ -3,9 +3,17 @@ module.exports = {
     description: "says a message",
     execute(message, args) {
         if (message.member.hasPermission('BAN_MEMBERS')) {
-            const sayMessage = args.join(" ");
-            message.delete().catch(err => console.log(err));
-            message.channel.send(sayMessage);
+            let msg;
+            let textChannel = message.mentions.channels.first()
+            message.delete()
+
+            if (textChannel) {
+                msg = args.slice(1).join(" ");
+                textChannel.send(msg)
+            } else {
+                msg = args.join(" ");
+                message.channel.send(msg)
+            }
         } else {
             message.delete().catch(err => console.log(err));
             message.reply('You do not have permissions for that command.')
