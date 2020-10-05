@@ -10,7 +10,7 @@ module.exports = {
           .setDescription('Follow OblivionGhoul on Insta')
           .setURL('https://www.instagram.com/minh.kien.dinh/')
           .setFooter('@lovemaster_ofcl on snap')
-          .setThumbnail('https://imgur.com/a/91pNTdM')
+          .setThumbnail('https://i.imgur.com/Ivtf7GP.png')
           .setTimestamp()
         try {
             message.reply(testEmbed);
