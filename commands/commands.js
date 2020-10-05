@@ -16,7 +16,7 @@ module.exports = {
           .addField('Meme', 'Sends a meme in the chat (ex: -meme)')
           .addField('Roast', 'Roasts a user (ex: -roast @usertag)')
           .addField('Rules', 'Sends the list of rules (ex: -rules)')
-          .addField('Cal', 'Calculator (ex: -cal add 234232 234234))')
+          .addField('Cal', 'Calculator (ex: -cal 234+23432)')
           .addField('Info', 'Gets the info of a user (ex: -info @usertag)')
           .addField('Avatar', 'Sends avatar of a user (ex: -avatar)')
           .addField('Weather', 'Sends the weather forecast of a city (ex: -weather [city name])')
