@@ -8,7 +8,7 @@ module.exports = {
           .setColor(0xedb1f2)
           .setTitle('Bot Commands')
           .setDescription('My prefix is (-).')
-          .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bat, Bryce, Ethan, Hanna, Jake, Josh, and Kay (ex: -minh)')
+          .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, and Kay (ex: -minh)')
           .addField('Ban', 'Bans a user (ex: -ban @usertag)')
           .addField('Kick', 'Kicks a user (ex: -kick @usertag)')
           .addField('Temp Mute', 'Temporarily mutes a user (ex: -tempmute [@usertag][time(s, m, h)])')

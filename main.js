@@ -92,8 +92,6 @@ client.on('message', message => {
         client.commands.get('meme').execute(message, args);
     } else if (command == 'rules') {
         client.commands.get('rules').execute(message, args);
-    } else if (command == 'bat') {
-        client.commands.get('bat').execute(message, args);
     } else if (command == 'commands') {
         client.commands.get('commands').execute(message, args);
     } else if (command == 'server') {
@@ -110,6 +108,8 @@ client.on('message', message => {
         client.commands.get('ticket').execute(message, args);
     } else if (command == 'close') {
         client.commands.get('close').execute(message, args);
+    } else if (command == 'fremont') {
+        client.commands.get('fremont').execute(message, args);
     }
 });
 
