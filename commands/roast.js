@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'roast',
     description: "roasts a user",
-    async execute(message, args) {
+    async execute(client, message, args) {
         if (!args[0]) return message.channel.send('Invalid Command Format: \`%roast @user`');
         const mentionedMember = message.mentions.members.first();
         if (!mentionedMember) return message.channel.send('Invalid User');

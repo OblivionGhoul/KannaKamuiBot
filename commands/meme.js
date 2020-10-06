@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'meme',
     description: "sends a meme",
-    async execute(message, args) {
+    async execute(client, message, args) {
         fetch('https://meme-api.herokuapp.com/gimme')
             .then(res => res.json())
             .then(async json => {

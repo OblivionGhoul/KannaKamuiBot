@@ -4,7 +4,7 @@ const ms = require('ms');
 module.exports = {
     name: 'tempmute',
     description: "mutes a user temporarily",
-    execute(message, args) {
+    execute(client, message, args) {
         let messageArray = message.content.split(" ");
         let args1 = messageArray.slice(1);
         let cmd = messageArray[0];

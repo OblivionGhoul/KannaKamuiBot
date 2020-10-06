@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'ticket',
     description: "creates a ticket",
-    async execute(message, args) {
+    async execute(client, message, args) {
         const reason = message.content.split(' ').slice(1).join(' ');
         let SupportCategory = message.guild.channels.cache.find(category => category.name === "Tickets");
         if (message.guild.me.hasPermission('MANAGE_CHANNELS') && !SupportCategory) {

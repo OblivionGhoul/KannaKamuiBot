@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'purge',
     description: "deletes messages",
-    async execute(message, args) {
+    async execute(client, message, args) {
         const messageArray = message.content.split(' ');
         const args1 = messageArray.slice(1);
 

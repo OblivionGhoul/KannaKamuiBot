@@ -1,7 +1,7 @@
 module.exports = {
     name: 'say',
     description: "says a message",
-    execute(message, args) {
+    execute(client, message, args) {
         if (message.member.hasPermission('BAN_MEMBERS')) {
             let msg;
             let textChannel = message.mentions.channels.first()

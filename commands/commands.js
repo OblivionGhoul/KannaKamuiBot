@@ -5,7 +5,7 @@ module.exports = {
     name: "commands",
     description: "Sends the list of commands",
 
-    async execute(message, args) {
+    async execute(client, message, args) {
         const moderation = new Discord.MessageEmbed()
             .setTitle('Moderation')
             .addField('Ban', 'Bans a user (ex: -ban @usertag)')
@@ -14,6 +14,7 @@ module.exports = {
             .addField('Poll', 'Creates a poll (ex: -poll [#channelname] [Question])')
             .addField('Rules', 'Sends the list of rules (ex: -rules)')
             .addField('Close', 'Deletes a channel (ex: -close)')
+            .addField('Giveaway', 'Creates a giveaway (ex: -giveaway [#channelname][time{s,m,h}][# of winners][giveaway prize]')
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 

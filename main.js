@@ -2,6 +2,21 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = '-';
 const fs = require('fs');
+const config = require('./config.json');
+client.config = config;
+//giveaways
+const {GiveawaysManager} = require('discord-giveaways');
+client.giveawaysManager = new GiveawaysManager(client, {
+    storage: "./giveaways.json",
+    updateCountdownEvery: 5000,
+    default: {
+        botsCanWin: false,
+        exemptPermissions: [],
+        embedColor: '#FF0000',
+        reaction: '🎉',
+    }
+});
+
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for(const file of commandFiles) {
@@ -65,7 +80,7 @@ client.on('message', message => {
     const commandName = args.shift().toLowerCase();
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
     try {
-        command.execute(message, args);
+        command.execute(client, message, args);
     } catch (error) {
         console.error(error);
     }

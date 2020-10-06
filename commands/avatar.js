@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "avatar",
     description: "send someone's avatar",
-    async execute (message, args) {
+    async execute (client, message, args) {
         let member = message.mentions.users.first() || message.author
         let avatar = member.displayAvatarURL({size: 1024})
         const embed = new Discord.MessageEmbed()

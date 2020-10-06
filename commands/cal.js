@@ -4,7 +4,7 @@ const math = require('mathjs');
 module.exports = {
     name: "cal",
     description: "calculates",
-    async execute(message, args) {
+    async execute(client, message, args) {
         if (!args[0]) return message.channel.send('Please provide a question');
 
         let resp;

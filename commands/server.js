@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'server',
     description: "displays server info",
-    execute(message, args) {
+    execute(client, message, args) {
         if (args[0] === 'members') {
             const serverMembers = message.guild.memberCount;
             const memberEmbed = new Discord.MessageEmbed()
