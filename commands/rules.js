@@ -13,7 +13,7 @@ module.exports = {
           .addField('Rule #3', 'Do not beg for a higher role.')
           .addField('Rule #4', 'Do not ping anyone unless necessary.')
           .setFooter('Use the -rules command to access the rules in a text channel')
-          .setThumbnail('https://i.imgur.com/Sp2cuZQ.png')
+          .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
           .setTimestamp()
         try {
             message.reply(testEmbed);
