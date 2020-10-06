@@ -1,7 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '-';
 const fs = require('fs');
+const {default_prefix} = require('./config.json');
+const db = require('quick.db');
 const config = require('./config.json');
 client.config = config;
 //giveaways
@@ -75,10 +76,17 @@ client.on('guildMemberRemove', member => {
 })
 //command handler
 client.on('message', message => {
+    //gets prefix
+    let prefix = await db.get(`prefix_${message.guild.id}`);
+    //sets prefix default
+    if (prefix === null) prefix = default_prefix;
+    //ignores messages that do not start with prefix
     if(!message.content.startsWith(prefix) || message.author.bot) return;
+    
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+    
     try {
         command.execute(client, message, args);
     } catch (error) {

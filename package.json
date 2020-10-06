@@ -17,6 +17,8 @@
     "mathjs": "^7.3.0",
     "ms": "^2.1.2",
     "node-opus": "^0.3.3",
+    "parse-ms": "^2.1.0",
+    "quick.db": "^7.0.0-b21",
     "weather-js": "^2.0.0",
     "ytdl-core": "^2.1.7"
   }

@@ -1,4 +1,5 @@
 {
     "everyoneMention": false,
-    "hostedBy": true
+    "hostedBy": true,
+    "default_prefix": "-"
 }

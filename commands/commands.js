@@ -15,6 +15,12 @@ module.exports = {
             .addField('Rules', 'Sends the list of rules (ex: -rules)')
             .addField('Close', 'Deletes a channel (ex: -close)')
             .addField('Giveaway', 'Creates a giveaway (ex: -giveaway [#channelname][time{s,m,h}][# of winners][giveaway prize]')
+            .addField('Dgiveaway', 'Deletes a giveaway (ex: -dgiveaway [giveaway ID]')
+            .addField('Reroll', 'Rerolls the giveaway (ex: -reroll [giveaway ID])')
+            .addField('Warn', 'Warns a user (ex: -warn [@usertag or user ID][reason for warn])')
+            .addField('Warnings', 'Checks user\'s amount of warnings (ex: -close)')
+            .addField('Dwarns', 'Deletes a member\'s warns (ex: -dwarns [@user or user ID])')
+            .addField('Setprefix', 'Changes the prefix of the bot (ex: -setprefix [new prefix])')
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
@@ -36,12 +42,26 @@ module.exports = {
             .addField('Weather', 'Sends the weather forecast of a city (ex: -weather [city name])')
             .addField('Server Info', 'Gets the info of the server (ex: -server [members, boosts, joined])')
             .addField('Ticket', 'Creates a ticket for questions (ex: -ticket [question])')
+            .addField('Ping', 'Gets the ping of the bot (ex: -ping)')
+            .setTimestamp()
+            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+
+        const economy = new Discord.MessageEmbed()
+            .setTitle('Economy')
+            .addField('Bal', 'Checks user balance (ex: -bal)')
+            .addField('Buy', 'Buys an item from the snop (ex: -buy [item name])')
+            .addField('Daily', 'Redeems daily money (ex: -daily)')
+            .addField('Work', 'Work to get money (ex: -work)')
+            .addField('Inv', 'Checks user inventory (ex: -inv)')
+            .addField('Leaderboard', 'Sends the leaderboard of economy (ex: -leaderboard)')
+            .addField('Store', 'Sends list of items in the store (ex: -store)')
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const pages = [
             fun,
             utility,
+            economy,
             moderation,
         ]
 
