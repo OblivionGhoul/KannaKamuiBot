@@ -75,7 +75,7 @@ client.on('guildMemberRemove', member => {
     client.channels.cache.get(stats.bots).setName(`Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 })
 //command handler
-client.on('message', message => {
+client.on('message', async message => {
     //gets prefix
     let prefix = await db.get(`prefix_${message.guild.id}`);
     //sets prefix default
