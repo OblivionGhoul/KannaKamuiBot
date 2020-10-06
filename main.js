@@ -27,6 +27,12 @@ client.once('ready', async() => {
         console.log(error)
     }
 });
+let stats = {
+    serverID: '705454198464053331',
+    member: "738642924346146817",
+    bots: "738642927366176905"
+}
+
 //welcome message
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
@@ -36,6 +42,10 @@ client.on('guildMemberAdd', member => {
     const autoRole = member.guild.roles.cache.get('705475155782008936');
     if(!autoRole) return;
     member.roles.add(autoRole.id);
+//update server count
+    if(member.guild.id !== stats.serverID) return;
+    client.channels.cache.get(stats.member).setName(`Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 })
 //leave message 
 client.on('guildMemberRemove', member => {
@@ -43,6 +53,10 @@ client.on('guildMemberRemove', member => {
     if (!channel) return;
 
     channel.send(`Hope you enjoyed your stay, ${member}! :(`)
+//update server count
+    if(member.guild.id !== stats.serverID) return;
+    client.channels.cache.get(stats.member).setName(`Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
+    client.channels.cache.get(stats.bots).setName(`Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 })
 //command handler
 client.on('message', message => {
