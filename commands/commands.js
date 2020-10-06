@@ -45,9 +45,6 @@ module.exports = {
         ]
 
         const emojiList = ["⏪", "⏩"];
-
-        const timeout = '120000';
-
-        pagination(message, pages, emojiList, timeout)
+        pagination(message, pages, emojiList)
     }
 }
