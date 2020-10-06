@@ -9,19 +9,19 @@ module.exports = {
 
         let channel = message.mentions.channels.first();
 
-        if (!channel) return message.channel.send('Please provide a channel');
+        if (!channel) return message.channel.send('Please provide a channel (ex: -giveaway [#channelname][time{s,m,h}][# of winners][giveaway prize]');
 
         let giveawayDuration = args[1];
 
-        if (!giveawayDuration || isNaN(ms(giveawayDuration))) return message.channel.send('Pleae provide a valid duration');
+        if (!giveawayDuration || isNaN(ms(giveawayDuration))) return message.channel.send('Pleae provide a valid duration (ex: -giveaway [#channelname][time{s,m,h}][# of winners][giveaway prize]');
 
         let giveawayWinners = args[2];
 
-        if (isNaN(giveawayWinners) || (parseInt(giveawayWinners) <= 0)) return message.channel.send('Please provide a valid number of winners!');
+        if (isNaN(giveawayWinners) || (parseInt(giveawayWinners) <= 0)) return message.channel.send('Please provide a valid number of winners! (ex: -giveaway [#channelname][time{s,m,h}][# of winners][giveaway prize]');
 
         let giveawayPrize = args.slice(3).join(" ");
 
-        if (!giveawayPrize) return message.channel.send('Ok then, I\'ll give away nothing');
+        if (!giveawayPrize) return message.channel.send('Please enter the giveaway prize (ex: -giveaway [#channelname][time{s,m,h}][# of winners][giveaway prize]');
 
         client.giveawaysManager.start(channel, {
             time: ms(giveawayDuration),
@@ -30,12 +30,12 @@ module.exports = {
             hostedBy: client.config.hostedBy ? message.author : null,
 
             messages: {
-                giveaway: (client.config.everyoneMention ? "@everyone\n\n" : "") + "GIVEAWAY",
-                giveawayEned: (client.config.everyoneMention ? "@everyone\n\n" : "") + "GIVEAWAY ENDED",
+                giveaway: (client.config.everyoneMention ? "@everyone\n\n" : "") + "🎊 NEW GIVEAWAY 🎊",
+                giveawayEnded: (client.config.everyoneMention ? "@everyone\n\n" : "") + "🎊 GIVEAWAY ENDED 🎊",
                 timeRemaining: "Time remaining: **{duration}**",
                 inviteToParticipate: "React with 🎉 to enter",
-                winMessage: "Congrats {winners}, you won **{prize}**",
-                embedFooter: "Giveaway time!",
+                winMessage: "Congratulations {winners}, you won **{prize}**! Please wait for a dm from OblivionGhoul.",
+                embedFooter: "Weekly giveaway!",
                 noWinner: "Couldn't determine a winner",
                 hostedBy: "Hosted by {user}",
                 winners: "winner(s)",
