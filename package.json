@@ -9,6 +9,7 @@
   "author": "Minh Dinh",
   "license": "ISC",
   "dependencies": {
+    "discord-giveaways": "^4.2.1",
     "discord.js": "^12.2.0",
     "discord.js-pagination": "^1.0.2",
     "ffmpeg-static": "^4.2.5",
