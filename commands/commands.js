@@ -8,6 +8,7 @@ module.exports = {
     async execute(client, message, args) {
         const moderation = new Discord.MessageEmbed()
             .setTitle('Moderation')
+            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('Ban', 'Bans a user (ex: -ban @usertag)')
             .addField('Kick', 'Kicks a user (ex: -kick @usertag)')
             .addField('Temp Mute', 'Temporarily mutes a user (ex: -tempmute [@usertag][time(s, m, h)])')
@@ -26,6 +27,7 @@ module.exports = {
 
         const fun = new Discord.MessageEmbed()
             .setTitle('Fun')
+            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, and Kay (ex: -minh)')
             .addField('Meme', 'Sends a meme in the chat (ex: -meme)')
             .addField('Roast', 'Roasts a user (ex: -roast @usertag)')
@@ -36,6 +38,7 @@ module.exports = {
 
         const utility = new Discord.MessageEmbed()
             .setTitle('Utility')
+            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('Cal', 'Calculator (ex: -cal 234+23432)')
             .addField('Info', 'Gets the info of a user (ex: -info @usertag)')
             .addField('Avatar', 'Sends avatar of a user (ex: -avatar)')
@@ -48,6 +51,7 @@ module.exports = {
 
         const economy = new Discord.MessageEmbed()
             .setTitle('Economy')
+            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('Bal', 'Checks user balance (ex: -bal)')
             .addField('Buy', 'Buys an item from the snop (ex: -buy [item name])')
             .addField('Daily', 'Redeems daily money (ex: -daily)')
