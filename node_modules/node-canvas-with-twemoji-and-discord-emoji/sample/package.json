@@ -1,0 +1,15 @@
+{
+  "name": "node-canvas-with-twemoji-sample1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "cagpie",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "urlsafe-base64": "^1.0.0"
+  }
+}
