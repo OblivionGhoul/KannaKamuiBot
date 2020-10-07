@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "commands",
     description: "Sends the list of commands",
-    aliases: ['command'],
+
     async execute(client, message, args) {
         const moderation = new Discord.MessageEmbed()
             .setTitle('Moderation')
