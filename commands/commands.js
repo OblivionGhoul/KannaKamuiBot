@@ -28,7 +28,7 @@ module.exports = {
         const fun = new Discord.MessageEmbed()
             .setTitle('Fun')
             .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
-            .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, and Kay (ex: -minh)')
+            .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, Matt, and Kay (ex: -minh)')
             .addField('Meme', 'Sends a meme in the chat (ex: -meme)')
             .addField('Roast', 'Roasts a user (ex: -roast @usertag)')
             .addField('Ascii', 'Sends cool text (ex: -ascii [text])')
