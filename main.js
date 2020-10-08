@@ -3,7 +3,6 @@ const client = new Discord.Client();
 const fs = require('fs');
 const {default_prefix} = require('./config.json');
 const db = require('quick.db');
-client.commands = new Discord.Collection();
 client.queue = new Map();
 //giveaways
 const config = require('./config.json');
