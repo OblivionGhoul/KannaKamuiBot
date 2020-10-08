@@ -1,6 +1,7 @@
 module.exports = {
     name: 'say',
     description: "says a message",
+    aliases: ['announce'],
     execute(client, message, args) {
         if (message.member.hasPermission('BAN_MEMBERS')) {
             let msg;

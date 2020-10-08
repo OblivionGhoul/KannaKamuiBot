@@ -4,7 +4,7 @@ module.exports = {
     name: "nowplaying",
     description: "To show the music which is currently playing in this server",
     usage: "",
-    aliases: ["np"],
+    aliases: ["np", "time", "song"],
     async execute(client, message, args) {
         const serverQueue = message.client.queue.get(message.guild.id);
         if (!serverQueue) return message.channel.send("There is nothing playing in this server.");

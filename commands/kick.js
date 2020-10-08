@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'kick',
     description: "kicks a user",
+    aliases: [''],
     execute(client, message, args) {
         if (message.member.hasPermission('KICK_MEMBERS')) {
             const userKick = message.mentions.users.first();

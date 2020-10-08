@@ -4,7 +4,7 @@ module.exports = {
     name: "stop",
     description: "To stop the music and clearing the queue",
     usage: "",
-    aliases: [],
+    aliases: [''],
   async execute(client, message, args) {
     const channel = message.member.voice.channel
     if (!channel)return message.channel.send("You need to be in a voice channel to play music!");

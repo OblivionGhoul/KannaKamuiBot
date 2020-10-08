@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "buy",
     description: "Buy an item from the store",
-
+    aliases: [''],
     async execute(client, message, args) {
         let purchase = args.join(" ");
         if(!purchase) return message.channel.send('Please provide an item to buy')

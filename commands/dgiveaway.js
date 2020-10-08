@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "dgiveaway",
     description: "deletes a giveaway",
-
+    aliases: ['deletegiveaway'],
     async execute(client, message, args) {
         let messageID = args[0];
         client.giveawaysManager.delete(messageID).then(() => {

@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'ban',
     description: "bans a user",
+    aliases: [''],
     execute(client, message, args) {
         if (message.member.hasPermission('BAN_MEMBERS')) {
             const userBan = message.mentions.users.first();

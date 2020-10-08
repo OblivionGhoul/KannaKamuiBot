@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "store",
     description: "View the store",
-
+    aliases: ['shop'],
     async execute(client, message, args) {
         const embed = new Discord.MessageEmbed()
         .setTitle('Store')

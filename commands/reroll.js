@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "reroll",
     description: "rerolls a giveaway",
-
+    aliases: [''],
     async execute(client, message, args) {
         let messageID = args[0];
         client.giveawaysManager.reroll(messageID).then(() => {

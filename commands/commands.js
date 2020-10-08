@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "commands",
     description: "Sends the list of commands",
-
+    aliases: ['help', 'command'],
     async execute(client, message, args) {
         const moderation = new Discord.MessageEmbed()
             .setTitle('Moderation')
@@ -62,9 +62,24 @@ module.exports = {
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
+        const music = new Discord.MessageEmbed()
+            .setTitle('Music')
+            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
+            .addField('Play', 'Searches Youtube and plays a song (ex: -p [song name] {Youtube links do not work yet}')
+            .addField('Pause', 'Pauses what is playing (ex: -pause)')
+            .addField('Resume', 'Resumes what is playing (ex: -resume)')
+            .addField('Stop', 'Stops playing a song (ex: -stop)')
+            .addField('Skip', 'Skips a song (ex: -skip)')
+            .addField('Queue', 'Sends song queue (ex: -queue)')
+            .addField('Volume', 'Sets or views current volume (ex: -vol [number])')
+            .addField('Now Playing', 'Shows song that is currently playing (ex: -np)')
+            .setTimestamp()
+            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+
         const pages = [
             fun,
             utility,
+            music,
             economy,
             moderation,
         ]

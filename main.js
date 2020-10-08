@@ -18,7 +18,7 @@ client.giveawaysManager = new GiveawaysManager(client, {
         reaction: '🎉',
     }
 });
-
+//Loading commands
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for(const file of commandFiles) {
@@ -44,6 +44,7 @@ client.once('ready', async() => {
         console.log(error)
     }
 });
+//Server stats channel IDs
 let stats = {
     serverID: '705454198464053331',
     member: "738642924346146817",
@@ -54,7 +55,7 @@ let stats = {
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
     if (!channel) return;
-    channel.send(`Welcome to the Inn, ${member}! Please react in game roles and read the rules.`)
+    channel.send(`Welcome to the Inn, ${member}! Please react in <#730641738615750739> and read <#758406457883361330>.`)
 
     const autoRole = member.guild.roles.cache.get('705475155782008936');
     if(!autoRole) return;
@@ -77,28 +78,21 @@ client.on('guildMemberRemove', member => {
 })
 //command handler
 client.on('message', async message => {
-    //gets prefix
+    //gets prefix from default
     let prefix = await db.get(`prefix_${message.guild.id}`);
     //sets prefix default
     if (prefix === null) prefix = default_prefix;
     //ignores messages that do not start with prefix
     if(!message.content.startsWith(prefix) || message.author.bot) return;
-    
+    //looks for correct commands
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
     const command = client.commands.get(commandName) || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-    
     try {
         command.execute(client, message, args);
     } catch (error) {
         console.error(error);
     }
-    //help command
-    let args1 = message.content.substring(prefix.length).split(" ");
-    switch (args1[0]) { 
-        case 'help':
-            message.author.send('Do -commands to get the list of commands for this bot. You can also do -ticket to get support in Minh\'s Inn.');
-        break;
-    }
 });
+//Getting bot token
 client.login(process.env.token);

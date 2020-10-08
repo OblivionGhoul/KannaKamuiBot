@@ -4,6 +4,7 @@ const weather = require('weather-js');
 module.exports = {
     name: 'weather',
     description: "shows the weather",
+    aliases: ['temp', 'temperature'],
     execute(client, message, args) {
         weather.find({ search: args.join(" "), degreeType: 'F' }, function (error, result) {
             if (error) return message.channel.send(error);

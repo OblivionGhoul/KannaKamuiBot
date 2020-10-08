@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "inv",
     description: "View your inventory",
+    aliases: ['inventory'],
     async execute(client, message, args) {
         let items = await db.fetch(message.author.id);
         if(items === null) items = "Nothing"

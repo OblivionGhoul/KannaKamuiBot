@@ -4,6 +4,7 @@ const figlet = require('figlet');
 module.exports = {
     name: "ascii",
     description: "makes text cool",
+    aliases: [''],
     async execute(client, message, args) {
         if(!args[0]) return message.channel.send('Please provide some text');
 

@@ -4,7 +4,7 @@ const warnings = require('./warnings');
 module.exports = {
     name: "dwarns",
     description: "Delete a member's warns",
-
+    aliases: ['deletewarns'],
     async execute(client, message, args){
         if(!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send('You can\'t use that.');
 

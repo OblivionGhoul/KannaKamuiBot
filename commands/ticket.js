@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'ticket',
     description: "creates a ticket",
+    aliases: ['support'],
     async execute(client, message, args) {
         const reason = message.content.split(' ').slice(1).join(' ');
         let SupportCategory = message.guild.channels.cache.find(category => category.name === "Tickets");

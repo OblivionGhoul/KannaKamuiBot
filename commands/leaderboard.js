@@ -4,7 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "leaderboard",
     description: "Check the sever's leaderboard",
-
+    aliases: ['lb'],
     async execute(client, message, args) {
         let money = db.startsWith(`money_${message.guild.id}`, { sort: '.data' })
 

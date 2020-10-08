@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'insta',
     description: "sends insta",
+    aliases: ['instagram'],
     execute(client, message, args) {
         const testEmbed = new Discord.MessageEmbed()
           .setColor(0x8fa9ff)

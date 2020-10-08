@@ -3,7 +3,7 @@ const db = require('quick.db');
 module.exports = {
     name: "setprefix",
     description: "Set a server's prefix",
-
+    aliases: [''],
     async execute (client, message, args) {
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('You don\'t have permission to use that.');
 

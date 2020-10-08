@@ -4,7 +4,7 @@ module.exports = {
     name: "resume",
     description: "To resume the paused music",
     usage: "",
-    aliases: [],
+    aliases: ['r'],
     async execute(client, message, args) {
         const serverQueue = message.client.queue.get(message.guild.id);
         if (serverQueue && !serverQueue.playing) {

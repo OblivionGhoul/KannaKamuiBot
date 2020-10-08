@@ -1,7 +1,8 @@
 module.exports = {
   name: 'kay',
-  description: "kay sucks!",
+  description: "quote",
+  aliases: [''],
   execute(client, message, args) {
-      message.channel.send('Kay sucks!');
+      message.channel.send('I am Vietnamese for the food');
   }
 }

@@ -3,6 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'rules',
     description: "sends the list of rules",
+    aliases: [''],
     execute(client, message, args) {
         const testEmbed = new Discord.MessageEmbed()
           .setColor(0x12ffff)

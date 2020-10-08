@@ -3,7 +3,7 @@ const ms = require('ms');
 module.exports = {
     name: "giveaway",
     description: "Starts a giveaway",
-
+    aliases: [''],
     async execute(client, message, args) {
         if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send('You are not allowed to start giveaways');
 

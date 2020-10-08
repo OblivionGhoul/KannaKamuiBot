@@ -4,7 +4,7 @@ module.exports = {
     name: "queue",
     description: "To show the server songs queue",
     usage: "",
-    aliases: ["q", "list", "songlist", "song-list"],
+    aliases: ["q", "list", "songlist", "song-list", "songs"],
   async execute(client, message, args) {
     const serverQueue = message.client.queue.get(message.guild.id);
     if (!serverQueue) return message.channel.send("There is nothing playing in this server.");

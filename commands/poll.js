@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: 'poll',
     description: "creates a poll for something",
+    aliases: [''],
     async execute(client, message, args) {
         if (message.author.bot || message.channel.type === "dm") return;
         const messageArray = message.content.split(' ');
