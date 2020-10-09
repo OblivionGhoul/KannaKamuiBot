@@ -21,6 +21,7 @@ module.exports = {
             .addField('Warn', 'Warns a user (ex: -warn [@usertag or user ID][reason for warn])')
             .addField('Warnings', 'Checks user\'s amount of warnings (ex: -close)')
             .addField('Dwarns', 'Deletes a member\'s warns (ex: -dwarns [@user or user ID])')
+            .addField('DM', 'DMs a user (ex: -dm [@user or user ID][message text])')
             .addField('Setprefix', 'Changes the prefix of the bot (ex: -setprefix [new prefix])')
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
@@ -50,6 +51,7 @@ module.exports = {
             .addField('Ticket', 'Creates a ticket for questions (ex: -ticket [question])')
             .addField('Ping', 'Gets the ping of the bot (ex: -ping)')
             .addField('Imdb', 'Sends user info on movie or tv show (ex: -imdb [movie or show name])')
+            .addField('Emoji', 'Sends all server emojis (ex: -emoji)')
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 

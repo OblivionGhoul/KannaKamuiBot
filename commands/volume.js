@@ -13,8 +13,9 @@ module.exports = {
         if (!args[0]) return message.channel.send(`The current volume is: **${serverQueue.volume}**`);
         serverQueue.volume = args[0];
         serverQueue.connection.dispatcher.setVolumeLogarithmic(args[0] / 5);
+        if (serverQueue.volume > 5) return message.channel.send('The max volume is 5');
         let xd = new MessageEmbed()
-            .setDescription(`I set the volume to: **${args[0] / 5}/5** (It will be divided by 5)`)
+            .setDescription(`I set the volume to: **${args[0]}**`)
             .setTitle("Server Volume Manager")
             .setColor("BLUE")
         return message.channel.send(xd);
