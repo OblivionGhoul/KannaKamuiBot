@@ -23,7 +23,7 @@ module.exports = {
             .addField('Dwarns', 'Deletes a member\'s warns (ex: -dwarns [@user or user ID])')
             .addField('DM', 'DMs a user (ex: -dm [@user or user ID][message text])')
             .addField('Setprefix', 'Changes the prefix of the bot (ex: -setprefix [new prefix])')
-            .setTimestamp()
+            .setTimestamp() 
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const fun = new Discord.MessageEmbed()
