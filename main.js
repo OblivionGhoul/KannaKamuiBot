@@ -4,6 +4,7 @@ const fs = require('fs');
 const {default_prefix} = require('./config.json');
 const db = require('quick.db');
 client.queue = new Map();
+const { badwords } = require("./data.json")
 //giveaways
 const config = require('./config.json');
 client.config = config;
@@ -32,7 +33,7 @@ client.once('ready', async() => {
         console.log('I am ready!');
 
         function pickStatus() {
-            let status = ['over the Inn', 'Welcome to the Inn', 'Simping for Minh'];
+            let status = ['over the Inn', 'Welcome to the Inn', 'Simping for Minh']; //change change status
             let Status = Math.floor(Math.random() * status.length);
 
             client.user.setActivity(status[Status], {
@@ -46,18 +47,18 @@ client.once('ready', async() => {
 });
 //Server stats channel IDs
 let stats = {
-    serverID: '705454198464053331',
-    member: "738642924346146817",
-    bots: "738642927366176905"
+    serverID: '705454198464053331', //can change channel ID 
+    member: "738642924346146817", //can change channel ID 
+    bots: "738642927366176905" //can change channel ID 
 }
 
 //welcome message
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
     if (!channel) return;
-    channel.send(`Welcome to the Inn, ${member}! Please react in <#730641738615750739> and read <#758406457883361330>.`)
+    channel.send(`Welcome to the Inn, ${member}! Please react in <#730641738615750739> and read <#758406457883361330>.`) //can change channel ID for welcome messages
 
-    const autoRole = member.guild.roles.cache.get('705475155782008936');
+    const autoRole = member.guild.roles.cache.get('705475155782008936'); //can change auto role ID
     if(!autoRole) return;
     member.roles.add(autoRole.id);
 //update server count
@@ -76,6 +77,22 @@ client.on('guildMemberRemove', member => {
     client.channels.cache.get(stats.member).setName(`Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 })
+//checks for certain words
+client.on('message', async message => {
+    if (message.author.bot) return;
+    if (!message.member.hasPermission("BAN_MEMBERS")) {
+        let confirm = false;
+        var i;
+        for (i = 0; i < badwords.length; i++) {
+            if (message.content.toLowerCase().includes(badwords[i].toLowerCase()))
+                confirm = true;
+        }
+        if (confirm) {
+            message.delete()
+            return message.channel.send("Stop fucking cussing bitch.")
+        }
+    }
+});
 //command handler
 client.on('message', async message => {
     //gets prefix from default

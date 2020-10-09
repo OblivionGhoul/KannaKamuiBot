@@ -14,11 +14,13 @@
     "discord.js-pagination": "^1.0.2",
     "ffmpeg-static": "^4.2.5",
     "figlet": "^1.5.0",
+    "imdb-api": "^4.2.0",
     "mathjs": "^7.3.0",
     "ms": "^2.1.2",
     "node-opus": "^0.3.3",
     "parse-ms": "^2.1.0",
     "quick.db": "^7.0.0-b21",
+    "something-random-on-discord": "0.0.2",
     "weather-js": "^2.0.0",
     "yt-search": "^2.3.2",
     "ytdl-core": "^2.1.7"
