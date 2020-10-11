@@ -19,7 +19,7 @@ module.exports = {
       if(song === serverQueue.songs[0])return
       return `**-** ${song.title}`
     }).join("\n"))
-    .setFooter("Currently Server Volume is "+serverQueue.volume)
+    .setFooter("Bot made by OblivionGhoul#5842")
     if(serverQueue.songs.length === 1)queue.setDescription(`No songs to play next.`)
     message.channel.send(queue)
   },
