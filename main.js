@@ -59,14 +59,14 @@ client.on('guildMemberAdd', member => {
     let avatar = member.displayAvatarURL()
     let messageEmbed = new Discord.MessageEmbed()
     if (!channel) return;
-    let messageEmbed = new Discord.MessageEmbed()
+    let welcomeEmbed = new Discord.MessageEmbed()
         .setTitle(`Welcome to The Inn, ${newMember}!`)
         .setDescription(`Please react in <#730641738615750739> to get your game roles and please read <#758406457883361330>.`)
         .setColor("RANDOM")
         .setFooter("Bot made by OblivionGhoul#5842")
         .setThumbnail(avatar)
         .setTimestamp()
-    channel.send(messageEmbed)
+    channel.send(welcomeEmbed)
 
     const autoRole = member.guild.roles.cache.get('705475155782008936'); //can change auto role ID
     if (!autoRole) return;
