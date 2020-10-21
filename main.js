@@ -1,14 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
-const { default_prefix } = require('./config.json');
+const {default_prefix} = require('./config.json');
 const db = require('quick.db');
 client.queue = new Map();
 const { badwords } = require("./data.json")
 //giveaways
 const config = require('./config.json');
 client.config = config;
-const { GiveawaysManager } = require('discord-giveaways');
+const {GiveawaysManager} = require('discord-giveaways');
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./giveaways.json",
     updateCountdownEvery: 5000,
@@ -22,12 +22,12 @@ client.giveawaysManager = new GiveawaysManager(client, {
 //finding commands
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-for (const file of commandFiles) {
+for(const file of commandFiles) {
     const command = require(`./commands/${file}`);
     client.commands.set(command.name, command);
 }
 //bot status
-client.once('ready', async () => {
+client.once('ready', async() => {
     try {
         let serverIn = client.guilds.size;
         console.log('I am ready!');
@@ -55,24 +55,14 @@ let stats = {
 //welcome message
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
-    let newMember = message.mentions.users.first() || message.author
-    let avatar = member.displayAvatarURL()
-    let messageEmbed = new Discord.MessageEmbed()
     if (!channel) return;
-    let welcomeEmbed = new Discord.MessageEmbed()
-        .setTitle(`Welcome to The Inn, ${newMember}!`)
-        .setDescription(`Please react in <#730641738615750739> to get your game roles and please read <#758406457883361330>.`)
-        .setColor("RANDOM")
-        .setFooter("Bot made by OblivionGhoul#5842")
-        .setThumbnail(avatar)
-        .setTimestamp()
-    channel.send(welcomeEmbed)
+    channel.send(`Welcome to the Inn, ${member}! Please react in <#730641738615750739> and read <#758406457883361330>.`) //can change channel ID for welcome messages
 
     const autoRole = member.guild.roles.cache.get('705475155782008936'); //can change auto role ID
-    if (!autoRole) return;
+    if(!autoRole) return;
     member.roles.add(autoRole.id);
-    //update server count
-    if (member.guild.id !== stats.serverID) return;
+//update server count
+    if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.member).setName(`Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 })
@@ -82,8 +72,8 @@ client.on('guildMemberRemove', member => {
     if (!channel) return;
 
     channel.send(`Hope you enjoyed your stay, ${member}! :(`)
-    //update server count
-    if (member.guild.id !== stats.serverID) return;
+//update server count
+    if(member.guild.id !== stats.serverID) return;
     client.channels.cache.get(stats.member).setName(`Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
     client.channels.cache.get(stats.bots).setName(`Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 })
@@ -110,7 +100,7 @@ client.on('message', async message => {
     //sets prefix default
     if (prefix === null) prefix = default_prefix;
     //ignores messages that do not start with prefix
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if(!message.content.startsWith(prefix) || message.author.bot) return;
     //looks for correct commands
     const args = message.content.slice(prefix.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
