@@ -55,12 +55,12 @@ let stats = {
 //welcome message
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
-    let member = message.mentions.users.first() || message.author
+    let newMember = message.mentions.users.first() || message.author
     let avatar = member.displayAvatarURL()
     let messageEmbed = new Discord.MessageEmbed()
     if (!channel) return;
     let messageEmbed = new Discord.MessageEmbed()
-        .setTitle(`Welcome to The Inn, ${member}!`)
+        .setTitle(`Welcome to The Inn, ${newMember}!`)
         .setDescription(`Please react in <#730641738615750739> to get your game roles and please read <#758406457883361330>.`)
         .setColor("RANDOM")
         .setFooter("Bot made by OblivionGhoul#5842")
