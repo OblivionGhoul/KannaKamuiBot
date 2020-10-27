@@ -4,22 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "meme",
-    "dev": "nodemon",
-    "start": "node ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "keywords": [
-  ],
-  "author": "",
-  "license": "",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
+  "author": "Minh Dinh",
+  "ISC": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "discord-giveaways": "^4.2.1",
