@@ -14,9 +14,7 @@
     },
     'conditions': [
       ['OS == "win"', {
-        'defines': [
-          'WIN32',
-        ],
+        'defines': ['WIN32'],
       }],
     ],
     'configurations': {

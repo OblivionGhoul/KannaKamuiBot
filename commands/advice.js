@@ -1,11 +1,13 @@
-const {Random} = require('something-random-on-discord');
+const { Random } = require('something-random-on-discord');
 const random = new Random();
 
-module.exports = {
-    name: 'advice',
+module.exports.run = async (client, message, args) => {
+    let data = await random.getAdvice()
+    message.channel.send(data)
+}
+
+module.exports.config = {
+    name: "advice",
     description: "sends advice",
-    async execute(client, message, args) {
-        let data = await random.getAdvice()
-        message.channel.send(data)
-    }
+    aliases: []
 }

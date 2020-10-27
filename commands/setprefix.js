@@ -1,18 +1,39 @@
-const db = require('quick.db');
+const prefixModel = require("../models/prefix")
 
-module.exports = {
-    name: "setprefix",
-    description: "Set a server's prefix",
-    aliases: [''],
-    async execute (client, message, args) {
-        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('You don\'t have permission to use that.');
+module.exports.run = async (bot, message, args) => {
+    const data = await prefixModel.findOne({
+        GuildID: message.guild.id
+    });
 
-        if(!args[0]) return message.channel.send('Please provide a new prefix');
+    if (!args[0]) return message.channel.send(`You must provide a **new prefix**!`);
 
-        if(args[1]) return message.channel.send('The prefix can\'t have two spaces');
+    if (args[0].length > 5) return message.channel.send('Your new prefix must be under \`5\` characters!')
 
-        db.set(`prefix_${message.guild.id}`, args[0])
+    if (data) {
+        await prefixModel.findOneAndRemove({
+            GuildID: message.guild.id
+        })
+        
+        message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
 
-        message.channel.send(`Succesffully set new prefix to **${args[0]}**`)
+        let newData = new prefixModel({
+            Prefix: args[0],
+            GuildID: message.guild.id
+        })
+        newData.save();
+    } else if (!data) {
+        message.channel.send(`The new prefix is now **\`${args[0]}\`**`);
+
+        let newData = new prefixModel({
+            Prefix: args[0],
+            GuildID: message.guild.id
+        })
+        newData.save();
     }
+
+}
+
+module.exports.config = {
+    name: "setprefix",
+    aliases: []
 }
