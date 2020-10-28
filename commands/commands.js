@@ -51,6 +51,7 @@ module.exports.run = async (client, message, args) => {
         .addField('Ping', 'Gets the ping of the bot (ex: -ping)')
         .addField('Imdb', 'Sends user info on movie or tv show (ex: -imdb [movie or show name])')
         .addField('Emoji', 'Sends all server emojis (ex: -emoji)')
+        .addField('Verse', 'Sends a bible bible verse (ex: -verse)')
         .setTimestamp()
         .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
