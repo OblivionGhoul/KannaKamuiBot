@@ -9,7 +9,7 @@ module.exports = (client) => {
   command(client, 'setwelcome', async (message) => {
     const { member, channel, content, guild } = message
 
-    if (!member.hasPermission('ADMINISTRATOR')) {
+    if (!member.hasPermission('BAN_MEMBERS')) {
       channel.send('You do not have permission to run this command.')
       return
     }
