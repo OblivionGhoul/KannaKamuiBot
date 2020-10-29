@@ -51,9 +51,6 @@ client.on('guildMemberAdd', member => {
 })
 //leave message 
 client.on('guildMemberRemove', member => {
-  const channel = member.guild.channels.cache.find(channel => channel.name === '〚☠〛welcome-to-da-inn')
-  if (!channel) return;
-  channel.send(`Hope you enjoyed your stay, ${member}! :(`)
   //update server count
   if (member.guild.id !== stats.serverID) return;
   client.channels.cache.get(stats.member).setName(`Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
