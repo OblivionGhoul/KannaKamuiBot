@@ -29,6 +29,7 @@ module.exports = (client) => {
     cache[guild.id] = [channel.id, text]
 
     await mongo().then(async (mongoose) => {
+      channel.send('Welcome channel set!')
       try {
         await welcomeSchema.findOneAndUpdate(
           {
