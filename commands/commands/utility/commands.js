@@ -77,11 +77,21 @@ module.exports = {
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
+        const setUp = new Discord.MessageEmbed()
+            .setTitle('Bot Set Up')
+            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
+            .addField('SetWelcome', 'Use this command in the welcome channel to set up welcome messages(ex: -setwelcome [welcome message] (Please note that you can do "<@>" to send the username of the user that just joined))')
+            .addField('SetLeave', 'Use this command in the leave channel to set up leave messages(ex: -setleave [welcome message] (Please note that you can do "<@>" to send the username of the user that just joined))')
+            .addField('For more support, please join my discord server using this code: VNAQrkQ')
+            .setTimestamp()
+            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+
         const pages = [
             fun,
             utility,
             economy,
             moderation,
+            setUp
         ]
 
         const emojiList = ["⏪", "⏩"];

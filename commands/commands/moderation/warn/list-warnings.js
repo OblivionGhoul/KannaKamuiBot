@@ -1,42 +1,14 @@
-const mongo = require('@util/mongo')
-const warnSchema = require('@schemas/warn-schema')
+const db = require('quick.db');
 
 module.exports = {
   commands: ['listwarnings', 'lw', 'warnings'],
-  minArgs: 1,
-  expectedArgs: "<Target user's @>",
-  permissions: 'BAN_MEMBERS',
   callback: async (message, arguments, text) => {
-    const target = message.mentions.users.first()
-    if (!target) {
-      message.reply('Please specify a user to load the warnings for.')
-      return
-    }
+    const user = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.author;
 
-    const guildId = message.guild.id
-    const userId = target.id
+    let warnings = await db.get(`warnings_${message.guild.id}_${user.id}`);
 
-    await mongo().then(async (mongoose) => {
-      try {
-        const results = await warnSchema.findOne({
-          guildId,
-          userId,
-        })
+    if (warnings === null) warnings = 0;
 
-        let reply = `Previous warnings for <@${userId}>:\n\n`
-
-        for (const warning of results.warnings) {
-          const { author, timestamp, reason } = warning
-
-          reply += `By ${author} on ${new Date(
-            timestamp
-          ).toLocaleDateString()} for "${reason}"\n\n`
-        }
-
-        message.reply(reply)
-      } finally {
-        mongoose.connection.close()
-      }
-    })
+    message.channel.send(`**${user.username}** has *${warnings}* warning(s)`);
   },
 }
