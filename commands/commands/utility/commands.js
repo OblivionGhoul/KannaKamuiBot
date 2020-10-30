@@ -91,6 +91,7 @@ module.exports = {
             utility,
             economy,
             moderation,
+            music,
             setUp
         ]
 

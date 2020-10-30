@@ -2,6 +2,7 @@ require('module-alias/register')
 
 const Discord = require('discord.js')
 const client = new Discord.Client()
+client.queue = new Map()
 
 const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
