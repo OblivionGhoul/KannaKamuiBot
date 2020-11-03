@@ -34,6 +34,7 @@ module.exports = {
             .addField('Joke', 'Sends user a joke (ex: -joke)')
             .addField('Coin', 'Flips a coin (ex: -coin)')
             .addField('Kpop', 'Sends a random kpop artist picture and name (ex: -kpop)')
+            .addField('8ball', 'Answers a question (ex: -8ball [question with ?])')
             .addField('Insta', 'Sends user OblivionGhouls Insta (ex: -insta)')
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
