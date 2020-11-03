@@ -1,14 +1,22 @@
 'use strict'
+
 const npm = require('../npm.js')
 const { format } = require('util')
 const { resolve } = require('path')
 const nameValidator = require('validate-npm-package-name')
 const npmlog = require('npmlog')
+const replaceInfo = require('./replace-info.js')
 const { report: explainEresolve } = require('./explain-eresolve.js')
 
 module.exports = (er) => {
   const short = []
   const detail = []
+
+  if (er.message)
+    er.message = replaceInfo(er.message)
+  if (er.stack)
+    er.stack = replaceInfo(er.stack)
+
   switch (er.code) {
     case 'ERESOLVE':
       short.push(['ERESOLVE', er.message])
