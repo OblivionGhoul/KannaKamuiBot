@@ -73,7 +73,6 @@ module.exports = {
                 `**❯ Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
                 '\u200b'
             ])
-            .addField(`Roles [${roles.length - 1}]`, roles.length < 10 ? roles.join(', ') : roles.length > 10 ? client.utils.trimArray(roles) : 'None')
             .setFooter('Bot made by OblivionGhoul#5842')
             .setTimestamp();
         message.channel.send(embed);
