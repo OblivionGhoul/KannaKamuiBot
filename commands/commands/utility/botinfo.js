@@ -1,7 +1,6 @@
 const { MessageEmbed, version: djsversion } = require('discord.js');
 const { version } = require('@root/package.json');
 const { utc } = require('moment');
-const os = require('os');
 const ms = require('ms');
 
 module.exports = {
@@ -21,17 +20,6 @@ module.exports = {
                 `**❯ Version:** v${version}`,
                 `**❯ Discord.js:** v${djsversion}`,
                 '\u200b'
-            ])
-            .addField('System', [
-                `**❯ Platform:** ${process.platform}`,
-                `**❯ Uptime:** ${ms(os.uptime() * 1000, { long: true })}`,
-                `**❯ CPU:**`,
-                `\u3000 Cores: ${os.cpus().length}`,
-                `\u3000 Model: ${core.model}`,
-                `\u3000 Speed: ${core.speed}MHz`,
-                `**❯ Memory:**`,
-                `\u3000 Available Memory: ${os.freemem()} Bytes`,
-                `\u3000 Total Memory: ${os.totalmem()} Bytes`,
             ])
             .setFooter('Bot made by OblivionGhoul#5842')
             .setTimestamp();
