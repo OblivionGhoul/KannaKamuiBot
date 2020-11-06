@@ -11,7 +11,7 @@ module.exports = {
                 const memeEmbed = new Discord.MessageEmbed()
                     .setTitle(json.title)
                     .setImage(json.url)
-                    .setFooter(`Link: ${json.postLink} | Subreddit: ${json.subreddit}`);
+                    .setFooter(`Link: ${json.postLink} | Subreddit: r/${json.subreddit}`);
                 msg.edit(memeEmbed);
             });
     },
