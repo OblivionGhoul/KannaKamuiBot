@@ -2,7 +2,7 @@ const Discord = require("discord.js")
 const axios = require('axios');
 
 module.exports = {
-    commands: ['compliment'],
+    commands: ['minh'],
     callback: async (message, args) => {
         axios.get('https://complimentr.com/api')
             .then(function (response) {
