@@ -4,8 +4,6 @@ module.exports = {
     commands: ['pp'],
     callback: async (message, author, guild, settings) => {
         try {
-            message.delete()
-
             var ppuser = message.mentions.users.first() || message.author;
 
             let reponses = ["8===D", "8=====D", "8========D", "8=D", "8==D", "8==========D", "8========D"]
