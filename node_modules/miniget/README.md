@@ -90,6 +90,9 @@ Emitted when a video request is made, including after any redirects, retries, an
 
 Emitted when a video response has been found and has started downloading, including after any successful reconnects.
 
+#### Forwarded events
+
+Any events emitted from the [request](https://nodejs.org/api/http.html#http_class_http_clientrequest) or [response](https://nodejs.org/api/http.html#http_class_http_serverresponse) objects will be forwarded to the miniget stream.
 
 # Install
 
