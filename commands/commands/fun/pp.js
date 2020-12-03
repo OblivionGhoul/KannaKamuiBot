@@ -6,7 +6,8 @@ module.exports = {
         try {
             var ppuser = message.mentions.users.first() || message.author;
 
-            let reponses = ["8===D", "8=====D", "8========D", "8=D", "8==D", "8==========D", "8========D"]
+            let reponses = ["8D \n Can You See That?", "8=D \n Thats Kinda Cute.", "8===D \n Not Bad.", "8========D \n Damnnnnn Nice.", "8====================D \n Nice Shlong."
+                            , "Can't Find Your PP Cuz It\'s Too Small.", "8---------------------D \n Skinny but long... 😏"]
 
             let answer = Math.floor((Math.random() * reponses.length))
 

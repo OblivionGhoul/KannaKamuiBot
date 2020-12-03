@@ -9,7 +9,6 @@ const answers = [
     'I hope not.',
     'I hope so.',
     'Never!',
-    'Fuhgeddaboudit.',
     'Ahaha! Really?!?',
     'Pfft.',
     'Sorry, bucko.',
@@ -22,7 +21,10 @@ const answers = [
     'Possibly.',
     'Never, ever, ever.',
     'There is a small chance.',
-    'Yes!'
+    'Yes!',
+    'Don\'t ask me this ever again.',
+    'Don\'t worry about it.',
+    'I gotta go pet my fish...'
 ];
 
 module.exports = {
@@ -30,6 +32,6 @@ module.exports = {
     callback: async (message, question) => {
         return message.reply(question.join(' ').endsWith('?') ?
             `🎱 ${answers[Math.floor(Math.random() * answers.length)]}` :
-            '🎱 That doesn\'t seem to be a question, please try again!');
+            '🎱 That doesn\'t seem to be a question, please try again! (Remember to add a question mark after the question.)');
     },
 }
