@@ -36,6 +36,7 @@ module.exports = {
             .addField('Kpop', 'Sends a random kpop artist picture and name (ex: -kpop)')
             .addField('8ball', 'Answers a question (ex: -8ball [question with ?])')
             .addField('PP', 'Sends a user\'s pp size (ex: -pp [@usertag]')
+            .addField('RPS', 'Sends a game of rock, paper, scissors (ex: -rps rock')
             .addField('Christmas', 'Sends the amount of days until Christmas (ex: -christmas)')
             .addField('Insta', 'Sends user OblivionGhouls Insta (ex: -insta)')
             .setTimestamp()
