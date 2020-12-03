@@ -5,7 +5,7 @@ module.exports = {
     commands: 'anime',
     callback: (message, args, client, user) => {
         if (!args.length) {
-            return message.channel.send("Please Give Anime Name")
+            return message.channel.send("Please Specify An Anime.")
         }
         let option = {
             url: `https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`,
@@ -33,7 +33,7 @@ module.exports = {
 
                 } catch (err) {
                     msg.delete();
-                    return message.channel.send("Unable to find this anime");
+                    return message.channel.send("Unable To Find Anime.");
                 }
             }
             )
