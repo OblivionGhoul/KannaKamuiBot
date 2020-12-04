@@ -86,7 +86,7 @@ client.on('message', message => {
   var {content} = message
   content = content.toLowerCase()
   if (message.author.id !== '396850772488355841') return
-  if (content.includes("ur mom") || content.includes("your mom")) return message.react('<:wazowski:763175958457876553>')
+  if (content.includes("ur mom") || content.includes("your mom")) return message.react('<:wazowski:735907372920209521>')
 })
 
 client.login(process.env.token)
