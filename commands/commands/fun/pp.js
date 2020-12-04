@@ -6,8 +6,20 @@ module.exports = {
         try {
             var ppuser = message.mentions.users.first() || message.author;
 
-            let responses = ["8D \n Can You See That?", "8=D \n Thats Kinda Cute.", "8===D \n Not Bad.", "8========D \n Damnnnnn Nice.", "8====================D \n Nice Shlong."
-                            , "Can't Find Your PP Cuz It\'s Too Small.", "8---------------------D \n Skinny but long... 😏"]
+            let responses = [
+            "No PP detected.",
+            "Can't Find Your PP Cuz It\'s Too Small.", 
+            "8D \n Can You See That?", 
+            "8=D \n Thats Kinda Cute.", 
+            "8===D \n Not Bad.", 
+            "8========D \n Damnnnnn Nice.",
+            "8==============D \n Woahhhhhhhh",  
+            "8====================D \n Nice Shlong.",
+            "8-D \n Damn, skinny and short...",
+            "8-----------D \n You can do better.",
+            "8---------------------D \n Skinny but long... 😏",
+            "Your PP is too big for me to comprehend."
+            ]
 
             let answer = Math.floor((Math.random() * responses.length))
 
@@ -16,6 +28,7 @@ module.exports = {
                 .setDescription(`*${ppuser}'s pp size is:*`)
                 .addField(`Result:`, responses[answer], true)
                 .setColor("RED")
+                .setFooter(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
             message.channel.send(ppuser)
         } catch (err) {
             var bug = new Discord.MessageEmbed()
