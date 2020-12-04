@@ -6,15 +6,15 @@ module.exports = {
         try {
             var ppuser = message.mentions.users.first() || message.author;
 
-            let reponses = ["8D \n Can You See That?", "8=D \n Thats Kinda Cute.", "8===D \n Not Bad.", "8========D \n Damnnnnn Nice.", "8====================D \n Nice Shlong."
+            let responses = ["8D \n Can You See That?", "8=D \n Thats Kinda Cute.", "8===D \n Not Bad.", "8========D \n Damnnnnn Nice.", "8====================D \n Nice Shlong."
                             , "Can't Find Your PP Cuz It\'s Too Small.", "8---------------------D \n Skinny but long... 😏"]
 
-            let answer = Math.floor((Math.random() * reponses.length))
+            let answer = Math.floor((Math.random() * responses.length))
 
             var ppuser = new Discord.MessageEmbed()
                 .setTitle('*PP MACHINE*')
                 .setDescription(`*${ppuser}'s pp size is:*`)
-                .addField(`Result:`, reponses[answer], true)
+                .addField(`Result:`, responses[answer], true)
                 .setColor("RED")
             message.channel.send(ppuser)
         } catch (err) {

@@ -74,4 +74,11 @@ client.on('message', async message => {
   }
 });
 
+client.on('message', message => {
+  var {content} = message
+  content = content.toLowerCase()
+  if (message.author.id !== '298589600132366339') return
+  if (content === 'lol' || content === 'lmao') return message.channel.send('minh moment')
+})
+
 client.login(process.env.token)
