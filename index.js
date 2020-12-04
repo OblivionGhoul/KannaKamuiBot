@@ -78,7 +78,15 @@ client.on('message', message => {
   var {content} = message
   content = content.toLowerCase()
   if (message.author.id !== '298589600132366339') return
-  if (content.includes("lol") || content.includes("lmao")) return message.channel.send('minh moment')
+  if (content.includes("lol") || content.includes("lmao")) return message.channel.send('minh moment'), 
+  message.react('<:cute02:783469626779500554>')
+})
+
+client.on('message', message => {
+  var {content} = message
+  content = content.toLowerCase()
+  if (message.author.id !== '396850772488355841') return
+  if (content.includes("ur mom") || content.includes("your mom")) return message.react('<:wazowski:763175958457876553>')
 })
 
 client.login(process.env.token)
