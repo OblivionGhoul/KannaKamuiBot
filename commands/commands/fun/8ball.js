@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 const answers = [
     'Maybe.',
     'Certainly not.',
@@ -30,8 +32,11 @@ const answers = [
 module.exports = {
     commands: ['8ball'],
     callback: async (message, question) => {
-        return message.reply(question.join(' ').endsWith('?') ?
-            `🎱 ${answers[Math.floor(Math.random() * answers.length)]}` :
-            '🎱 That doesn\'t seem to be a question, please try again! (Remember to add a question mark after the question.)');
+        const embed = new Discord.MessageEmbed()
+        .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+        .setTitle('🎱 8Ball 🎱')
+        .setDescription(`${answers[Math.floor(Math.random() * answers.length)]}`)
+        .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+        message.channel.send(embed);
     },
 }
