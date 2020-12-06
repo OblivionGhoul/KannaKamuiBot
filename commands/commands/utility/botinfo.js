@@ -19,7 +19,7 @@ module.exports = {
                 `**❯ Discord.js:** v${djsversion}`,
                 '\u200b'
             ])
-            .setFooter('Bot made by OblivionGhoul#5842')
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setTimestamp();
 
         message.channel.send(embed);

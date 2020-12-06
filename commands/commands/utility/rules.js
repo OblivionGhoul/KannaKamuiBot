@@ -14,7 +14,7 @@ module.exports = {
             .addField('Rule #5', 'No begging for higher roles (Server rank does not directly correspond to roles).')
             .addField('Rule #6', 'Do not ping anyone unless necessary.')
             .setFooter('Bot made by OblivionGhoul#5842')
-            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setTimestamp()
         try {
             message.reply(testEmbed);

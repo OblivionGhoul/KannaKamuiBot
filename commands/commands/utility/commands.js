@@ -39,6 +39,8 @@ module.exports = {
             .addField('RPS', 'Sends a game of rock, paper, scissors (ex: -rps rock')
             .addField('Christmas', 'Sends the amount of days until Christmas (ex: -christmas)')
             .addField('Snake', 'Sends a snake game (ex: -snake)')
+            .addField('Dog', 'Sends a picture of a dog (ex: -dog)')
+            .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
             .addField('Insta', 'Sends user OblivionGhouls Insta (ex: -insta)')
             .setTimestamp()
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')

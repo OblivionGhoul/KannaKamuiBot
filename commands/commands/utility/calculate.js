@@ -19,6 +19,7 @@ module.exports = {
             .setTitle('Calculator')
             .addField('Question', `\`\`\`css\n${args.join(' ')}\`\`\``)
             .addField('Answer', `\`\`\`css\n${resp}\`\`\``)
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
 
         message.channel.send(embed);
     },

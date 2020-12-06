@@ -11,7 +11,7 @@ module.exports = {
                 .setDescription(`${Object.values(response.data)} Days Until Christmas!`)
                 .setColor('GREEN')
                 .setThumbnail('https://i.imgur.com/FXW0oTi.jpg')
-                .setFooter('Bot made by OblivionGhoul#5842')
+                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 .setTimestamp()
                 message.channel.send(embed)
             })

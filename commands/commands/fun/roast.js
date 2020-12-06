@@ -12,7 +12,8 @@ module.exports = {
             .then(res => res.json())
             .then(json => {
                 const roastEmbed = new Discord.MessageEmbed()
-                    .setTitle(mentionedMember.user.tag + ` ${json.insult}`);
+                    .setTitle(mentionedMember.user.tag + ` ${json.insult}`)
+                    .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 msg.edit(roastEmbed);
             });
     },

@@ -17,7 +17,8 @@ module.exports = {
             .setFooter(`Ratings: ${movie.rating}`)
             .addField("Country", movie.country, true)
             .addField("Languages", movie.languages, true)
-            .addField("Type", movie.type, true);
+            .addField("Type", movie.type, true)
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
         message.channel.send(embed)
     },
 }

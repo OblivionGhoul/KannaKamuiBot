@@ -8,7 +8,7 @@ module.exports = {
             .setTitle('Instagram')
             .setDescription('Follow OblivionGhoul on Insta')
             .setURL('https://www.instagram.com/minh.kien.dinh/')
-            .setFooter('@lovemaster_ofcl on snap')
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setThumbnail('https://i.imgur.com/Ivtf7GP.png')
             .setTimestamp()
         try {

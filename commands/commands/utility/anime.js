@@ -28,6 +28,7 @@ module.exports = {
                         .addField("Ratings", body.data[0].attributes.averageRating)
                         .addField("TOTAL EPISODES", body.data[0].attributes.episodeCount)
                         .setImage(body.data[0].attributes.coverImage.large)
+                        .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                     message.channel.send(embed)
                     msg.delete();
 

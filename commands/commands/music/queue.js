@@ -13,7 +13,7 @@ module.exports = {
             .addField("Now Playing", serverQueue.songs[0].title, true)
             .addField("Text Channel", serverQueue.textChannel, true)
             .addField("Voice Channel", serverQueue.voiceChannel, true)
-            .setFooter("Bot made by OblivionGhoul#5842")
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setDescription(serverQueue.songs.map((song) => {
                 if (song === serverQueue.songs[0]) return
                 return `**-** ${song.title}`

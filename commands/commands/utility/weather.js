@@ -24,6 +24,7 @@ module.exports = {
                 .addField('Wind', current.winddisplay, true)
                 .addField('Feels like', `${current.feelslike}°`, true)
                 .addField('Humidity', `${current.humidity}%`, true)
+                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             message.channel.send(weatherinfo)
         })
     },
