@@ -28,7 +28,7 @@ const answers = [
 
 module.exports = {
     commands: ['8ball'],
-    callback: async (message, question) => {
+    callback: async (message, question, args) => {
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
         .setTitle('🎱 8Ball 🎱')
