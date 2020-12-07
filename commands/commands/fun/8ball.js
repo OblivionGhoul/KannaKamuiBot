@@ -30,7 +30,6 @@ module.exports = {
     commands: ['8ball'],
     callback: async (message, question) => {
         const embed = new Discord.MessageEmbed()
-        const embed = new Discord.MessageEmbed()
         .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
         .setTitle('🎱 8Ball 🎱')
         .setDescription(`${answers[Math.floor(Math.random() * answers.length)]}`)
