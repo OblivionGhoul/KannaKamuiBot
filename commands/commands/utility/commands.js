@@ -20,7 +20,7 @@ module.exports = {
             .addField('Unmute', 'Unmutes a user (ex: -unmute [user ID])')
             .addField('Nickname', 'Changes a user nickname (ex: -nickname [@usertag])')
             .addField('Setprefix', 'Changes the prefix of the bot (ex: -setprefix [new prefix])')
-            .setTimestamp()
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const fun = new Discord.MessageEmbed()
@@ -41,8 +41,10 @@ module.exports = {
             .addField('Snake', 'Sends a snake game (ex: -snake)')
             .addField('Dog', 'Sends a picture of a dog (ex: -dog)')
             .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
+            .addField('Hug', 'Hugs someone (ex: -hug [@usertag])')
+            .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (ex: -ttt [@usertag])')
             .addField('Insta', 'Sends user OblivionGhouls Insta (ex: -insta)')
-            .setTimestamp()
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const utility = new Discord.MessageEmbed()
@@ -61,7 +63,8 @@ module.exports = {
             .addField('Verse', 'Sends a bible bible verse (ex: -verse)')
             .addField('Anime', 'Sends info about an anime (ex: -anime [anime name])')
             .addField('Docs', 'Sends discord.js documentation (ex: -docs [search query])')
-            .setTimestamp()
+            .addField('Channel', 'Sends ID of channel command is used in (ex: -channel)')
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const economy = new Discord.MessageEmbed()
@@ -69,7 +72,7 @@ module.exports = {
             .setDescription('More economy commands are going to be added.')
             .addField('Bal', 'Checks user balance (ex: -bal)')
             .addField('Addbal', 'Gives money to a user (ex: -addbal [@usertag] [amount of money])')
-            .setTimestamp()
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const music = new Discord.MessageEmbed()
@@ -83,7 +86,7 @@ module.exports = {
             .addField('Queue', 'Sends song queue (ex: -queue)')
             .addField('Volume', 'Sets or views current volume (ex: -vol [number])')
             .addField('Now Playing', 'Shows song that is currently playing (ex: -np)')
-            .setTimestamp()
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const setUp = new Discord.MessageEmbed()
@@ -92,7 +95,7 @@ module.exports = {
             .addField('SetWelcome', 'Use this command in the welcome channel to set up welcome messages(ex: -setwelcome [welcome message] (Please note that you can do "<@>" to send the username of the user that just joined))')
             .addField('SetLeave', 'Use this command in the leave channel to set up leave messages(ex: -setleave [welcome message] (Please note that you can do "<@>" to send the username of the user that just joined))')
             .addField('For more support, please join my discord server using this code: VNAQrkQ')
-            .setTimestamp()
+            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
 
         const pages = [

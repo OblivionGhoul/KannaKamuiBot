@@ -11,8 +11,6 @@ const answers = [
     'I hope not.',
     'I hope so.',
     'Never!',
-    'Ahaha! Really?!?',
-    'Pfft.',
     'Sorry, bucko.',
     'Hell, yes.',
     'Hell to the no.',
@@ -26,17 +24,27 @@ const answers = [
     'Yes!',
     'Don\'t ask me this ever again.',
     'Don\'t worry about it.',
-    'I gotta go pet my fish...'
 ];
 
 module.exports = {
     commands: ['8ball'],
     callback: async (message, question) => {
         const embed = new Discord.MessageEmbed()
+        const embed = new Discord.MessageEmbed()
         .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
         .setTitle('🎱 8Ball 🎱')
         .setDescription(`${answers[Math.floor(Math.random() * answers.length)]}`)
         .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+
+        const error = new Discord.MessageEmbed()
+        .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
+        .setTitle('🎱 8Ball 🎱')
+        .setDescription(`Please provide a question.`)
+        .setColor('RED')
+        .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+
+        if (!args) return message.channel.send(error)
+
         message.channel.send(embed);
     },
 }
