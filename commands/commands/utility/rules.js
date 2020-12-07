@@ -13,7 +13,6 @@ module.exports = {
             .addField('Rule #4', 'Don\'t be toxic (Don\'t attack people personally).')
             .addField('Rule #5', 'No begging for higher roles (Server rank does not directly correspond to roles).')
             .addField('Rule #6', 'Do not ping anyone unless necessary.')
-            .setFooter('Bot made by OblivionGhoul#5842')
             .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setTimestamp()
         try {
