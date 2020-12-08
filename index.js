@@ -7,7 +7,7 @@ client.queue = new Map()
 const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
 const loadFeatures = require('@root/features/load-features')
-const {badwords} = require('@root/data.json')
+const { badwords } = require('@root/data.json')
 
 
 client.on('ready', async () => {
@@ -61,32 +61,38 @@ client.on('guildMemberRemove', member => {
 client.on('message', async message => {
   if (message.author.bot) return;
   if (!message.member.hasPermission("BAN_MEMBERS")) {
-      let confirm = false;
-      var i;
-      for (i = 0; i < badwords.length; i++) {
-          if (message.content.toLowerCase().includes(badwords[i].toLowerCase()))
-              confirm = true;
-      }
-      if (confirm) {
-          message.delete()
-          return message.channel.send("You are not allowed to say that.")
-      }
+    let confirm = false;
+    var i;
+    for (i = 0; i < badwords.length; i++) {
+      if (message.content.toLowerCase().includes(badwords[i].toLowerCase()))
+        confirm = true;
+    }
+    if (confirm) {
+      message.delete()
+      return message.channel.send("You are not allowed to say that.")
+    }
   }
 });
 
 client.on('message', message => {
-  var {content} = message
+  var { content } = message
   content = content.toLowerCase()
   if (message.author.id !== '298589600132366339') return
-  if (content.includes("lol") || content.includes("lmao")) return message.channel.send('minh moment'), 
-  message.react('<:cute02:783469626779500554>')
+  if (content.includes("lol") || content.includes("lmao")) return message.channel.send('minh moment'),
+    message.react('<:cute02:783469626779500554>')
 })
 
 client.on('message', message => {
-  var {content} = message
+  var { content } = message
   content = content.toLowerCase()
   if (message.author.id !== '396850772488355841') return
   if (content.includes("ur mom") || content.includes("your mom")) return message.react('<:wazowski:735907372920209521>')
+})
+
+client.on('message', message => {
+  var { content } = message
+  content = content.toLowerCase()
+  if (content.includes("christmas")) return message.react('<:caraputechristmas:785676846716026880>')
 })
 
 client.login(process.env.token)

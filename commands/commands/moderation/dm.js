@@ -1,7 +1,7 @@
 module.exports = {
     commands: ['dm', 'directmessage'],
     callback: async (message, args) => {
-        if (!message.member.permissions.has("BAN_MEMBERS"))
+        if (!message.member.permissions.has("ADMINISTRATOR"))
             return message.channel.send("You do not have permissions for this command.");
         let user =
             message.mentions.members.first() ||

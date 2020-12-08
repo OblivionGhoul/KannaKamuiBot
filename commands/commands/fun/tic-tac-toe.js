@@ -36,7 +36,7 @@ module.exports = {
         const Embed = new Discord.MessageEmbed()
             .setTitle('Tic Tac Toe')
             .setDescription(`🎮 **${authorName}** VS ${member} 🎮\n\n🟦🟦🟦🟦🟦\n🟦${a1}${a2}${a3}🟦\n🟦${b1}${b2}${b3}🟦\n🟦${c1}${c2}${c3}🟦\n🟦🟦🟦🟦🟦`)
-            .setFooter('You have 10 seconds to reply with your next move!\nYou may type "cancel" at any time to stop the game.\n(Upper left, Up, Upper Right, Left, Middle, Right, Bottom Left, Bottom, Bottom Right)')
+            .setFooter('You have 20 seconds to reply with your next move!\nYou may type "cancel" at any time to stop the game.\n(Top Left, Top, Top Right, Left, Middle, Right, Bottom Left, Bottom, Bottom Right)')
             .setColor(3426654)
         message.channel.send(`<@${author}>`, Embed).then(async message => {
             for (i = 0; i < 9; i++) {
@@ -53,7 +53,7 @@ module.exports = {
                 try {
                     msg = await message.channel.awaitMessages(filter, {
                         max: 1,
-                        time: '20000',
+                        time: '30000',
                         errors: ['time']
                     })
                     if (msg.first().content.toLowerCase().trim() === 'cancel') {
@@ -62,7 +62,7 @@ module.exports = {
                         midDuel.delete(member.id)
                         break
                     } else {
-                        if (msg.first().content.toLowerCase().trim() === 'upper left' || msg.first().content.toLowerCase().trim() === 'ul') {
+                        if (msg.first().content.toLowerCase().trim() === 'top left' || msg.first().content.toLowerCase().trim() === 'tl') {
                             if (a1 == '🔴' || a1 == '❌') {
                                 message.channel.send('That spot is already occupied.. and now you lost lol')
                                 midDuel.delete(author)
@@ -71,7 +71,7 @@ module.exports = {
                             } else {
                                 a1 = xCircle
                             }
-                        } else if (msg.first().content.toLowerCase().trim() === 'up' || msg.first().content.toLowerCase().trim() === 'u') {
+                        } else if (msg.first().content.toLowerCase().trim() === 'top' || msg.first().content.toLowerCase().trim() === 't') {
                             if (a2 == '🔴' || a2 == '❌') {
                                 message.channel.send('That spot is already occupied.. and now you lost lol')
                                 midDuel.delete(author)
@@ -80,7 +80,7 @@ module.exports = {
                             } else {
                                 a2 = xCircle
                             }
-                        } else if (msg.first().content.toLowerCase().trim() === 'upper right' || msg.first().content.toLowerCase().trim() === 'ur') {
+                        } else if (msg.first().content.toLowerCase().trim() === 'top right' || msg.first().content.toLowerCase().trim() === 'tr') {
                             if (a3 == '🔴' || a3 == '❌') {
                                 message.channel.send('That spot is already occupied.. and now you lost lol')
                                 midDuel.delete(author)
@@ -161,14 +161,14 @@ module.exports = {
                     const updatedEmbed = new Discord.MessageEmbed()
                         .setTitle('Tic Tac Toe')
                         .setDescription(`🎮 ${authorName} VS ${member} 🎮\n\n🟦🟦🟦🟦🟦\n🟦${a1}${a2}${a3}🟦\n🟦${b1}${b2}${b3}🟦\n🟦${c1}${c2}${c3}🟦\n🟦🟦🟦🟦🟦`)
-                        .setFooter('You have 10 seconds to reply with your next move!\nYou may type "cancel" at any time to stop the game.\n(Upper left, Up, Upper Right, Left, Middle, Right, Bottom Left, Bottom, Bottom Right)')
+                        .setFooter('You have 20 seconds to reply with your next move!\nYou may type "cancel" at any time to stop the game.\n(Top Left, Top, Top Right, Left, Middle, Right, Bottom Left, Bottom, Bottom Right)')
                         .setColor(3426654)
                     message.edit(updatedEmbed)
                 } else if (i % 2 > 0) {
                     const updatedEmbed = new Discord.MessageEmbed()
                         .setTitle('Tic Tac Toe')
                         .setDescription(`🎮 **${authorName}** VS ${member} 🎮\n\n🟦🟦🟦🟦🟦\n🟦${a1}${a2}${a3}🟦\n🟦${b1}${b2}${b3}🟦\n🟦${c1}${c2}${c3}🟦\n🟦🟦🟦🟦🟦`)
-                        .setFooter('You have 10 seconds to reply with your next move!\nYou may type "cancel" at any time to stop the game.\n(Upper left, Up, Upper Right, Left, Middle, Right, Bottom Left, Bottom, Bottom Right)')
+                        .setFooter('You have 20 seconds to reply with your next move!\nYou may type "cancel" at any time to stop the game.\n(Top Left, Top, Top Right, Left, Middle, Right, Bottom Left, Bottom, Bottom Right)')
                         .setColor(3426654)
                     message.edit(updatedEmbed)
                 }

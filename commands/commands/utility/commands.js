@@ -4,6 +4,23 @@ const Discord = require('discord.js');
 module.exports = {
     commands: ['commands', 'help'],
     callback: async (message) => {
+        const dev = new Discord.MessageEmbed()
+            .setTitle('Developer Tools')
+            .setDescription('For the support discord server, use the command -discord.')
+            .addField('Docs', 'Sends discord.js documentation (ex: -docs [search query])')
+            .addField('Channel', 'Sends ID of channel command is used in (ex: -channel)')
+            .addField('Execute', 'Use terminal commands in Discord (ex: -execute [command])')
+
+        const vote = new Discord.MessageEmbed()
+            .setTitle('Voting help')
+            .setDescription('To vote, do -vote. It will then open a voting channel for you. Please state who you want to vote for or who you want to nominate in that channel.')
+            .addField('For Admins', 'Using this command in the vote channels will give you options (ex: -vote-info)')
+
+        let content = message.content.substring(message.content.indexOf(' ') + 1)
+        content = content.toLowerCase()
+        if (content.includes("dev")) return message.channel.send(dev)
+        if (content.includes("vote")) return message.channel.send(vote)
+
         const moderation = new Discord.MessageEmbed()
             .setTitle('Moderation')
             .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
@@ -21,6 +38,7 @@ module.exports = {
             .addField('Nickname', 'Changes a user nickname (ex: -nickname [@usertag])')
             .addField('Setprefix', 'Changes the prefix of the bot (ex: -setprefix [new prefix])')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+        if (content.includes("mod")) return message.channel.send(moderation)
 
         const fun = new Discord.MessageEmbed()
             .setTitle('Fun')
@@ -44,6 +62,7 @@ module.exports = {
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (ex: -ttt [@usertag])')
             .addField('Insta', 'Sends user OblivionGhouls Insta (ex: -insta)')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+        if (content.includes("fun")) return message.channel.send(fun)
 
         const utility = new Discord.MessageEmbed()
             .setTitle('Utility')
@@ -60,9 +79,8 @@ module.exports = {
             .addField('Emoji', 'Sends all server emojis (ex: -emoji)')
             .addField('Verse', 'Sends a bible bible verse (ex: -verse)')
             .addField('Anime', 'Sends info about an anime (ex: -anime [anime name])')
-            .addField('Docs', 'Sends discord.js documentation (ex: -docs [search query])')
-            .addField('Channel', 'Sends ID of channel command is used in (ex: -channel)')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+        if (content.includes("util")) return message.channel.send(utility)
 
         const economy = new Discord.MessageEmbed()
             .setTitle('Economy')
@@ -70,6 +88,7 @@ module.exports = {
             .addField('Bal', 'Checks user balance (ex: -bal)')
             .addField('Addbal', 'Gives money to a user (ex: -addbal [@usertag] [amount of money])')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+        if (content.includes("economy")) return message.channel.send(economy)
 
         const music = new Discord.MessageEmbed()
             .setTitle('Music')
@@ -83,6 +102,7 @@ module.exports = {
             .addField('Volume', 'Sets or views current volume (ex: -vol [number])')
             .addField('Now Playing', 'Shows song that is currently playing (ex: -np)')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+        if (content.includes("music")) return message.channel.send(music)
 
         const setUp = new Discord.MessageEmbed()
             .setTitle('Bot Set Up')
@@ -91,6 +111,7 @@ module.exports = {
             .addField('SetLeave', 'Use this command in the leave channel to set up leave messages(ex: -setleave [welcome message] (Please note that you can do "<@>" to send the username of the user that just joined))')
             .addField('For more support, please join my discord server using this code:', 'VNAQrkQ')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+        if (content.includes("setup")) return message.channel.send(setUp)
 
         const pages = [
             fun,
