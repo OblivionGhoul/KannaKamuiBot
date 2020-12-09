@@ -4,37 +4,36 @@ const Discord = require('discord.js');
 module.exports = {
     commands: ['commands', 'help'],
     callback: async (message) => {
-        const dev = new Discord.MessageEmbed()
-            .setTitle('Developer Tools')
-            .setDescription('For the support discord server, use the command -discord.')
-            .addField('Docs', 'Sends discord.js documentation (ex: -docs [search query])')
-            .addField('Channel', 'Sends ID of channel command is used in (ex: -channel)')
-            .addField('Execute', 'Use terminal commands in Discord (ex: -execute [command])')
-
         const vote = new Discord.MessageEmbed()
             .setTitle('Voting help')
             .setDescription('To vote, do -vote. It will then open a voting channel for you. Please state who you want to vote for or who you want to nominate in that channel.')
             .addField('For Admins', 'Using this command in the vote channels will give you options (ex: -vote-info)')
 
+        const inn = new Discord.MessageEmbed()
+            .setTitle('Inn Commands')
+            .setDescription('These commands will only work in the Inn.')
+            .addField('Ticket', 'Creates a ticket for questions (ex: -ticket [question])')
+            .addField('Temp Mute', 'Temporarily mutes a user (ex: -tempmute [@usertag][time(s, m, h)])')
+            .addField('Rules', 'Sends the list of rules (ex: -rules)')
+            .addField('Warn', 'Warns a user (ex: -warn [@usertag or user ID][reason for warn])')
+            .addField('Warnings', 'Checks user\'s amount of warnings (ex: -close)')
+            .addField('Mute', 'Mutes a user (ex: -mute [user ID])')
+            .addField('Unmute', 'Unmutes a user (ex: -unmute [user ID])')
+            .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, Matt, Christy, Andrew, Nobel, Brennan, and Kay (ex: -minh)')
+
         let content = message.content.substring(message.content.indexOf(' ') + 1)
         content = content.toLowerCase()
-        if (content.includes("dev")) return message.channel.send(dev)
         if (content.includes("vote")) return message.channel.send(vote)
+        if (content.includes("inn")) return message.channel.send(inn)
 
         const moderation = new Discord.MessageEmbed()
             .setTitle('Moderation')
             .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('Ban', 'Bans a user (ex: -ban @usertag)')
             .addField('Kick', 'Kicks a user (ex: -kick @usertag)')
-            .addField('Temp Mute', 'Temporarily mutes a user (ex: -tempmute [@usertag][time(s, m, h)])')
             .addField('Poll', 'Creates a poll (ex: -poll [#channelname] [Question])')
-            .addField('Rules', 'Sends the list of rules (ex: -rules)')
             .addField('Close', 'Deletes a channel (ex: -close)')
-            .addField('Warn', 'Warns a user (ex: -warn [@usertag or user ID][reason for warn])')
-            .addField('Warnings', 'Checks user\'s amount of warnings (ex: -close)')
             .addField('DM', 'DMs a user (ex: -dm [@user or user ID][message text])')
-            .addField('Mute', 'Mutes a user (ex: -mute [user ID])')
-            .addField('Unmute', 'Unmutes a user (ex: -unmute [user ID])')
             .addField('Nickname', 'Changes a user nickname (ex: -nickname [@usertag])')
             .addField('Setprefix', 'Changes the prefix of the bot (ex: -setprefix [new prefix])')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
@@ -43,7 +42,6 @@ module.exports = {
         const fun = new Discord.MessageEmbed()
             .setTitle('Fun')
             .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
-            .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, Matt, Christy, Andrew, Nobel, Brennan, and Kay (ex: -minh)')
             .addField('Meme', 'Sends a meme in the chat (ex: -meme)')
             .addField('Roast', 'Roasts a user (ex: -roast @usertag)')
             .addField('Ascii', 'Sends cool text (ex: -ascii [text])')
@@ -60,7 +58,6 @@ module.exports = {
             .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
             .addField('Hug', 'Hugs someone (ex: -hug [@usertag])')
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (ex: -ttt [@usertag])')
-            .addField('Insta', 'Sends user OblivionGhouls Insta (ex: -insta)')
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
         if (content.includes("fun")) return message.channel.send(fun)
 
@@ -68,12 +65,11 @@ module.exports = {
             .setTitle('Utility')
             .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('Cal', 'Calculator (ex: -cal 234+23432)')
-            .addField('Info', 'Gets the info of a user (ex: -info @usertag)')
-            .addField('Avatar', 'Sends avatar of a user (ex: -avatar)')
+            .addField('UserInfo', 'Gets the info of a user (ex: -userinfo @usertag)')
+            .addField('Avatar', 'Sends avatar of a user (ex: -avatar [@usertag (optional)])')
             .addField('Weather', 'Sends the weather forecast of a city (ex: -weather [city name])')
             .addField('Server Info', 'Gets the info of the server (ex: -serverinfo)')
             .addField('Bot Info', 'Gets the info of the bot (ex: -botinfo)')
-            .addField('Ticket', 'Creates a ticket for questions (ex: -ticket [question])')
             .addField('Ping', 'Gets the ping of the bot (ex: -ping)')
             .addField('Imdb', 'Sends user info on movie or tv show (ex: -imdb [movie or show name])')
             .addField('Emoji', 'Sends all server emojis (ex: -emoji)')
@@ -92,7 +88,7 @@ module.exports = {
 
         const music = new Discord.MessageEmbed()
             .setTitle('Music')
-            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
+            .setDescription('The music commands are currently not stable, so they might not work.')
             .addField('Play', 'Searches Youtube and plays a song (ex: -p [song name] {Youtube links do not work yet})')
             .addField('Pause', 'Pauses what is playing (ex: -pause)')
             .addField('Resume', 'Resumes what is playing (ex: -resume)')
@@ -113,12 +109,20 @@ module.exports = {
             .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
         if (content.includes("setup")) return message.channel.send(setUp)
 
+        const dev = new Discord.MessageEmbed()
+            .setTitle('Developer Tools')
+            .setDescription('For the support discord server, use the command -discord.')
+            .addField('Docs', 'Sends discord.js documentation (ex: -docs [search query])')
+            .addField('Channel', 'Sends ID of channel command is used in (ex: -channel)')
+            .addField('Execute', 'Use terminal commands in Discord (ex: -execute [command])')
+        if (content.includes("dev")) return message.channel.send(dev)
+
         const pages = [
             fun,
             utility,
-            economy,
             moderation,
             music,
+            dev,
             setUp
         ]
 

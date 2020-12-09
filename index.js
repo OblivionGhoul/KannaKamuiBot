@@ -16,7 +16,7 @@ client.on('ready', async () => {
     console.log('I am ready!');
 
     function pickStatus() {
-      let status = ['over the Inn', 'Welcome to the Inn', 'Simping for Minh']; //change change status
+      let status = [`over ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users!`, `over ${client.guilds.cache.size.toLocaleString()} servers!`]; //change change status
       let Status = Math.floor(Math.random() * status.length);
 
       client.user.setActivity(status[Status], {
