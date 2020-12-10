@@ -75,6 +75,7 @@ client.on('message', async message => {
 });
 
 client.on('message', message => {
+  if (message.mentions.has(client.user)) message.channel.send("To get my full list of commands, use the help command. (ex: -help)")
   var { content } = message
   content = content.toLowerCase()
   if (message.author.id !== '298589600132366339') return

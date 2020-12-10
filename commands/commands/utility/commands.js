@@ -36,7 +36,6 @@ module.exports = {
             .addField('DM', 'DMs a user (ex: -dm [@user or user ID][message text])')
             .addField('Nickname', 'Changes a user nickname (ex: -nickname [@usertag])')
             .addField('Setprefix', 'Changes the prefix of the bot (ex: -setprefix [new prefix])')
-            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
         if (content.includes("mod")) return message.channel.send(moderation)
 
         const fun = new Discord.MessageEmbed()
@@ -58,7 +57,7 @@ module.exports = {
             .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
             .addField('Hug', 'Hugs someone (ex: -hug [@usertag])')
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (ex: -ttt [@usertag])')
-            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+            .addField('Connect4', 'Sends a Connect 4 game (ex: -connect4 [@usertag])')
         if (content.includes("fun")) return message.channel.send(fun)
 
         const utility = new Discord.MessageEmbed()
@@ -75,7 +74,6 @@ module.exports = {
             .addField('Emoji', 'Sends all server emojis (ex: -emoji)')
             .addField('Verse', 'Sends a bible bible verse (ex: -verse)')
             .addField('Anime', 'Sends info about an anime (ex: -anime [anime name])')
-            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
         if (content.includes("util")) return message.channel.send(utility)
 
         const economy = new Discord.MessageEmbed()
@@ -83,7 +81,6 @@ module.exports = {
             .setDescription('More economy commands are going to be added.')
             .addField('Bal', 'Checks user balance (ex: -bal)')
             .addField('Addbal', 'Gives money to a user (ex: -addbal [@usertag] [amount of money])')
-            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
         if (content.includes("economy")) return message.channel.send(economy)
 
         const music = new Discord.MessageEmbed()
@@ -97,7 +94,6 @@ module.exports = {
             .addField('Queue', 'Sends song queue (ex: -queue)')
             .addField('Volume', 'Sets or views current volume (ex: -vol [number])')
             .addField('Now Playing', 'Shows song that is currently playing (ex: -np)')
-            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
         if (content.includes("music")) return message.channel.send(music)
 
         const setUp = new Discord.MessageEmbed()
@@ -105,8 +101,7 @@ module.exports = {
             .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('SetWelcome', 'Use this command in the welcome channel to set up welcome messages(ex: -setwelcome [welcome message] (Please note that you can do "<@>" to send the username of the user that just joined))')
             .addField('SetLeave', 'Use this command in the leave channel to set up leave messages(ex: -setleave [welcome message] (Please note that you can do "<@>" to send the username of the user that just joined))')
-            .addField('For more support, please join my discord server using this code:', 'VNAQrkQ')
-            .setThumbnail('https://i.imgur.com/Cwea8yj.png?1')
+            .addField('For more support, please join my discord server by using this command:', '(-discord)')
         if (content.includes("setup")) return message.channel.send(setUp)
 
         const dev = new Discord.MessageEmbed()
