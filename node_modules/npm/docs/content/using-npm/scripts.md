@@ -1,16 +1,12 @@
 ---
-section: using-npm
 title: scripts
+section: 7
 description: How npm handles the "scripts" field
 ---
 
-# scripts(7)
-
-## How npm handles the "scripts" field
-
 ### Description
 
-The `"scripts"` property of of your `package.json` file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts. These all can be executed by running `npm run-script <stage>` or `npm run <stage>` for short. *Pre* and *post* commands with matching names will be run for those as well (e.g. `premyscript`, `myscript`, `postmyscript`). Scripts from dependencies can be run with `npm explore <pkg> -- npm run <stage>`.
+The `"scripts"` property of your `package.json` file supports a number of built-in scripts and their preset life cycle events as well as arbitrary scripts. These all can be executed by running `npm run-script <stage>` or `npm run <stage>` for short. *Pre* and *post* commands with matching names will be run for those as well (e.g. `premyscript`, `myscript`, `postmyscript`). Scripts from dependencies can be run with `npm explore <pkg> -- npm run <stage>`.
 
 ### Pre & Post Scripts
 
@@ -78,7 +74,7 @@ The advantage of doing these things at `prepublish` time is that they can be don
 
 ### Life Cycle Operation Order
 
-#### [`npm publish`](/cli-commands/npm-publish)
+#### [`npm publish`](/commands/npm-publish)
 
 * `prepublishOnly`
 * `prepare`
@@ -86,12 +82,12 @@ The advantage of doing these things at `prepublish` time is that they can be don
 * `publish`
 * `postpublish`
 
-#### [`npm pack`](/cli-commands/npm-pack)
+#### [`npm pack`](/commands/npm-pack)
 
 * `prepack`
 * `postpack`
 
-#### [`npm install`](/cli-commands/npm-install)
+#### [`npm install`](/commands/npm-install)
 
 * `preinstall`
 * `install`
@@ -100,9 +96,9 @@ The advantage of doing these things at `prepublish` time is that they can be don
 Also triggers
 
 * `prepublish` (when on local)
-* `prepare` (when on local)
+* `prepare` (when on local or workspaces)
 
-#### [`npm start`](/cli-commands/npm-start)
+#### [`npm start`](/commands/npm-start)
 
 `npm run start` has an `npm start` shorthand.
 
@@ -126,10 +122,8 @@ npm will default some script values based on package contents.
 
 ### User
 
-If npm was invoked with root privileges, then it will change the uid
-to the user account or uid specified by the `user` config, which
-defaults to `nobody`.  Set the `unsafe-perm` flag to run scripts with
-root privileges.
+When npm is run as root, scripts are always run with the effective uid
+and gid of the working directory owner.
 
 ### Environment
 
@@ -228,7 +222,7 @@ For example, if your package.json contains this:
 { 
   "scripts" : { 
     "install" : "scripts/install.js", 
-    "postinstall" : "scripts/install.js", 
+    "postinstall" : "scripts/postinstall.js", 
     "uninstall" : "scripts/uninstall.js"
   }
 }
@@ -304,7 +298,7 @@ above.
 
 ### See Also
 
-* [npm run-script](/cli-commands/npm-run-script)
+* [npm run-script](/commands/npm-run-script)
 * [package.json](/configuring-npm/package-json)
 * [npm developers](/using-npm/developers)
-* [npm install](/cli-commands/npm-install)
+* [npm install](/commands/npm-install)

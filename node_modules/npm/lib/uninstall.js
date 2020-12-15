@@ -1,79 +1,50 @@
-'use strict'
-// remove a package.
+const { resolve } = require('path')
+const Arborist = require('@npmcli/arborist')
+const rpj = require('read-package-json-fast')
 
-module.exports = uninstall
-
-const path = require('path')
-const validate = require('aproba')
-const readJson = require('read-package-json')
-const iferr = require('iferr')
 const npm = require('./npm.js')
-const Installer = require('./install.js').Installer
-const getSaveType = require('./install/save.js').getSaveType
-const removeDeps = require('./install/deps.js').removeDeps
-const log = require('npmlog')
-const usage = require('./utils/usage')
+const usageUtil = require('./utils/usage.js')
+const reifyFinish = require('./utils/reify-finish.js')
+const completion = require('./utils/completion/installed-shallow.js')
 
-uninstall.usage = usage(
+const usage = usageUtil(
   'uninstall',
   'npm uninstall [<@scope>/]<pkg>[@<version>]... [--save-prod|--save-dev|--save-optional] [--no-save]'
 )
 
-uninstall.completion = require('./utils/completion/installed-shallow.js')
+const cmd = (args, cb) => rm(args).then(() => cb()).catch(cb)
 
-function uninstall (args, cb) {
-  validate('AF', arguments)
+const rm = async args => {
   // the /path/to/node_modules/..
-  const dryrun = !!npm.config.get('dry-run')
+  const { global, prefix } = npm.flatOptions
+  const path = global ? resolve(npm.globalDir, '..') : prefix
 
-  if (args.length === 1 && args[0] === '.') args = []
+  if (!args.length) {
+    if (!global)
+      throw new Error('Must provide a package name to remove')
+    else {
+      let pkg
 
-  const where = npm.config.get('global') || !args.length
-    ? path.resolve(npm.globalDir, '..')
-    : npm.prefix
+      try {
+        pkg = await rpj(resolve(npm.localPrefix, 'package.json'))
+      } catch (er) {
+        if (er.code !== 'ENOENT' && er.code !== 'ENOTDIR')
+          throw er
+        else
+          throw usage
+      }
 
-  args = args.filter(function (a) {
-    return path.resolve(a) !== where
+      args.push(pkg.name)
+    }
+  }
+
+  const arb = new Arborist({ ...npm.flatOptions, path })
+
+  await arb.reify({
+    ...npm.flatOptions,
+    rm: args,
   })
-
-  if (args.length) {
-    new Uninstaller(where, dryrun, args).run(cb)
-  } else {
-    // remove this package from the global space, if it's installed there
-    readJson(path.resolve(npm.localPrefix, 'package.json'), function (er, pkg) {
-      if (er && er.code !== 'ENOENT' && er.code !== 'ENOTDIR') return cb(er)
-      if (er) return cb(uninstall.usage)
-      new Uninstaller(where, dryrun, [pkg.name]).run(cb)
-    })
-  }
+  await reifyFinish(arb)
 }
 
-class Uninstaller extends Installer {
-  constructor (where, dryrun, args) {
-    super(where, dryrun, args)
-    this.remove = []
-  }
-
-  loadArgMetadata (next) {
-    this.args = this.args.map(function (arg) { return {name: arg} })
-    next()
-  }
-
-  loadAllDepsIntoIdealTree (cb) {
-    validate('F', arguments)
-    this.remove = this.args
-    this.args = []
-    log.silly('uninstall', 'loadAllDepsIntoIdealTree')
-    const saveDeps = getSaveType()
-
-    super.loadAllDepsIntoIdealTree(iferr(cb, () => {
-      removeDeps(this.remove, this.idealTree, saveDeps, cb)
-    }))
-  }
-
-  // no top level lifecycles on rm
-  runPreinstallTopLevelLifecycles (cb) { cb() }
-  runPostinstallTopLevelLifecycles (cb) { cb() }
-}
-
-module.exports.Uninstaller = Uninstaller
+module.exports = Object.assign(cmd, { usage, completion })
