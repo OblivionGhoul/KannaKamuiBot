@@ -3,7 +3,9 @@ const axios = require('axios')
 module.exports = {
     commands: ['docs', 'discord.js', 'discordjs'],
     callback: async (message, args) => {
-        if (!args[0]) return message.channnel.send('Please provide a search query after the command.')
+        if (!message.content.includes(" ")) {
+            return message.channel.send("Please enter a search query.")
+        }
         const uri = `https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURIComponent(
             args
         )}`
