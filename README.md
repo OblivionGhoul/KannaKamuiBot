@@ -56,8 +56,6 @@ Use this command in the leave channel to set up leave messages. (Please note tha
 
 `Goodbye, @OblivionGhoul!`
 # Support
-Join my discord server above for support.
-
-You can also open an issue on GitHub. 
+Join my discord server above for support. You can also open an issue on GitHub. 
 # Contributions
-All contributions are welcome! I am new to GitHub and Javascript, so any advice would be great! 
+All contributions are welcome! I am new to GitHub and Javascript, so any advice would be great! I will also accept recommendations on new commands.
