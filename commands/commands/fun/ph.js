@@ -1,8 +1,4 @@
-const Discord = require("discord.js");
-const Random = require("srod-v2");
 const Fetch = require("node-fetch")
-const client = require('alexflipnote.js');
-const alexclient = new client('Your-API-Token-Here');
 
 module.exports = {
     commands: ['ph'],

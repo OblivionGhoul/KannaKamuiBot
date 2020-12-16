@@ -57,8 +57,17 @@ module.exports = {
             .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
             .addField('Hug', 'Hugs someone (ex: -hug [@usertag])')
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (ex: -ttt [@usertag])')
-            .addField('Connect4', 'Sends a Connect 4 game (ex: -connect4 [@usertag])')
+            .addField('ChangeMyMind', 'Creates ChangeMyMind meme (ex: -changemymind [text])')
+            .addField('Sign', 'Creates a picture of Hifumi with a sign (ex: -sign [text])')
+            .addField('PH', 'Creates a PH comment (ex: -ph [text])')
         if (content.includes("fun")) return message.channel.send(fun)
+
+        const nsfw = new Discord.MessageEmbed()
+            .setTitle('NSFW')
+            .setDescription('This command will only work in channels with nsfw enabled.')
+            .addField('NSFW', 'Sends an nsfw image (ex: -nsfw [category])')
+            .addField('NSFW Categories', 'hass, hmidriff, pgif, 4k, hentai, hneko, hkitsune, anal, hanal, gonewild, ass, pussy, thigh, hthigh, paizuri, tentacle, boobs, hboobs')
+        if (content.includes("nsfw")) return message.channel.send(nsfw)
 
         const utility = new Discord.MessageEmbed()
             .setTitle('Utility')
@@ -118,6 +127,7 @@ module.exports = {
             moderation,
             music,
             dev,
+            nsfw,
             setUp
         ]
 
