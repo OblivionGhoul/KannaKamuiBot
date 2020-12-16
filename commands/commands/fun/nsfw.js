@@ -1,3 +1,4 @@
+const { NekoBot } = require("nekobot-api");
 const api = new NekoBot();
 
 module.exports = {
