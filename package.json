@@ -32,7 +32,7 @@
     "srod-v2": "0.0.5",
     "weather-js": "^2.0.0",
     "yt-search": "^2.5.1",
-    "ytdl-core": "^4.1.7"
+    "ytdl-core": "^4.2.0"
   },
   "_moduleAliases": {
     "@root": ".",

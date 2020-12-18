@@ -105,6 +105,7 @@ module.exports = {
             .addField('Queue', 'Sends song queue (ex: -queue)')
             .addField('Volume', 'Sets or views current volume (ex: -vol [number])')
             .addField('Now Playing', 'Shows song that is currently playing (ex: -np)')
+            .addField('Leave', 'Bot will leave the vc (ex: -leave)')
         if (content.includes("music")) return message.channel.send(music)
 
         const setUp = new Discord.MessageEmbed()

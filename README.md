@@ -22,7 +22,7 @@ Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, Ping, Imdb, Emoji, Verse, 
 Ban, Kick, Poll, Close, DM, Nickname, Setprefix.
 
 ## Music 
-Play, Pause, Resume, Stop, Skip, Queue, Volume, NowPlaying.
+Play, Pause, Resume, Stop, Skip, Queue, Volume, NowPlaying, Leave.
 
 ## Developer Tools
 Docs, Channel, Execute.
