@@ -75,6 +75,8 @@ client.on('message', async message => {
 });
 
 client.on('message', message => {
+  var { content } = message
+  if (content.toLowerCase().includes("here") || content.toLowerCase().includes("everyone")) return
   if (message.mentions.has(client.user)) message.channel.send("To get my full list of commands, use the help command. (ex: -help)")
   var { content } = message
   content = content.toLowerCase()
