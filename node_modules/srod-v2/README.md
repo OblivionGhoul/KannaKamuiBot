@@ -1,58 +1,55 @@
-### Something Random On Discord
-  
-- This Package Is Officially By CTK WARRIOR#7923
-- I Just Created V2 With More Functions And Fixed All Errors!
-- Stable Version : Current Version
-- Full : Something Random On Discord V2
+# Srod V2
 
-# Usage
+- Package [V1](https://bit.ly/34tvqau) Was By [CTK WARRIOR#7923](https://bit.ly/34tvqau) ([Discord Server](https://discord.gg/7efH8yYpqK))
+- Current : Something Random On Discord V2
+
+### Example
 ```js
+//Discord.js Bot - discord.js.org - npm i discord.js
 const Discord = require("discord.js");
 const Random = require("srod-v2");
 const client = new Discord.Client();
 
-client.on("ready", () => {
-    console.log("Bot Is Ready With Srod-v2!");
+client.on("ready", async () => {
+    await console.log("Bot Is Ready With Something Random On Discord V2 💙");
 });
 
 client.on("message", async message => {
     if (message.content.toLowerCase() === "meme") {
         let Meme = await Random.GetMeme();
         return message.channel.send(Meme);
-    }
+    };
 });
 
 client.login("Put Your Epic Bot Token Here!");
 ```
 ![](https://cdn.discordapp.com/attachments/763294769974607912/763295959761289246/unknown.png)
 
-# Why Srod-v2?
+### Why Srod V2?
 
-- Fastest Speed & Easy To Use
-- Small Size
-- Quick Support
+- Not Sure...
 
-# Documentation
+### Documentation
 
-- All Functions Return Data As JSON Embeds (Discord Message Embeds)
-- Color Information - Use CAPS For Name (Blue : BLUE , Orange : ORANGE) , Black If Your Provided Color Is Invalid , Embed Color Will Be Random If No Color Provided!
+- All [Functions](https://bit.ly/34tvqau) Return Data As [Json](https://bit.ly/34tvqau) Embeds (Discord Message Embeds)
+- Color - [Hex Code](https://bit.ly/34tvqau) , Name (In CAPS) | Black If Provided Color Is Invalid
+- Link - [Click Me (Recommended)](https://bit.ly/34tvqau) Or [Scroll Down](https://bit.ly/34tvqau)
 
-Link => [Click Me](https://github.com/LegendaryEmoji/srod-v2/wiki)
+### Donate
 
-# More!
+_Donations Will Help Us To Maintain This Package 💙_
 
-_Note: This Package Is Using Many Websites For Getting Stuff, Thanks To Websites Owners_
+- [Patreon (Ctk)](https://www.patreon.com/dbdandmore)
+- [Paypal (Emoji)](https://www.paypal.com/paypalme/LegendEmoji)
+- [Patreon (Emoji)](https://www.patreon.com/LegendaryEmoji)
+- [Ko-Fi (Emoji)](https://ko-fi.com/LegendaryEmoji)
 
-- This Package Is Made With 💖 By Ctk & Emoji
+### Information
 
-- Donations Will Help Us To Maintain This Package
+_Note : This Package Is Using Many Websites For Getting Data, Credit Goes To Websites Owners!_
 
-- Thank You For Reading & Using This Package ;)
+- This Package Is Made With [💙](https://bit.ly/34tvqau) By [Emoji](https://bit.ly/34tvqau) & [Ctk](https://bit.ly/34tvqau)
 
-=== Links ===
+- [Documentation](https://bit.ly/34tvqau) - [Click Me](https://github.com/LegendaryEmoji/srod-v2/wiki)
 
-Support Server => [Click Me](https://discord.gg/8XDYaRe)
-
-Patreon (Legendary Emoji) (Creator Of This Package) => [Click Me](https://www.patreon.com/LegendaryEmoji)
-
-Patreon (Ctk) (Creator Of The Old Version Of This Package) => [Click Me](https://www.patreon.com/dbdandmore)
+- Thank You For Reading & Using [This Package](https://www.npmjs.com/package/srod-v2) ;)

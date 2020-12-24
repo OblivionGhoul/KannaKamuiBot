@@ -1,6 +1,6 @@
 {
-  "name": "Minh's Discord Bot",
-  "version": "3.0.0",
+  "name": "KannaKamui",
+  "version": "3.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
-    "alexflipnote.js": "^2.3.2",
-    "axios": "^0.21.0",
+    "alexflipnote.js": "^2.3.3",
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "discord.js-pagination": "^1.0.3",
     "figlet": "^1.5.0",
@@ -29,10 +29,10 @@
     "request-promise-native": "^1.0.9",
     "snakecord": "0.0.6",
     "something-random-on-discord": "0.0.2",
-    "srod-v2": "0.0.5",
+    "srod-v2": "^1.0.1",
     "weather-js": "^2.0.0",
     "yt-search": "^2.5.1",
-    "ytdl-core": "^4.2.0"
+    "ytdl-core": "^4.2.1"
   },
   "_moduleAliases": {
     "@root": ".",
