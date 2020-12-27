@@ -81,7 +81,6 @@ module.exports = {
             .addField('Server Info', 'Gets the info of the server (ex: -serverinfo)')
             .addField('Bot Info', 'Gets the info of the bot (ex: -botinfo)')
             .addField('Ping', 'Gets the ping of the bot (ex: -ping)')
-            .addField('Imdb', 'Sends user info on movie or tv show (ex: -imdb [movie or show name])')
             .addField('Emoji', 'Sends all server emojis (ex: -emoji)')
             .addField('Verse', 'Sends a bible bible verse (ex: -verse)')
             .addField('Anime', 'Sends info about an anime (ex: -anime [anime name])')
