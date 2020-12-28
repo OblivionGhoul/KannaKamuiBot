@@ -3,7 +3,6 @@ module.exports = {
     callback: async (message, args, err) => {
         const gif = [
             'https://tenor.com/boUmz.gif',
-            'https://tenor.com/bp8pS.gif',
             'https://tenor.com/bqzIv.gif',
             'https://tenor.com/boUmw.gif',
             'https://tenor.com/bn56o.gif',
