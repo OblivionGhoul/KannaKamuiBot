@@ -13,10 +13,10 @@ The default prefix for this bot is [-].
 # Bot Commands
 Use the help command to get the most updated list of bot commands. (`-help`)
 ## Fun
-Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Snake, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, Poggers, ChangeMyMind, Sign, PH.
+Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Snake, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, Poggers, ChangeMyMind, Sign, PH, Animemes, Waifus.
 
 ## Utility 
-Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, Ping, Imdb, Emoji, Verse, Anime.
+Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Imdb, Emoji, Verse, Anime.
 
 ## Moderation
 Ban, Kick, Poll, Close, DM, Nickname, Setprefix.
