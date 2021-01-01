@@ -1,1 +1,9 @@
+
+# Visual Studio Code
 .vscode
+
+# ItelliJ IDEA
+.idea
+
+# NPM Stuff
+/node_modules/
