@@ -12,6 +12,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "alexflipnote.js": "^2.3.3",
+    "animequotes": "^1.1.2",
     "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "discord.js-pagination": "^1.0.3",
@@ -24,6 +25,7 @@
     "ms": "^2.1.3",
     "nekobot-api": "^2.0.1",
     "node-fetch": "^2.6.1",
+    "node-kitsu": "^1.1.1",
     "npm": "^7.1.2",
     "parse-ms": "^2.1.0",
     "request-promise-native": "^1.0.9",

@@ -58,6 +58,7 @@ module.exports = {
             .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
             .addField('Hug', 'Hugs someone (ex: -hug [@usertag])')
             .addField('Kanna', 'Sends a picture of Kanna Kamui (ex: -kanna)')
+            .addField('AnimeQuote', 'Sends a quote from a random anime (ex: -animequote)')
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (ex: -ttt [@usertag])')
             .addField('Poggers', 'Sends a poggers meme (ex: -poggers) (This command might be nsfw)')
             .addField('ChangeMyMind', 'Creates ChangeMyMind meme (ex: -changemymind [text])')
