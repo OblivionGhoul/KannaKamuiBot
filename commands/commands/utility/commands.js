@@ -20,7 +20,7 @@ module.exports = {
             .addField('Mute', 'Mutes a user (ex: -mute [user ID])')
             .addField('Unmute', 'Unmutes a user (ex: -unmute [user ID])')
             .addField('Report', 'Reports a user (ex: -report [@usertag] [reason for reporting])')
-            .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, Matt, Christy, Andrew, Nobel, Brennan, Andy, and Kay (ex: -minh)')
+            .addField('Quotes (Enter name to use this command)', 'Sends quotes from Minh, Bryce, Ethan, Hanna, Jake, Josh, Fremont, Matt, Christy, Andrew, Nobel, Brennan, Andy, Ally, and Kay (ex: -minh)')
 
         let content = message.content.substring(message.content.indexOf(' ') + 1)
         content = content.toLowerCase()
