@@ -10,6 +10,8 @@ This bot is still a work in progress so the command list below might not be the 
 
 The default prefix for this bot is [-].
 
+I included the node_modules folder and a Procfile in this repository because I am hosting the bot through Heroku, and Heroku just uses the code from GitHub. I am sure there might be a work around, but I have not gotten there yet.
+
 # Bot Commands
 Use the help command to get the most updated list of bot commands. (`-help`)
 ## Fun
