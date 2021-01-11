@@ -7,7 +7,7 @@ module.exports = {
         const profile = args[0]
         const tag = args[1]
         if (!args[0] || !args[1]) {
-            message.channel.send('Please specify your riot id correctly. (usage: -valstats [name] [tag])')
+            message.channel.send('Please specify your riot id correctly without a hashtag. (usage: -valstats [name] [tag])')
         }
         axios.get(`https://api.henrikdev.xyz/valorant/v1/profile/${profile}/${tag}`)
             .then(function (response) {
@@ -33,8 +33,8 @@ module.exports = {
                 message.channel.send(embed)
             })
             .catch(function (error) {
-                console.log(error)
-                message.channel.send('Please make sure you follow the correct format and have the correct name. Add an underscore to names with spaces. ***This command will not work if you have never signed into tracker.gg before!!!*** (usage: -valstats [name] [tag])')
+                message.channel.send(error.response.data.message)
+                message.channel.send('Usage: -valstats [name] [tag]')
             })
     },
 }
