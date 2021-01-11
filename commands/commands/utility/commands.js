@@ -87,6 +87,7 @@ module.exports = {
             .addField('Verse', 'Sends a bible bible verse (ex: -verse)')
             .addField('Anime', 'Sends info about an anime (ex: -anime [anime name])')
             .addField('Emoji Info', 'Gets the info of an emoji (ex: -emojiinfo [emoji or emoji name])')
+            .addField('Server Picture', 'Sends the pfp of the server (ex: -serverpicture)')
         if (content.includes("util")) return message.channel.send(utility)
 
         const economy = new Discord.MessageEmbed()

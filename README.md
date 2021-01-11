@@ -18,7 +18,7 @@ Use the help command to get the most updated list of bot commands. (`-help`)
 Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Snake, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, Poggers, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote.
 
 ## Utility 
-Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Imdb, Emoji, Verse, Anime.
+Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Imdb, Emoji, Verse, Anime, ServerPicture.
 
 ## Moderation
 Ban, Kick, Poll, Close, DM, Nickname, Setprefix.
