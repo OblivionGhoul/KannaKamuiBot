@@ -1,10 +1,15 @@
 const axios = require('axios');
-const Discord = require('discord.js')
+const Discord = require('discord.js');
 
 module.exports = {
     commands: ['valstats', 'valorantstats', 'valorant-stats'],
-    callback: (message, arguments, text, client) => {
-        axios.get('https://api.henrikdev.xyz/valorant/v1/profile/kay/VuVu')
+    callback: (message, args) => {
+        const profile = args[0]
+        const tag = args[1]
+        if (!args[0] || !args[1]) {
+            message.channel.send('Please specify your riot id correctly. (usage: -valstats [name] [tag])')
+        }
+        axios.get(`https://api.henrikdev.xyz/valorant/v1/profile/${profile}/${tag}`)
             .then(function (response) {
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${response.data.user}'s Valorant Profile`)
@@ -28,7 +33,7 @@ module.exports = {
                 message.channel.send(embed)
             })
             .catch(function (error) {
-                console.log(error);
+                message.channel.send('Please make sure you follow the correct format and have the correct name. (usage: -valstats [name] [tag])')
             })
     },
 }

@@ -127,11 +127,18 @@ module.exports = {
             .addField('Execute', 'Use terminal commands in Discord (ex: -execute [command])')
         if (content.includes("dev")) return message.channel.send(dev)
 
+        const val = new Discord.MessageEmbed()
+        .setTitle('Valorant Commands')
+        .setDescription('For the support discord server, use the command -discord.')
+        .addField('Val Stats', 'Sends a player\'s Valorant Stats (ex: -valstats [name] [tag])')
+        if (content.includes("val")) return message.channel.send(val)
+
         const pages = [
             fun,
             utility,
             moderation,
             music,
+            val,
             dev,
             nsfw,
             setUp
