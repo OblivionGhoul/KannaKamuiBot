@@ -33,7 +33,8 @@ module.exports = {
                 message.channel.send(embed)
             })
             .catch(function (error) {
-                message.channel.send('Please make sure you follow the correct format and have the correct name. (usage: -valstats [name] [tag])')
+                console.log(error)
+                message.channel.send('Please make sure you follow the correct format and have the correct name. Add an underscore to names with spaces. ***This command will not work if you have never signed into tracker.gg before!!!*** (usage: -valstats [name] [tag])')
             })
     },
 }
