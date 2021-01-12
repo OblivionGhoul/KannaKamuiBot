@@ -131,6 +131,7 @@ module.exports = {
         .setTitle('Valorant Commands')
         .setDescription('For the support discord server, use the command -discord.')
         .addField('Val Stats', 'Sends a player\'s Valorant Stats (ex: -valstats [name] [tag])')
+        .addField('Val Matches', 'Sends a player\'s Last 3 Matches (ex: -valmatches [name] [tag])')
         if (content.includes("val")) return message.channel.send(val)
 
         const pages = [
