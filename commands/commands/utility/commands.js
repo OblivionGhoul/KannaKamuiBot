@@ -53,7 +53,6 @@ module.exports = {
             .addField('PP', 'Sends a user\'s pp size (ex: -pp [@usertag]')
             .addField('RPS', 'Sends a game of rock, paper, scissors (ex: -rps rock')
             .addField('Christmas', 'Sends the amount of days until Christmas (ex: -christmas)')
-            .addField('Snake', 'Sends a snake game (ex: -snake)')
             .addField('Dog', 'Sends a picture of a dog (ex: -dog)')
             .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
             .addField('Hug', 'Hugs someone (ex: -hug [@usertag])')

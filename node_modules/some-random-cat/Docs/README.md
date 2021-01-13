@@ -46,5 +46,3 @@ somethingRandom.getCat()
 * 200 weekly downloads
 * and... growing!
 
-{% page-ref page="classes/random.md" %}
-

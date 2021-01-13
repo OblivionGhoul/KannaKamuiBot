@@ -48,7 +48,7 @@ class Random {
         if (!sub) Promise.reject("SomeRandomCat > Error, you did not specify a subreddit!");
         const start = Date.now()
         const response = await axios.get(
-          `https://imageapi.fionn.cc/reddit/${sub.toLowerCase()}`
+          `https://imageapi.fionn.live/reddit/${sub.toLowerCase()}`
         )
         const responseTime = Date.now() - start;
         if (response.error || response.err)

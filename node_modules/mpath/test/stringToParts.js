@@ -11,11 +11,13 @@ describe('stringToParts', function() {
 
   it('handles dot notation', function() {
     assert.deepEqual(stringToParts('a.b.c'), ['a', 'b', 'c']);
-    assert.deepEqual(stringToParts('a..b.d'), ['a', 'b', 'd']);
+    assert.deepEqual(stringToParts('a..b.d'), ['a', '', 'b', 'd']);
   });
 
-  it('throws for invalid numbers in square brackets', function() {
-    assert.throws(() => stringToParts('foo[1mystring]'), /1mystring/);
+  it('ignores invalid numbers in square brackets', function() {
+    assert.deepEqual(stringToParts('foo[1mystring]'), ['foo[1mystring]']);
+    assert.deepEqual(stringToParts('foo[1mystring].bar[1]'), ['foo[1mystring]', 'bar', '1']);
+    assert.deepEqual(stringToParts('foo[1mystring][2]'), ['foo[1mystring]', '2']);
   });
 
   it('handles empty string', function() {
