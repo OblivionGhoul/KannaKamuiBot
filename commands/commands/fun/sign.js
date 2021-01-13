@@ -1,4 +1,4 @@
-const Fetch = require("node-fetch")
+const axios = require('axios');
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
@@ -10,8 +10,8 @@ module.exports = {
         message.channel.send('Creating image...')
         let input = message.content.substring(message.content.indexOf(' ') + 1)
 
-        let res = await Fetch(`https://nekobot.xyz/api/imagegen?type=fact&text=${input}`);
-        let json = await res.json();
+        let res = await axios.get(`https://nekobot.xyz/api/imagegen?type=fact&text=${input}`);
+        let json = res.data;
 
         if (!json.message) throw new Error(`Something Went Wrong, Try Again Later!`);
 

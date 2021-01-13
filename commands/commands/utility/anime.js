@@ -1,5 +1,5 @@
-const Discord = require("discord.js")
-const { get } = require("request-promise-native");
+const Discord = require("discord.js");
+const axios = require('axios');
 
 module.exports = {
     commands: 'anime',
@@ -7,27 +7,26 @@ module.exports = {
         if (!args.length) {
             return message.channel.send("Please Specify An Anime.")
         }
-        let option = {
-            url: `https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`,
-            method: `GET`,
+        const url = `https://kitsu.io/api/edge/anime?filter[text]=${args.join(" ")}`;
+        const config = {
             headers: {
                 'Content-Type': "application/vnd.api+json",
                 'Accept': "application/vnd.api+json"
-            },
-            json: true
+            }
         }
 
         message.channel.send("Fetching The Info").then(msg => {
-            get(option).then(body => {
+            axios.get(url, config).then(res => {
                 try {
+                    const data = res.data.data[0];
                     let embed = new Discord.MessageEmbed()
-                        .setTitle(body.data[0].attributes.titles.en)
+                        .setTitle(data.attributes.titles.en)
                         .setColor("RED")
-                        .setDescription(body.data[0].attributes.synopsis)
-                        .setThumbnail(body.data[0].attributes.posterImage.original)
-                        .addField("Ratings", body.data[0].attributes.averageRating)
-                        .addField("TOTAL EPISODES", body.data[0].attributes.episodeCount)
-                        .setImage(body.data[0].attributes.coverImage.large)
+                        .setDescription(data.attributes.synopsis)
+                        .setThumbnail(data.attributes.posterImage.original)
+                        .addField("Ratings", data.attributes.averageRating)
+                        .addField("TOTAL EPISODES", data.attributes.episodeCount)
+                        .setImage(data.attributes.coverImage.large)
                         .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                     message.channel.send(embed)
                     msg.delete();

@@ -1,4 +1,4 @@
-const Fetch = require("node-fetch")
+const axios = require('axios');
 
 module.exports = {
     commands: ['ph'],
@@ -11,9 +11,9 @@ module.exports = {
         let input = message.content.substring(message.content.indexOf(' ') + 1)
         let name = member.user.username
         let image = member.user.displayAvatarURL({ dynamic: true })
-        let res = await Fetch(`https://nekobot.xyz/api/imagegen?type=phcomment&username=${name}&image=${image}&text=${input}`);
+        let res = await axios.get(`https://nekobot.xyz/api/imagegen?type=phcomment&username=${name}&image=${image}&text=${input}`);
 
-        let json = await res.json();
+        let json = res.data;
 
         if (!json.message) throw new Error("Something Went Wrong, Try Again Later!");
 
