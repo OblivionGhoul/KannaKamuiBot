@@ -1,6 +1,5 @@
 const { MessageEmbed, version: djsversion } = require('discord.js');
 const { version } = require('@root/package.json');
-const ms = require('ms');
 
 module.exports = {
     commands: ['botinfo', 'bot-info'],
