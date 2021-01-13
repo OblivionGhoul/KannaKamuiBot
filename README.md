@@ -1,7 +1,4 @@
 # Notes
-
-Join my discord server [here](https://discord.com/invite/agVDGxS9FN)!
-
 Invite the bot to your server [here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)!
 
 Visit my website [here](https://oblivionghoul.com/)!
