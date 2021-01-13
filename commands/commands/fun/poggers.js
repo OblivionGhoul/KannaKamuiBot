@@ -1,9 +1,6 @@
 module.exports = {
     commands: ['pog', 'poggers'],
     callback: async (message) => {
-        if (!message.channel.nsfw) {
-            return message.channel.send('This command only works in nsfw channels.')
-        }
         const gif = [
             'https://tenor.com/boUmz.gif',
             'https://tenor.com/bqzIv.gif',
