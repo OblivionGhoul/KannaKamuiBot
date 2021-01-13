@@ -65,4 +65,6 @@ Join my discord server above for support. You can also open an issue on GitHub.
 # Contributions
 All contributions are welcome! I am new to GitHub and Javascript, so any advice would be great! I will also accept recommendations on new commands.
 # Known Issues
-
+1. roast - Errors and shows use %roast @user
+2. snake - Reaction buttons do nothing
+3. changemymind - Gets stuck on creating image
