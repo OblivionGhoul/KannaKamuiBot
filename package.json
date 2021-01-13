@@ -26,7 +26,6 @@
     "nekobot-api": "^2.0.1",
     "node-fetch": "^2.6.1",
     "node-kitsu": "^1.1.1",
-    "npm": "^7.1.2",
     "parse-ms": "^2.1.0",
     "request-promise-native": "^1.0.9",
     "snakecord": "0.0.6",
