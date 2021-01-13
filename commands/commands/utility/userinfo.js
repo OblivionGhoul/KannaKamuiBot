@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
-const moment = require("moment")
+const dayjs = require('dayjs');
+const relativeTime = require('dayjs/plugin/relativeTime');
+
+dayjs.extend(relativeTime);
 
 const flags = {
     DISCORD_EMPLOYEE: 'Discord Employee',
@@ -36,14 +39,14 @@ module.exports = {
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
-                `**❯ Time Created:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
+                `**❯ Time Created:** ${dayjs(member.user.createdTimestamp).format('LT LL')} ${dayjs(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** ${member.user.presence.status}`,
                 `**❯ Game:** ${member.user.presence.game || 'Not playing a game.'}`,
                 `\u200b`
             ])
             .addField('Member', [
                 `**❯ Highest Role:** ${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest.name}`,
-                `**❯ Server Join Date:** ${moment(member.joinedAt).format('LL LTS')}`,
+                `**❯ Server Join Date:** ${dayjs(member.joinedAt).format('LL LTS')}`,
                 `\u200b`
             ])
             .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
