@@ -31,6 +31,7 @@
     "npm": "^7.1.2",
     "parse-ms": "^2.1.0",
     "request-promise-native": "^1.0.9",
+    "sakuranpm": "^1.1.0",
     "snakecord": "0.0.6",
     "some-random-cat": "^2.2.1",
     "something-random-on-discord": "0.0.2",

@@ -55,6 +55,8 @@ module.exports = {
             .addField('RPS', 'Sends a game of rock, paper, scissors (ex: -rps rock')
             .addField('Christmas', 'Sends the amount of days until Christmas (ex: -christmas)')
             .addField('Dog', 'Sends a picture of a dog (ex: -dog)')
+            .addField('Ship', 'Ships 2 users (ex: -ship [@usertag] [@usertag])')
+            .addField('Pat', 'Pats a user (ex: -pat [@usertag])')
             .addField('Cat', 'Sends a picture of a cat (ex: -cat)')
             .addField('Hug', 'Hugs someone (ex: -hug [@usertag])')
             .addField('Kanna', 'Sends a picture of Kanna Kamui (ex: -kanna)')
