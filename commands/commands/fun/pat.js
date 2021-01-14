@@ -8,7 +8,7 @@ module.exports = {
         let slaps = [imgKiss];
         let slapR = slaps[Math.floor(Math.random() * slaps.length)];
         let personslap = message.mentions.members.first();
-        let quote = ['Happy now?', 'UwU', "I will always be here to pat you!", 'Very wholesome!', 'AWWWWWWWWWWWW!', 'How cute.'];
+        let quote = ['Happy now?', 'UwU', "I will always be here to pat you!", 'Very wholesome!', 'AWWWWWWWWWWWW!', 'How cute'];
         let quoter = quote[Math.floor(Math.random() * quote.length)];
 
         if (!personslap) {
