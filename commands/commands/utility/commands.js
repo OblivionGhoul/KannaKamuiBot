@@ -42,6 +42,7 @@ module.exports = {
         const fun = new Discord.MessageEmbed()
             .setTitle('Fun')
             .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
+            .addField('Anime Trivia', 'Sends an anime trivia question (ex: -animetrivia)')
             .addField('Meme', 'Sends a meme in the chat (ex: -meme)')
             .addField('Roast', 'Roasts a user (ex: -roast @usertag)')
             .addField('Ascii', 'Sends cool text (ex: -ascii [text])')
@@ -98,7 +99,7 @@ module.exports = {
 
         const music = new Discord.MessageEmbed()
             .setTitle('Music')
-            .setDescription('The music commands are currently not stable, so they might not work.')
+            .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
             .addField('Play', 'Searches Youtube and plays a song (ex: -p [song name] {Youtube links do not work yet})')
             .addField('Pause', 'Pauses what is playing (ex: -pause)')
             .addField('Resume', 'Resumes what is playing (ex: -resume)')
@@ -128,7 +129,7 @@ module.exports = {
 
         const val = new Discord.MessageEmbed()
         .setTitle('Valorant Commands')
-        .setDescription('For the support discord server, use the command -discord.')
+        .setDescription('My default prefix is [-]. Click the arrows at the bottom to change categories.')
         .addField('Val Stats', 'Sends a player\'s Valorant Stats (ex: -valstats [name] [tag])')
         .addField('Val Matches', 'Sends a player\'s Last 3 Matches (ex: -valmatches [name] [tag])')
         .addField('Val Maps', 'Sends a Valorant Map (ex: -valmap [map name])')

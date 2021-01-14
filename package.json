@@ -13,6 +13,7 @@
     "@discordjs/opus": "^0.3.3",
     "alexflipnote.js": "^2.3.3",
     "animequotes": "^1.1.2",
+    "atob": "^2.1.2",
     "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "discord.js-pagination": "^1.0.3",

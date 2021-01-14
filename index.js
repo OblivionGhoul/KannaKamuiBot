@@ -76,26 +76,9 @@ client.on('message', async message => {
 
 client.on('message', message => {
   var { content } = message
-  if (content.toLowerCase().includes("here") || content.toLowerCase().includes("everyone")) return
-  if (message.mentions.has(client.user)) message.channel.send("To get my full list of commands, use the help command. (ex: -help)")
-  var { content } = message
-  content = content.toLowerCase()
-  if (message.author.id !== '298589600132366339') return
-  if (content.includes("lol") || content.includes("lmao")) return message.channel.send('minh moment'),
-    message.react('<:cute02:783469626779500554>')
-})
-
-client.on('message', message => {
-  var { content } = message
   content = content.toLowerCase()
   if (message.author.id !== '396850772488355841') return
   if (content.includes("ur mom") || content.includes("your mom")) return message.react('<:wazowski:735907372920209521>')
-})
-
-client.on('message', message => {
-  var { content } = message
-  content = content.toLowerCase()
-  if (content.includes("christmas")) return message.react('<:caraputechristmas:785676846716026880>')
 })
 
 client.login(process.env.token)
