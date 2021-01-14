@@ -12,7 +12,7 @@ I included the node_modules folder and a Procfile in this repository because I a
 # Bot Commands
 Use the help command to get the most updated list of bot commands. (`-help`)
 ## Fun
-Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Spank, Anime Trivia.
+Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Spank, Anime Trivia, Akinator.
 
 ## Utility 
 Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Imdb, Emoji, Verse, Anime, ServerPicture.

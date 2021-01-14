@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
+    "aki-api": "^5.2.1",
     "alexflipnote.js": "^2.3.3",
     "animequotes": "^1.1.2",
     "atob": "^2.1.2",
