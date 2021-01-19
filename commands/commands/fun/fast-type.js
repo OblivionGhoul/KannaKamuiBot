@@ -16,11 +16,11 @@ module.exports = {
                 sentence += ' ' + argument.split('').join(' ') + ' '
             })
             message.channel.send('Type \'cancel\' or \'end\' to stop the game.')
-            message.reply(`**Type the following message (You have 25 seconds!)**:\n${sentence}`)
+            message.reply(`**Type the following message (You have 20 seconds!)**:\n${sentence}`)
             try {
                 msg = await message.channel.awaitMessages(filter, {
                     max: 1,
-                    time: 25000,
+                    time: 20000,
                     errors: ['time']
                 })
             } catch (ex) {
