@@ -1,4 +1,8 @@
 # Notes
+If you enjoy the bot and want it to keep running, please consider donating [here](https://www.paypal.com/paypalme/kannabot)!
+
+Join my support server [here](https://discord.gg/QpMWndNpse) if you have issues or suggestions!
+
 Invite the bot to your server [here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)!
 
 Visit my website [here](https://oblivionghoul.com/)!
@@ -12,10 +16,10 @@ I included the node_modules folder and a Procfile in this repository because I a
 # Bot Commands
 Use the help command to get the most updated list of bot commands. (`-help`)
 ## Fun
-Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Spank, Anime Trivia, Akinator, Ship, Pat.
+Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Spank, Anime Trivia, Akinator, Ship, Pat, Fast Type.
 
 ## Utility 
-Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Imdb, Emoji, Verse, Anime, ServerPicture.
+Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, Anime, ServerPicture.
 
 ## Moderation
 Ban, Kick, Poll, Close, DM, Nickname, Setprefix.

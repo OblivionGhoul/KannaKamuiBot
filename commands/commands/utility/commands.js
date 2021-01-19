@@ -66,6 +66,7 @@ module.exports = {
             .addField('Kanna', 'Sends a picture of Kanna Kamui (usage: -kanna)')
             .addField('AnimeQuote', 'Sends a quote from a random anime (usage: -animequote)')
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (usage: -ttt [@usertag])')
+            .addField('Fast Type', 'Sends a fast type game (usage: -fasttype)')
             .addField('Spank', 'Spanks a User (usage: -spank [@usertag])')
             .addField('Aki', 'Sends an Akinator Game (usage: -aki)')
             .addField('ChangeMyMind', 'Creates ChangeMyMind meme (usage: -changemymind [text])')
