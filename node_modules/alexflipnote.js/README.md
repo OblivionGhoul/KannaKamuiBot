@@ -39,6 +39,7 @@ Wondering how to get an Auth token to use your API ye? Well head on to https://d
 | `sepia()` | `image` | Sends a Sepia image filter |
 | `communist()` | `image` | Sends a communist image filter |
 | `what()` | `image` | Sends an Earthbound WHAT meme |
+| `shame()` | `image` | Sends you to the Dock of Shame |
 | `colorify()` | `image` `c(optional)` `b(optional)` | Sends a colorify image filter |
 | `floor()` | `image` `text` | The floor is lava |
 | `scroll()` | `text` | Sends the Scroll of Truth |
@@ -81,7 +82,7 @@ All endpoints will return a `Buffer` except birb/cats/dogs/sadcat/color/fml
 I added a typings file and will be working to perfect it. This allows editors like VSC to use intellisense/autocomplete to suggest functions and help out with parameters and to see what you'll be receiving as a result of function calls.
 
 ## Examples
-### Await/Async example
+### Cats Example
 ```js
 const client = require('alexflipnote.js');
 const alexclient = new client('Your-API-Token-Here');

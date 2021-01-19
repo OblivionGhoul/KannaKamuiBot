@@ -24,6 +24,7 @@ declare class AlexClient {
     gay(object: {image: string}):Promise<Buffer>;
     wide(object: {image: string}):Promise<Buffer>;
     sepia(object: {image: string}):Promise<Buffer>;
+    shame(object: {image: string}):Promise<Buffer>;
     communist(object: {image: string}):Promise<Buffer>;
     colorify(object: {image: string, b?: string, c?: string}):Promise<Buffer>;
     floor(object: {image: string, text: string}):Promise<Buffer>;
