@@ -37,7 +37,7 @@
     "txtgen": "^2.2.8",
     "weather-js": "^2.0.0",
     "yt-search": "^2.5.2",
-    "ytdl-core": "^4.4.3"
+    "ytdl-core": "^4.4.5"
   },
   "_moduleAliases": {
     "@root": ".",
