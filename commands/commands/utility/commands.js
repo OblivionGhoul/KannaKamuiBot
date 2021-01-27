@@ -69,7 +69,6 @@ module.exports = {
             .addField('Fast Type', 'Sends a fast type game (usage: -fasttype)')
             .addField('Spank', 'Spanks a User (usage: -spank [@usertag])')
             .addField('Aki', 'Sends an Akinator Game (usage: -aki)')
-            .addField('ChangeMyMind', 'Creates ChangeMyMind meme (usage: -changemymind [text])')
             .addField('Sign', 'Creates a picture of Hifumi with a sign (usage: -sign [text])')
             .addField('PH', 'Creates a PH comment (usage: -ph [text])')
         if (content.includes("fun")) return message.channel.send(fun)

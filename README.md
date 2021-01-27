@@ -67,4 +67,3 @@ Join my discord server above for support. You can also open an issue on GitHub.
 All contributions are welcome! I am new to GitHub and Javascript, so any advice would be great! I will also accept recommendations on new commands.
 # Known Issues
 1. Roast - Errors and shows use %roast @user
-2. ChangeMyMind - Gets stuck on creating image
