@@ -111,7 +111,7 @@ module.exports = {
             .setDescription(
                 'Invite Me To Your Server [Here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)\nPlease Consider Donating [Here](https://www.paypal.com/paypalme/kannabot) To Keep It Running\nAny Issues Or Suggestions? Join My Support Server [Here](https://discord.gg/QpMWndNpse)\nMy Default Prefix Is [-]'
             )
-            .addField('Play', 'Searches Youtube and plays a song (usage: -p [song name] {Youtube links might not work})')
+            .addField('Play', 'Searches Youtube and plays a song (usage: -p [song name])')
             .addField('Pause', 'Pauses what is playing (usage: -pause)')
             .addField('Resume', 'Resumes what is playing (usage: -resume)')
             .addField('Stop', 'Stops playing a song (usage: -stop)')
