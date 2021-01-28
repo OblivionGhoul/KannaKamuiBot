@@ -8,10 +8,12 @@ module.exports = {
         if (serverQueue && !serverQueue.playing) {
             serverQueue.playing = true;
             serverQueue.connection.dispatcher.resume();
+            serverQueue.connection.dispatcher.pause();
+            serverQueue.connection.dispatcher.resume();
             let xd = new MessageEmbed()
                 .setDescription("▶ Resumed the music for you!")
                 .setColor("YELLOW")
-                .setTitle("Music has been Resumed!")
+                .setAuthor("Music has been Resumed!")
                 .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             return message.channel.send(xd);
         }

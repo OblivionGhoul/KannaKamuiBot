@@ -120,6 +120,11 @@ module.exports = {
             .addField('Volume', 'Sets or views current volume (usage: -vol [number])')
             .addField('Now Playing', 'Shows song that is currently playing (usage: -np)')
             .addField('Leave', 'Bot will leave the vc (usage: -leave)')
+            .addField('Loop', 'Loops the music queue (usage: -loop)')
+            .addField('Lyrics', 'Sends the lyrics of a song (usage: -lyrics)')
+            .addField('Remove', 'Removes a song from the queue (usage: -remove [number of song])')
+            .addField('Shuffle', 'Shuffles the songs in the queue (usage: -shuffle)')
+            .addField('SkipTo', 'Skips to a song in the queue (usage: -skipto [number of song])')
         if (content.includes("music")) return message.channel.send(music)
 
         const setUp = new Discord.MessageEmbed()
