@@ -1,0 +1,99 @@
+[
+    {
+      "id": "icebox",
+      "key": "1",
+      "name": "Ice Box",
+      "photos": [[{
+      "minimap": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt727aeefa1875f8ce/5fc9954afd99385ff600b0f6/Icebox_1a.jpg",
+      "minimap_2": "https://static.wikia.nocookie.net/valorant/images/1/1c/TX_Map_Port_FogOfWar.png/revision/latest?cb=20201015084052",
+      "screenshot_1": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt9ef7b41910a14118/5f80debff6c586323f8b17a3/icebox_1.jpg",
+      "screenshot_2": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6c01692b82ba6ace/5f80debe9245d74a2063d3c5/icebox_2.jpg",
+      "screenshot_3": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta5558199bebb5107/5f80debfa50ed742e7fca4b9/icebox_3.jpg",
+      "screenshot_4": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6c9b4fb24870f16d/5f80dec0f9d3bf27fac3a05f/icebox_4.jpg",
+      "screenshot_5": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt5e97ee30cae1b6b6/5f80dec04671ee30c689ca24/icebox_5.jpg",
+      "screenshot_6": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltd665c580a4b876c2/5f80debf271ecf4a1a642fe2/icebox_6.jpg",
+      "screenshot_7": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt3073fafdd0e84ca8/5f80dec03f52332642075f9b/icebox_7.jpg",
+      "screenshot_8": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt9e6c8e8f66a5fcad/5f80debface59e4b82915f48/icebox8.jpg"
+      }]],
+      "informations": {
+        "about_map": "Your next battleground is a secret Kingdom excavation site overtaken by the arctic. The two plant sites protected by snow and metal require some horizontal finesse. Take advantage of the ziplines and they’ll never see you coming.",
+        "coordinate": ["76°44'N149°30'E", "Russia"],
+        "callouts": [["Site", "Back", "Tube", "Hall", "Blue", "Spawn", "Lobby", "Green", "Garage", "Alley", "Main", "Rafters", "Kitchen", "Boiler", "Elbow", "Orange", "Belt", "Pipes", "Nest", "Screen", "Snowman", "Cubby", "Wires", "Snow Pile", "Hut", "Yellow", "Crawl", "Fence", "Pallet", "Harry Potter (Community created)"]]
+
+      }
+    },
+      {
+        "id": "bind",
+        "key": "2",
+        "name": "Bind",
+        "photos": [[{
+        "minimap": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltad4274632c983531/5ecd64d04d187c101f3f2486/bind-minimap-2.png",
+        "minimap_2": "https://static.wikia.nocookie.net/valorant/images/d/dd/Bind_mini-map_2.png/revision/latest/scale-to-width-down/185?cb=20200408013537",
+        "screenshot_1": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltc54ad3a88d94a4d6/5eabe92eaf7e315106b4799b/bind1.jpg",
+        "screenshot_2": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt4d395d5eb0c5aeec/5eabe92d97c0a55d71b7fce5/bind2.jpg",
+        "screenshot_3": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt275a73b80ff9eb5a/5eabe92db8a6356e4ddc0c92/bind3.jpg",
+        "screenshot_4": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt81c2ff999b2e5887/5eabe92d08d37e6d82ef715a/bind4.jpg",
+        "screenshot_5": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta6be60823002f711/5eabe92d4398082ffe23fdb5/bind5.jpg",
+        "screenshot_6": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta7ba841d52448022/5eabe92e2b79652f27c326c4/bind6.jpg"
+        }]],
+        "informations": {
+          "about_map": "Two sites. No middle. Gotta pick left or right. What’s it going to be then? Both offer direct paths for attackers and a pair of one-way teleporters make it easier to flank.",
+          "coordinate": ["34°2'N6°51'W", "Morocco"],
+          "callouts": [["A Site", "B Site", "Bath", "Cave", "Cubby", "Elbow", "Exit", "Fountain", "Garden", "Hall", "Lamps", "Link", "Lobby", "Long", "Short", "Site", "Spawn", "Teleporter", "Tower", "Window"]]
+        }
+    },
+    {
+        "id": "haven",
+        "key": "3",
+        "name": "Haven",
+        "photos": [[{
+        "minimap": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltedb5d57941e4f3f5/5ecd64c14d187c101f3f2484/haven-minimap-2.png",
+        "minimap_2": "https://static.wikia.nocookie.net/valorant/images/1/13/Haven_mini-map.png/revision/latest/scale-to-width-down/350?cb=20200408013354",
+        "screenshot_1": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt7df0b99a582cc5aa/5eabe987b8a6356e4ddc0ca4/haven1.jpg",
+        "screenshot_2": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt65a4029cdfaf77b4/5eabe9861b51e36d7c1b67ab/haven2.jpg",
+        "screenshot_3": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt2bd976c100216469/5eabe98608d37e6d82ef7160/haven3.jpg",
+        "screenshot_4": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt768f194cd2c52f84/5eabe9862b79652f27c326ca/haven4.jpg"
+        }]],
+        "informations": {
+          "about_map": "Beneath a forgotten monastery, a clamour emerges from rival Agents clashing to control three sites. There’s more territory to control, but defenders can use the extra real estate for aggressive pushes.",
+          "coordinate": ["27°28'N89°38'E", "Bhutan"],
+          "callouts": [["A Site", "B Site", "Back", "C Site", "Courtyard", "Cubby", "Hay Bales", "Garage", "Garden", "Link", "Lobby", "Long", "Sewer", "Short", "Site", "Spawn", "Tower", "Tower", "Window (on C site)", "Window (on Mid)"]]
+        }
+    },
+    {
+        "id": "split",
+        "key": "4",
+        "name": "Split",
+        "photos": [[{
+        "minimap": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt2caea7a88362d6aa/5ecd64b0817e574fa1dcc162/split-minimap-2.png",
+        "minimap_2": "https://static.wikia.nocookie.net/valorant/images/f/f2/Split_mini-map.png/revision/latest?cb=20200408012547",
+        "screenshot_1": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt643d33e2defb855c/5eabe9fe248a28605479c547/split1.jpg",
+        "screenshot_2": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt8114d8ae57703cf8/5ed81946bf4ae52c761ec8e8/split2-2.jpg",
+        "screenshot_3": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltdfd43bd79d9b3410/5eabe9fea20afe612d82f833/split3.jpg",
+        "screenshot_4": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltf7a4f75409f2dbc1/5ed81936047b8c2b9c25fe74/split4-2.jpg"
+        }]],
+        "informations": {
+          "about_map": "If you want to go far, you’ll have to go up. A pair of sites split by an elevated center allows for rapid movement using two rope ascenders. Each site is built with a looming tower vital for control. Remember to watch above before it all blows sky-high.",
+          "coordinate": ["35°41'N139°41'E", "Japan"],
+          "callouts": [["A Site", "B Site", "Alley", "Back", "Bottom", "Garage", "Link", "Lobby", "Mail", "Main", "Rafters", "Ramps", "Screens", "Sewer", "Site", "Spawn", "Stairs", "Top", "Tower", "Vent"]]
+        }
+    },
+    {
+        "id": "ascent",
+        "key": "5",
+        "name": "Ascent",
+        "photos": [[{
+        "minimap": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt47bef6aa9e43d8ec/5ecd64df96a8996de38bbf8f/ascent-minimap-2.jpg",
+        "minimap_2": "https://static.wikia.nocookie.net/valorant/images/5/55/Ascent-B.png/revision/latest/scale-to-width-down/350?cb=20200510031307",
+        "screenshot_1": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt930666d9ab927326/5eabe9c45751b2150e57a42c/ascent1.jpg",
+        "screenshot_2": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt9e24fe356d0faf81/5eabe9c497c0a55d71b7fceb/ascent2.jpg",
+        "screenshot_3": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt77e465b8079103af/5eabe9c4af7e315106b479a1/ascent3.jpg",
+        "screenshot_4": "https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta7375f4e704347dc/5eabe9c4b8a6356e4ddc0caa/ascent4.jpg"
+        }]],
+        "informations": {
+          "about_map": "An open playground for small wars of position and attrition divide two sites on Ascent. Each site can be fortified by irreversible bomb doors; once they’re down, you’ll have to destroy them or find another way. Yield as little territory as possible.",
+          "coordinate": ["45°26'N12°20'E", "Italy"],
+          "callouts": [["A Site", "B Site", "Boat House", "Bottom", "Catwalk", "Courtyard", "Cubby", "Garden", "Link", "Lobby", "Main", "Market", "Pizza", "Rafters", "Site", "Spawn", "Top", "Tree", "Window", "Wine"]]
+        }
+    }
+]

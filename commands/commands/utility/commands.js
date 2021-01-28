@@ -4,11 +4,6 @@ const Discord = require('discord.js');
 module.exports = {
     commands: ['commands', 'help'],
     callback: async (message) => {
-        const vote = new Discord.MessageEmbed()
-            .setTitle('Voting help')
-            .setDescription('To vote, do -vote. It will then open a voting channel for you. Please state who you want to vote for or who you want to nominate in that channel.')
-            .addField('For Admins', 'Using this command in the vote channels will give you options (ex: -vote-info)')
-
         const inn = new Discord.MessageEmbed()
             .setTitle('Inn Commands')
             .setDescription('These commands will only work in the Inn.')
@@ -24,7 +19,6 @@ module.exports = {
 
         let content = message.content.substring(message.content.indexOf(' ') + 1)
         content = content.toLowerCase()
-        if (content.includes("vote")) return message.channel.send(vote)
         if (content.includes("inn")) return message.channel.send(inn)
 
         const moderation = new Discord.MessageEmbed()
@@ -36,9 +30,7 @@ module.exports = {
             .addField('Kick', 'Kicks a user (usage: -kick @usertag)')
             .addField('Poll', 'Creates a poll (usage: -poll [#channelname] [Question])')
             .addField('Close', 'Deletes a channel (usage: -close)')
-            .addField('DM', 'DMs a user (usage: -dm [@user or user ID][message text])')
             .addField('Nickname', 'Changes a user nickname (usage: -nickname [@usertag])')
-            .addField('Setprefix', 'Changes the prefix of the bot (usage: -setprefix [new prefix])')
         if (content.includes("mod")) return message.channel.send(moderation)
 
         const fun = new Discord.MessageEmbed()
@@ -46,7 +38,6 @@ module.exports = {
             .setDescription(
                 'Invite Me To Your Server [Here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)\nPlease Consider Donating [Here](https://www.paypal.com/paypalme/kannabot) To Keep It Running\nAny Issues Or Suggestions? Join My Support Server [Here](https://discord.gg/QpMWndNpse)\nMy Default Prefix Is [-]'
             )
-            .addField('Anime Trivia', 'Sends an anime trivia question (usage: -animetrivia)')
             .addField('Meme', 'Sends a meme in the chat (usage: -meme)')
             .addField('Roast', 'Roasts a user (usage: -roast @usertag)')
             .addField('Ascii', 'Sends cool text (usage: -ascii [text])')
@@ -63,13 +54,10 @@ module.exports = {
             .addField('Pat', 'Pats a user (usage: -pat [@usertag])')
             .addField('Cat', 'Sends a picture of a cat (usage: -cat)')
             .addField('Hug', 'Hugs someone (usage: -hug [@usertag])')
-            .addField('Kanna', 'Sends a picture of Kanna Kamui (usage: -kanna)')
-            .addField('AnimeQuote', 'Sends a quote from a random anime (usage: -animequote)')
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (usage: -ttt [@usertag])')
             .addField('Fast Type', 'Sends a fast type game (usage: -fasttype)')
             .addField('Spank', 'Spanks a User (usage: -spank [@usertag])')
             .addField('Aki', 'Sends an Akinator Game (usage: -aki)')
-            .addField('Sign', 'Creates a picture of Hifumi with a sign (usage: -sign [text])')
             .addField('PH', 'Creates a PH comment (usage: -ph [text])')
         if (content.includes("fun")) return message.channel.send(fun)
 
@@ -94,9 +82,9 @@ module.exports = {
             .addField('Ping', 'Gets the ping of the bot (usage: -ping)')
             .addField('Emoji', 'Sends all server emojis (usage: -emoji)')
             .addField('Verse', 'Sends a bible bible verse (usage: -verse)')
-            .addField('Anime', 'Sends info about an anime (usage: -anime [anime name])')
             .addField('Emoji Info', 'Gets the info of an emoji (usage: -emojiinfo [emoji or emoji name])')
             .addField('Server Picture', 'Sends the pfp of the server (usage: -serverpicture)')
+            .addField('Setprefix', 'Changes the prefix of the bot (usage: -setprefix [new prefix])')
         if (content.includes("util")) return message.channel.send(utility)
 
         const economy = new Discord.MessageEmbed()
@@ -154,15 +142,29 @@ module.exports = {
         )
         .addField('Val Stats', 'Sends a player\'s Valorant Stats (usage: -valstats [name] [tag])')
         .addField('Val Matches', 'Sends a player\'s Last 3 Matches (usage: -valmatches [name] [tag])')
-        .addField('Val Maps', 'Sends a Valorant Map (usage: -valmap [map name])')
+        .addField('Val Maps', 'Sends info of a Valorant Map (usage: -valmap [map name])')
+        .addField('Val Agent', 'Sends info of a Valorant Agent (usage: -valagent [agent name])')
         if (content.includes("val")) return message.channel.send(val)
+
+        const anime = new Discord.MessageEmbed()
+        .setTitle('Anime Commands')
+        .setDescription(
+            'Invite Me To Your Server [Here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)\nPlease Consider Donating [Here](https://www.paypal.com/paypalme/kannabot) To Keep It Running\nAny Issues Or Suggestions? Join My Support Server [Here](https://discord.gg/QpMWndNpse)\nMy Default Prefix Is [-]'
+        )
+        .addField('Anime Trivia', 'Sends an anime trivia question (usage: -animetrivia)')
+        .addField('Kanna', 'Sends a picture of Kanna Kamui (usage: -kanna)')
+        .addField('AnimeQuote', 'Sends a quote from a random anime (usage: -animequote)')
+        .addField('Sign', 'Creates a picture of Hifumi with a sign (usage: -sign [text])')
+        .addField('Anime', 'Sends info about an anime (usage: -anime [anime name])')
+        if (content.includes("anime")) return message.channel.send(anime)
 
         const pages = [
             fun,
             utility,
-            moderation,
+            anime,
             music,
             val,
+            moderation,
             dev,
             nsfw,
             setUp

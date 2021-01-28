@@ -34,7 +34,7 @@ Docs, Channel, Execute.
 Hass, Hmidriff, Pgif, 4k, Hentai, Hneko, Hkitsune, Anal, Hanal, Gonewild, Ass, Pussy, Thigh, Hthigh, Paizuri, Tentacle, Boobs, Hboobs.
 
 ## Valorant
-Valorant Stats, Valorant Matches, Valorant Map
+Valorant Stats, Valorant Matches, Valorant Map, Valorant Agent. 
 
 # Setting Up Welcome Messages
 Use this command in the welcome channel to set up welcome messages. (Please note that you can do "<@>" to send the username of the user that just joined. You can also do `-simwelcome` to test welcome messages.)
@@ -65,5 +65,7 @@ Use this command in the leave channel to set up leave messages. (Please note tha
 Join my discord server above for support. You can also open an issue on GitHub. 
 # Contributions
 All contributions are welcome! I am new to GitHub and Javascript, so any advice would be great! I will also accept recommendations on new commands.
+
+Special thanks to [Henrik](https://github.com/Henrik-3) for letting me use his unofficial [ValorantAPI](https://github.com/Henrik-3/unofficial-valorant-api)!
 # Known Issues
 1. Roast - Errors and shows use %roast @user
