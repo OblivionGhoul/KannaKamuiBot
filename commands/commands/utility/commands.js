@@ -113,6 +113,7 @@ module.exports = {
             .addField('Remove', 'Removes a song from the queue (usage: -remove [number of song])')
             .addField('Shuffle', 'Shuffles the songs in the queue (usage: -shuffle)')
             .addField('SkipTo', 'Skips to a song in the queue (usage: -skipto [number of song])')
+            .addField('Playlist', 'Queues a Youtube Playlist (usage: -playlist [playlist name or link])')
         if (content.includes("music")) return message.channel.send(music)
 
         const setUp = new Discord.MessageEmbed()
