@@ -73,6 +73,7 @@ module.exports = {
             .setDescription(
                 'Invite Me To Your Server [Here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)\nPlease Consider Donating [Here](https://www.paypal.com/paypalme/kannabot) To Keep It Running\nAny Issues Or Suggestions? Join My Support Server [Here](https://discord.gg/QpMWndNpse)\nMy Default Prefix Is [-]'
             )
+            .addField('Spotify', 'Sends A User\'s Spotify Discord Status (usage: -spotify [@usertag])')
             .addField('Cal', 'Calculator (ex: -cal 234+23432)')
             .addField('UserInfo', 'Gets the info of a user (usage: -userinfo @usertag)')
             .addField('Avatar', 'Sends avatar of a user (usage: -avatar [@usertag (optional)])')
