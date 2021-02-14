@@ -1,20 +1,14 @@
 require('module-alias/register')
-
 const Discord = require('discord.js')
 const client = new Discord.Client()
-client.queue = new Map()
-
 const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
 const loadFeatures = require('@root/features/load-features')
-const { badwords } = require('@root/data.json')
-
+client.queue = new Map()
 
 client.on('ready', async () => {
   try {
-    let serverIn = client.guilds.size;
     console.log('I am ready!');
-
     function pickStatus() {
       let status = [`over ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users!`, `over ${client.guilds.cache.size.toLocaleString()} servers!`]; //change change status
       let Status = Math.floor(Math.random() * status.length);
@@ -57,22 +51,6 @@ client.on('guildMemberRemove', member => {
   client.channels.cache.get(stats.member).setName(`Members: ${member.guild.members.cache.filter(m => !m.user.bot).size}`);
   client.channels.cache.get(stats.bots).setName(`Bots: ${member.guild.members.cache.filter(m => m.user.bot).size}`);
 })
-//checks for certain words
-client.on('message', async message => {
-  if (message.author.bot) return;
-  if (!message.member.hasPermission("BAN_MEMBERS")) {
-    let confirm = false;
-    var i;
-    for (i = 0; i < badwords.length; i++) {
-      if (message.content.toLowerCase().includes(badwords[i].toLowerCase()))
-        confirm = true;
-    }
-    if (confirm) {
-      message.delete()
-      return message.channel.send("You are not allowed to say that.")
-    }
-  }
-});
 
 client.on('message', message => {
   var { content } = message
