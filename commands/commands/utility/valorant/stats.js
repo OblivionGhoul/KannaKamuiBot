@@ -11,6 +11,8 @@ module.exports = {
         }
         axios.get(`https://api.henrikdev.xyz/valorant/v2/profile/${profile}/${tag}`)
             .then(function (response) {
+                let kd = response.data.stats.kills / response.data.stats.deaths
+                kd = kd.toFixed(2)
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${response.data.user}'s Valorant Profile`)
                 .addField('Rank', response.data.stats.rank, true)
@@ -19,7 +21,7 @@ module.exports = {
                 .addField('Kills', response.data.stats.kills, true)
                 .addField('Deaths', response.data.stats.deaths, true)
                 .addField('Assists', response.data.stats.assists, true)
-                .addField('K/D', response.data.stats.kdratio, true)
+                .addField('K/D', kd, true)
                 .addField('Headshots', response.data.stats.headshots, true)
                 .addField('Headshot Percentage', response.data.stats.headshotpercentage, true)
                 .addField('Wins', response.data.stats.wins, true)

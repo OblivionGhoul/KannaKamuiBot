@@ -7,10 +7,20 @@ module.exports = {
         const profile = args[0]
         const tag = args[1]
         if (!args[0] || !args[1]) {
-            message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valmapstats [name] [tag])')
+            message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valstats [name] [tag])')
         }
         axios.get(`https://api.henrikdev.xyz/valorant/v2/profile/${profile}/${tag}`)
             .then(function (response) {
+                let kd1 = response.data.maps[0].kills / response.data.maps[0].deaths
+                kd1 = kd1.toFixed(2)
+                let kd2 = response.data.maps[1].kills / response.data.maps[1].deaths
+                kd2 = kd2.toFixed(2)
+                let kd3 = response.data.maps[2].kills / response.data.maps[2].deaths
+                kd3 = kd3.toFixed(2)
+                let kd4 = response.data.maps[3].kills / response.data.maps[3].deaths
+                kd4 = kd4.toFixed(2)
+                let kd5 = response.data.maps[4].kills / response.data.maps[4].deaths
+                kd5 = kd5.toFixed(2)
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${response.data.user}'s Map Stats`)
                 .addField(response.data.maps[0].map, `
@@ -19,7 +29,7 @@ module.exports = {
                 **Kills**: ${response.data.maps[0].kills}
                 **Deaths**: ${response.data.maps[0].deaths}
                 **Assists**: ${response.data.maps[0].assists}
-                **K/D**: ${response.data.maps[0].kdratio}
+                **K/D**: ${kd1}
                 **Headshots**: ${response.data.maps[0].headshots}
                 **Headshot Percentage**: ${response.data.maps[0].headshotpercentage}
                 **Wins**: ${response.data.maps[0].wins}
@@ -35,7 +45,7 @@ module.exports = {
                 **Kills**: ${response.data.maps[1].kills}
                 **Deaths**: ${response.data.maps[1].deaths}
                 **Assists**: ${response.data.maps[1].assists}
-                **K/D**: ${response.data.maps[1].kdratio}
+                **K/D**: ${kd2}
                 **Headshots**: ${response.data.maps[1].headshots}
                 **Headshot Percentage**: ${response.data.maps[1].headshotpercentage}
                 **Wins**: ${response.data.maps[1].wins}
@@ -51,7 +61,7 @@ module.exports = {
                 **Kills**: ${response.data.maps[2].kills}
                 **Deaths**: ${response.data.maps[2].deaths}
                 **Assists**: ${response.data.maps[2].assists}
-                **K/D**: ${response.data.maps[2].kdratio}
+                **K/D**: ${kd3}
                 **Headshots**: ${response.data.maps[2].headshots}
                 **Headshot Percentage**: ${response.data.maps[2].headshotpercentage}
                 **Wins**: ${response.data.maps[2].wins}
@@ -67,7 +77,7 @@ module.exports = {
                 **Kills**: ${response.data.maps[3].kills}
                 **Deaths**: ${response.data.maps[3].deaths}
                 **Assists**: ${response.data.maps[3].assists}
-                **K/D**: ${response.data.maps[3].kdratio}
+                **K/D**: ${kd4}
                 **Headshots**: ${response.data.maps[3].headshots}
                 **Headshot Percentage**: ${response.data.maps[3].headshotpercentage}
                 **Wins**: ${response.data.maps[3].wins}
@@ -83,7 +93,7 @@ module.exports = {
                 **Kills**: ${response.data.maps[4].kills}
                 **Deaths**: ${response.data.maps[4].deaths}
                 **Assists**: ${response.data.maps[4].assists}
-                **K/D**: ${response.data.maps[4].kdratio}
+                **K/D**: ${kd5}
                 **Headshots**: ${response.data.maps[4].headshots}
                 **Headshot Percentage**: ${response.data.maps[4].headshotpercentage}
                 **Wins**: ${response.data.maps[4].wins}
@@ -99,8 +109,8 @@ module.exports = {
                 message.channel.send(embed)
             })
             .catch(function (error) {
-                message.channel.send(error.response.data.message)
-                message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valmapstats [name] [tag])')
+                console.log(error)
+                message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valstats [name] [tag])')
             })
     },
 }
