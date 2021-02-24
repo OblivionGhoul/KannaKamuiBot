@@ -6,7 +6,7 @@ const { MessageEmbed } = require("discord.js"),
 module.exports = {
     commands: ['aki', 'akinator'],
     callback: async (message) => {
-        message.channel.send('Please wait for the game to fully start up. If the reactions are not working, unreact and react again.')
+        message.channel.send('Please wait for the game to fully start up. If the reactions are not working, unreact and react again. If the game does not load, use the command again.')
         if (!Started.has(message.author.id)) Started.add(message.author.id);
         else return message.channel.send("**:x: | The game already started..**");
         const aki = new Aki("en");

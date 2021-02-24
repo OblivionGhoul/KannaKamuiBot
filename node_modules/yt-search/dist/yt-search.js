@@ -18,7 +18,32 @@ var _require = require('./util.js'),
     _findLine = _require._findLine,
     _between = _require._between;
 
-var _jp = require('jsonpath'); // google bot user-agent
+var MAX_RETRY_ATTEMPTS = 3;
+var RETRY_INTERVAL = 333; // ms
+
+var jpp = require('jsonpath-plus').JSONPath;
+
+var _jp = {}; // const items = _jp.query( json, '$..itemSectionRenderer..contents.*' )
+
+_jp.query = function (json, path) {
+  var opts = {
+    path: path,
+    json: json,
+    resultType: 'value'
+  };
+  return jpp(opts);
+}; // const listId = hasList && ( _jp.value( item, '$..playlistId' ) )
+
+
+_jp.value = function (json, path) {
+  var opts = {
+    path: path,
+    json: json,
+    resultType: 'value'
+  };
+  var r = jpp(opts)[0];
+  return r;
+}; // google bot user-agent
 // Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
 // use fixed user-agent to get consistent html page documents as
 // it varies depending on the user-agent
@@ -70,6 +95,15 @@ module.exports = function (query, callback) {
 };
 
 module.exports.search = search;
+module.exports._parseSearchResultInitialData = _parseSearchResultInitialData;
+module.exports._parseVideoInitialData = _parseVideoInitialData;
+module.exports._parsePlaylistInitialData = _parsePlaylistInitialData;
+module.exports._videoFilter = _videoFilter;
+module.exports._playlistFilter = _playlistFilter;
+module.exports._channelFilter = _channelFilter;
+module.exports._liveFilter = _liveFilter;
+module.exports._allFilter = _allFilter;
+module.exports._parsePlaylistLastUpdateTime = _parsePlaylistLastUpdateTime;
 /**
  * Main
  */
@@ -93,6 +127,31 @@ function search(query, callback) {
     };
   } else {
     _options = query;
+  } // init and increment attempts
+
+
+  _options._attempts = (_options._attempts || 0) + 1; // save unmutated bare necessary options for retry
+
+  var retryOptions = Object.assign({}, _options);
+
+  function callback_with_retry(err, data) {
+    if (err) {
+      if (_options._attempts > MAX_RETRY_ATTEMPTS) {
+        return callback(err, data);
+      } else {
+        // retry
+        debug(' === ');
+        debug(' RETRYING: ' + _options._attempts);
+        debug(' === ');
+        var n = _options._attempts;
+        var wait_ms = Math.pow(2, n - 1) * RETRY_INTERVAL;
+        setTimeout(function () {
+          search(retryOptions, callback);
+        }, wait_ms);
+      }
+    } else {
+      return callback(err, data);
+    }
   } // override userAgent if set ( not recommended )
 
 
@@ -103,12 +162,12 @@ function search(query, callback) {
   _options.original_search = _options.search; // ignore query, only get metadata from specific video id
 
   if (_options.videoId) {
-    return getVideoMetaData(_options.videoId, callback);
+    return getVideoMetaData(_options.videoId, callback_with_retry);
   } // ignore query, only get metadata from specific playlist id
 
 
   if (_options.listId) {
-    return getPlaylistMetaData(_options.listId, callback);
+    return getPlaylistMetaData(_options.listId, callback_with_retry);
   }
 
   if (!_options.search) {
@@ -118,7 +177,7 @@ function search(query, callback) {
   work();
 
   function work() {
-    getSearchResults(_options, callback);
+    getSearchResults(_options, callback_with_retry);
   }
 }
 
@@ -380,7 +439,12 @@ function _parseSearchResultInitialData(responseText, callback) {
   var results = [];
   var json = JSON.parse(initialData[0]);
 
-  var items = _jp.query(json, '$..itemSectionRenderer..contents.*');
+  var items = _jp.query(json, '$..itemSectionRenderer..contents.*'); // support newer richGridRenderer html structure
+
+
+  _jp.query(json, '$..primaryContents..contents.*').forEach(function (item) {
+    items.push(item);
+  });
 
   debug('items.length: ' + items.length);
 
@@ -388,9 +452,12 @@ function _parseSearchResultInitialData(responseText, callback) {
     var item = items[_i];
     var result = undefined;
     var type = 'unknown';
-    var hasList = item.compactPlaylistRenderer || item.playlistRenderer;
-    var hasChannel = item.compactChannelRenderer || item.channelRenderer;
-    var hasVideo = item.compactVideoRenderer || item.videoRenderer;
+
+    var hasList = _jp.value(item, '$..compactPlaylistRenderer') || _jp.value(item, '$..playlistRenderer');
+
+    var hasChannel = _jp.value(item, '$..compactChannelRenderer') || _jp.value(item, '$..channelRenderer');
+
+    var hasVideo = _jp.value(item, '$..compactVideoRenderer') || _jp.value(item, '$..videoRenderer');
 
     var listId = hasList && _jp.value(item, '$..playlistId');
 
@@ -401,8 +468,8 @@ function _parseSearchResultInitialData(responseText, callback) {
     var watchingLabel = _jp.query(item, '$..viewCountText..text').join('');
 
     var isUpcoming = // if scheduled livestream (has not started yet)
-    _jp.query(item, '$..thumbnailOverlayTimeStatusRenderer..style').join('').trim() === 'UPCOMING';
-    var isLive = watchingLabel.indexOf('watching') >= 0 || _jp.query(item, '$..thumbnailOverlayTimeStatusRenderer..text').join('').trim() === 'LIVE' || isUpcoming;
+    _jp.query(item, '$..thumbnailOverlayTimeStatusRenderer..style').join('').toUpperCase().trim() === 'UPCOMING';
+    var isLive = watchingLabel.indexOf('watching') >= 0 || _jp.query(item, '$..badges..label').join('').toUpperCase().trim() === 'LIVE NOW' || _jp.query(item, '$..thumbnailOverlayTimeStatusRenderer..text').join('').toUpperCase().trim() === 'LIVE' || isUpcoming;
 
     if (videoId) {
       type = 'video';
@@ -807,21 +874,54 @@ function _parsePlaylistInitialData(responseText, callback) {
   }
 
   var json = JSON.parse(jsonString); //console.log( json )
-  // TODO parse relevant json data with jsonpath
+  // check for errors (ex: noexist/unviewable playlist)
+
+  var plerr = _jp.value(json, '$..alerts..alertRenderer');
+
+  if (plerr && typeof plerr.type === 'string' && plerr.type.toLowerCase() === 'error') {
+    var plerrtext = 'playlist error, not found?';
+
+    if (_typeof(plerr.text) === 'object') {
+      plerrtext = _jp.query(plerr.text, '$..text').join('');
+    }
+
+    if (typeof plerr.text === 'string') {
+      plerrtext = plerr.text;
+    }
+
+    throw new Error('playlist error: ' + plerrtext);
+  }
 
   var listId = _jp.value(json, '$..microformat..urlCanonical').split('=')[1]; // console.log( 'listId: ' + listId )
 
 
-  var viewCount = _jp.value(json, '$..sidebar.playlistSidebarRenderer.items[0]..stats[1].simpleText').match(/\d+/); // console.log( 'viewCount: ' + viewCount )
-  // playlistVideoListRenderer contents
+  var viewCount = 0;
+
+  try {
+    var viewCountLabel = _jp.value(json, '$..sidebar.playlistSidebarRenderer.items[0]..stats[1].simpleText');
+
+    if (viewCountLabel.toLowerCase() === 'no views') {
+      viewCount = 0;
+    } else {
+      viewCount = viewCountLabel.match(/\d+/g).join('');
+    }
+  } catch (err) {
+    /* ignore */
+  }
+
+  var size = (_jp.value(json, '$..sidebar.playlistSidebarRenderer.items[0]..stats[0].simpleText') || _jp.query(json, '$..sidebar.playlistSidebarRenderer.items[0]..stats[0]..text').join('')).match(/\d+/g).join(''); // playlistVideoListRenderer contents
 
 
-  var list = _jp.query(json, '$..playlistVideoListRenderer..contents')[0]; // const list = _jp.query( json, '$..contents..tabs[0]..contents[0]..contents[0]..contents' )[ 0 ]
+  var list = _jp.query(json, '$..playlistVideoListRenderer..contents')[0]; // TODO unused atm
 
+
+  var listHasContinuation = _typeof(list[list.length - 1].continuationItemRenderer) === 'object'; // const list = _jp.query( json, '$..contents..tabs[0]..contents[0]..contents[0]..contents' )[ 0 ]
 
   var videos = [];
-  list.forEach(function (playlistVideoRenderer) {
-    var json = playlistVideoRenderer;
+  list.forEach(function (item) {
+    if (!item.playlistVideoRenderer) return; // skip
+
+    var json = item;
 
     var duration = _parseDuration(_jp.value(json, '$..lengthText..simpleText') || _jp.value(json, '$..thumbnailOverlayTimeStatusRenderer..simpleText') || _jp.query(json, '$..lengthText..text').join('') || _jp.query(json, '$..thumbnailOverlayTimeStatusRenderer..text').join(''));
 
@@ -829,7 +929,7 @@ function _parsePlaylistInitialData(responseText, callback) {
       title: _jp.value(json, '$..title..simpleText') || _jp.value(json, '$..title..text') || _jp.query(json, '$..title..text').join(''),
       videoId: _jp.value(json, '$..videoId'),
       listId: listId,
-      thumbnail: _jp.value(json, '$..thumbnail..thumbnails[0]..url').split('?')[0],
+      thumbnail: _normalizeThumbnail(_jp.value(json, '$..thumbnail..url')) || _normalizeThumbnail(_jp.value(json, '$..thumbnails..url')) || _normalizeThumbnail(_jp.value(json, '$..thumbnails')),
       // ref: issue #35 https://github.com/talmobi/yt-search/issues/35
       duration: duration,
       author: {
@@ -841,15 +941,18 @@ function _parsePlaylistInitialData(responseText, callback) {
   }); // console.log( videos )
   // console.log( 'videos.length: ' + videos.length )
 
+  var plthumbnail = _normalizeThumbnail(_jp.value(json, '$..microformat..thumbnail..url')) || _normalizeThumbnail(_jp.value(json, '$..microformat..thumbnails..url')) || _normalizeThumbnail(_jp.value(json, '$..microformat..thumbnails'));
+
   var playlist = {
     title: _jp.value(json, '$..microformat..title'),
     listId: listId,
     url: 'https://youtube.com/playlist?list=' + listId,
+    size: Number(size),
     views: Number(viewCount),
     // lastUpdate: lastUpdate,
     date: _parsePlaylistLastUpdateTime(_jp.value(json, '$..sidebar.playlistSidebarRenderer.items[0]..stats[2]..simpleText') || _jp.query(json, '$..sidebar.playlistSidebarRenderer.items[0]..stats[2]..text').join('') || ''),
-    image: videos[0].thumbnail,
-    thumbnail: videos[0].thumbnail,
+    image: plthumbnail || videos[0].thumbnail,
+    thumbnail: plthumbnail || videos[0].thumbnail,
     // playlist items/videos
     videos: videos,
     author: {
@@ -861,24 +964,53 @@ function _parsePlaylistInitialData(responseText, callback) {
 }
 
 function _parsePlaylistLastUpdateTime(lastUpdateLabel) {
-  debug('fn: _parsePlaylistLastUpdateTime'); // ex "Last Updated on Jun 25, 2018"
-  // ex: "Viimeksi päivitetty 25.6.2018"
+  debug('fn: _parsePlaylistLastUpdateTime');
+  var DAY_IN_MS = 1000 * 60 * 60 * 24;
 
-  var words = lastUpdateLabel.trim().split(/[\s.-]+/);
+  try {
+    // ex "Last Updated on Jun 25, 2018"
+    // ex: "Viimeksi päivitetty 25.6.2018"
+    var words = lastUpdateLabel.toLowerCase().trim().split(/[\s.-]+/);
 
-  for (var i = 0; i < words.length; i++) {
-    var slice = words.slice(i);
-    var t = slice.join(' ');
-    var r = slice.reverse().join(' ');
+    if (words.length > 0) {
+      var lastWord = words[words.length - 1].toLowerCase();
 
-    var _a = new Date(t);
+      if (lastWord === 'yesterday') {
+        var ms = Date.now() - DAY_IN_MS;
+        var d = new Date(ms); // a day earlier than today
 
-    var b = new Date(r);
-    if (_a.toString() !== 'Invalid Date') return _toInternalDateString(_a);
-    if (b.toString() !== 'Invalid Date') return _toInternalDateString(b);
+        if (d.toString() !== 'Invalid Date') return _toInternalDateString(d);
+      }
+    }
+
+    if (words.length >= 2) {
+      // handle strings like "7 days ago"
+      if (words[0] === 'updated' && words[2].slice(0, 3) === 'day') {
+        var _ms = Date.now() - DAY_IN_MS * words[1];
+
+        var _d = new Date(_ms); // a day earlier than today
+
+
+        if (_d.toString() !== 'Invalid Date') return _toInternalDateString(_d);
+      }
+    }
+
+    for (var i = 0; i < words.length; i++) {
+      var slice = words.slice(i);
+      var t = slice.join(' ');
+      var r = slice.reverse().join(' ');
+
+      var _a = new Date(t);
+
+      var b = new Date(r);
+      if (_a.toString() !== 'Invalid Date') return _toInternalDateString(_a);
+      if (b.toString() !== 'Invalid Date') return _toInternalDateString(b);
+    }
+
+    return '';
+  } catch (err) {
+    return '';
   }
-
-  return '';
 }
 
 function _toInternalDateString(date) {
@@ -1087,7 +1219,7 @@ function test(query) {
   });
 }
 
-},{"./util.js":2,"async.parallellimit":undefined,"cheerio":undefined,"dasu":undefined,"fs":undefined,"human-time":undefined,"jsonpath":undefined,"path":undefined,"querystring":undefined,"url":undefined}],2:[function(require,module,exports){
+},{"./util.js":2,"async.parallellimit":undefined,"cheerio":undefined,"dasu":undefined,"fs":undefined,"human-time":undefined,"jsonpath-plus":undefined,"path":undefined,"querystring":undefined,"url":undefined}],2:[function(require,module,exports){
 "use strict";
 
 var _cheerio = require('cheerio');

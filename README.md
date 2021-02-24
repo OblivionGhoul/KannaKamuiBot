@@ -34,7 +34,7 @@ Docs, Channel, Execute.
 Hass, Hmidriff, Pgif, 4k, Hentai, Hneko, Hkitsune, Anal, Hanal, Gonewild, Ass, Pussy, Thigh, Hthigh, Paizuri, Tentacle, Boobs, Hboobs.
 
 ## Valorant
-Valorant Stats, Valorant Matches, Valorant Map, Valorant Agent. 
+Valorant Stats, Valorant Matches, Valorant Map, Valorant Agent, Agent-Stats, Map-Stats, Annoucements, Dev, Esports, Leaderboard, MMR, Server-Status, Updates. 
 
 # Setting Up Welcome Messages
 Use this command in the welcome channel to set up welcome messages. (Please note that you can do "<@>" to send the username of the user that just joined. You can also do `-simwelcome` to test welcome messages.)

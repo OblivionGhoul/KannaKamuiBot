@@ -6,11 +6,19 @@ module.exports = {
     callback: (message, args) => {
         const profile = args[0]
         const tag = args[1]
+        let filter = args[2]
         if (!args[0] || !args[1]) {
-            message.channel.send('Please specify your riot id correctly without a hashtag. (usage: -valstats [name] [tag])')
+            message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valstats [name] [tag] [category])')
+            message.channel.send('Catgory List: Competitive, Unrated, Deathmatch, Spikerush, Escalation')
         }
-        axios.get(`https://api.henrikdev.xyz/valorant/v1/matches/${profile}/${tag}`)
+        axios.get(`https://api.henrikdev.xyz/valorant/v1/matches/${profile}/${tag}?filter=${filter}`)
             .then(function (response) {
+                let color1 = 'RED'
+                if (response.data.matches[0].metadata.playerhaswon === true) color1 = 'GREEN'
+                let color2 = 'RED'
+                if (response.data.matches[1].metadata.playerhaswon === true) color2 = 'GREEN'
+                let color3 = 'RED'
+                if (response.data.matches[2].metadata.playerhaswon === true) color3 = 'GREEN'
                 const embed1 = new Discord.MessageEmbed()
                 .setTitle(`${response.data.user}'s Last Valorant Match`)
                 .addField('Gamemode', response.data.matches[0].metadata.modename, true)
@@ -27,7 +35,7 @@ module.exports = {
                 .addField('Playtime', response.data.matches[0].game.playtime.patched, true)
 
                 .setThumbnail('https://i.imgur.com/4GPTAgh.jpg')
-                .setColor('RANDOM')
+                .setColor(color1)
                 .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 message.channel.send(embed1)
 
@@ -47,7 +55,7 @@ module.exports = {
                 .addField('Playtime', response.data.matches[1].game.playtime.patched, true)
 
                 .setThumbnail('https://i.imgur.com/4GPTAgh.jpg')
-                .setColor('RANDOM')
+                .setColor(color2)
                 .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 message.channel.send(embed2)
 
@@ -67,13 +75,14 @@ module.exports = {
                 .addField('Playtime', response.data.matches[2].game.playtime.patched, true)
 
                 .setThumbnail('https://i.imgur.com/4GPTAgh.jpg')
-                .setColor('RANDOM')
+                .setColor(color3)
                 .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 message.channel.send(embed3)
             })
             .catch(function (error) {
                 message.channel.send(error.response.data.message)
-                message.channel.send('Please specify your riot id correctly without a hashtag. (usage: -valstats [name] [tag])')
+                message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valstats [name] [tag] [category])')
+                message.channel.send('Catgory List: Competitive, Unrated, Deathmatch, Spikerush, Escalation')
             })
     },
 }

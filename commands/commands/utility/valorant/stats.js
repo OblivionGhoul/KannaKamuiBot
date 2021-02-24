@@ -7,9 +7,9 @@ module.exports = {
         const profile = args[0]
         const tag = args[1]
         if (!args[0] || !args[1]) {
-            message.channel.send('Please specify your riot id correctly without a hashtag. (usage: -valstats [name] [tag])')
+            message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valstats [name] [tag])')
         }
-        axios.get(`https://api.henrikdev.xyz/valorant/v1/profile/${profile}/${tag}`)
+        axios.get(`https://api.henrikdev.xyz/valorant/v2/profile/${profile}/${tag}`)
             .then(function (response) {
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${response.data.user}'s Valorant Profile`)
@@ -27,14 +27,15 @@ module.exports = {
                 .addField('First Bloods', response.data.stats.firstbloods, true)
                 .addField('Clutch Rounds', response.data.stats.clutches, true)
                 .addField('Flawless Rounds', response.data.stats.flawless, true)
-                .setThumbnail('https://i.imgur.com/4GPTAgh.jpg')
+                .addField('# Agents Unlocked', (response.data.agents).length, true)
+                .setThumbnail(response.data.stats.playercard)
                 .setColor('RANDOM')
                 .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 message.channel.send(embed)
             })
             .catch(function (error) {
                 message.channel.send(error.response.data.message)
-                message.channel.send('Usage: -valstats [name] [tag]')
+                message.channel.send('Please specify your riot id correctly without a hashtag or space. (usage: -valstats [name] [tag])')
             })
     },
 }
