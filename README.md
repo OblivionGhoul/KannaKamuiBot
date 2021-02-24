@@ -69,3 +69,4 @@ All contributions are welcome! I am new to GitHub and Javascript, so any advice 
 Special thanks to [Henrik](https://github.com/Henrik-3) for letting me use his unofficial [ValorantAPI](https://github.com/Henrik-3/unofficial-valorant-api)!
 # Known Issues
 1. Roast - Errors and shows use %roast @user
+2. Valorant Commands may show the wrong K/D

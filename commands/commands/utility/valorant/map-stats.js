@@ -45,6 +45,22 @@ module.exports = {
                 **Clutches**: ${response.data.maps[1].clutches}
                 **Flawless Rounds**: ${response.data.maps[1].flawless}
                 `, true)
+                .addField(response.data.maps[2].map, `
+                **Playtime**: ${response.data.maps[2].playtime.playtimepatched}
+                **Matches**: ${response.data.maps[2].matches}
+                **Kills**: ${response.data.maps[2].kills}
+                **Deaths**: ${response.data.maps[2].deaths}
+                **Assists**: ${response.data.maps[2].assists}
+                **K/D**: ${response.data.maps[2].kdratio}
+                **Headshots**: ${response.data.maps[2].headshots}
+                **Headshot Percentage**: ${response.data.maps[2].headshotpercentage}
+                **Wins**: ${response.data.maps[2].wins}
+                **Win Percentage**: ${response.data.maps[2].winpercentage}
+                **First Bloods**: ${response.data.maps[2].firstbloods}
+                **Aces**: ${response.data.maps[2].aces}
+                **Clutches**: ${response.data.maps[2].clutches}
+                **Flawless Rounds**: ${response.data.maps[2].flawless}
+                `, true)
                 .addField(response.data.maps[3].map, `
                 **Playtime**: ${response.data.maps[3].playtime.playtimepatched}
                 **Matches**: ${response.data.maps[3].matches}
