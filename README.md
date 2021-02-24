@@ -19,7 +19,7 @@ Use the help command to get the most updated list of bot commands. (`-help`)
 Meme, Roast, Ascii, Advice, Joke, Coin, Kpop, 8Ball, PP, RPS, Christmas, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Spank, Anime Trivia, Akinator, Ship, Pat, Fast Type.
 
 ## Utility 
-Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, Anime, ServerPicture, Spotify.
+Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, Anime, ServerPicture, Spotify, QR Code.
 
 ## Moderation
 Ban, Kick, Poll, Close, DM, Nickname, Setprefix.
@@ -28,7 +28,7 @@ Ban, Kick, Poll, Close, DM, Nickname, Setprefix.
 Play, Pause, Resume, Stop, Skip, Queue, Volume, NowPlaying, Leave, Loop, Lyrics, Remove, Shuffle, SkipTo, Playlist.
 
 ## Developer Tools
-Docs, Channel, Execute.
+Docs, Channel.
 
 ## Nsfw
 Hass, Hmidriff, Pgif, 4k, Hentai, Hneko, Hkitsune, Anal, Hanal, Gonewild, Ass, Pussy, Thigh, Hthigh, Paizuri, Tentacle, Boobs, Hboobs.
@@ -68,4 +68,4 @@ All contributions are welcome! I am new to GitHub and Javascript, so any advice 
 
 Special thanks to [Henrik](https://github.com/Henrik-3) for letting me use his unofficial [ValorantAPI](https://github.com/Henrik-3/unofficial-valorant-api)!
 # Known Issues
-1. Valorant Commands may show the wrong # of aces (This is a problem with Tracker.gg)
+To view the list of current known issues, click [here](https://docs.google.com/document/d/1SneXDKNzDz6jo-uTPfFF6eHd9hJqIlqtMSgvmGQs-mY/edit?usp=sharing).

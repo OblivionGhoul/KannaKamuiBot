@@ -85,6 +85,7 @@ module.exports = {
             .addField('Verse', 'Sends a bible bible verse (usage: -verse)')
             .addField('Emoji Info', 'Gets the info of an emoji (usage: -emojiinfo [emoji or emoji name])')
             .addField('Server Picture', 'Sends the pfp of the server (usage: -serverpicture)')
+            .addField('QR Code', 'Generates a QR Code for a link (usage: -qr [link])')
             .addField('Setprefix', 'Changes the prefix of the bot (usage: -setprefix [new prefix])')
         if (content.includes("util")) return message.channel.send(utility)
 
