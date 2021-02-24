@@ -17,17 +17,22 @@ module.exports = {
         axios.get(`https://api.henrikdev.xyz/valorant/v1/mmr/${region}/${profile}/${tag}`)
             .then(function (response) {
                 const embed = new Discord.MessageEmbed()
-                    .setTitle(`${profile}'s MMR`)
-                    .addField('Rank', response.data.data.currenttierpatched)
-                    .addField('Current MMR', `${response.data.data.ranking_in_tier} / 100`)
-                    .addField('Last MMR Change', response.data.data.mmr_change_to_last_game)
-                    .addField('Current Elo', response.data.data.elo)
-                    .setColor('RANDOM')
-                    .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                .setTitle(`${profile}'s MMR`)
+                .addField('Rank', response.data.data.currenttierpatched)
+                .addField('Current MMR', `${response.data.data.ranking_in_tier} / 100`)
+                .addField('Last MMR Change', response.data.data.mmr_change_to_last_game)
+                .addField('Current Elo', response.data.data.elo)
+                .setColor('RANDOM')
+                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 message.channel.send(embed)
             })
             .catch(function (error) {
-                return message.channel.send('Please specify your riot id and region correctly without a hashtag or space. (usage: -valmmr [name] [tag] [region])')
+                try {
+                    let errorMessage = error.response.data.data.message
+                    if (errorMessage) return message.channel.send(errorMessage)
+                } catch {
+                    message.channel.send('The User has not played a rank match in the last 20 Matches or queued the wrong region.')
+                }
             })
     },
 }

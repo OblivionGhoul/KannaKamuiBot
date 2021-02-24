@@ -13,6 +13,10 @@ module.exports = {
             .then(function (response) {
                 let kd = response.data.stats.kills / response.data.stats.deaths
                 kd = kd.toFixed(2)
+
+                let hs = (response.data.stats.headshots / response.data.stats.kills) 
+                hs = hs.toFixed(2) * 100
+
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${response.data.user}'s Valorant Profile`)
                 .addField('Rank', response.data.stats.rank, true)
@@ -23,7 +27,7 @@ module.exports = {
                 .addField('Assists', response.data.stats.assists, true)
                 .addField('K/D', kd, true)
                 .addField('Headshots', response.data.stats.headshots, true)
-                .addField('Headshot Percentage', response.data.stats.headshotpercentage, true)
+                .addField('Headshot Percentage', hs, true)
                 .addField('Wins', response.data.stats.wins, true)
                 .addField('Win Percentage', response.data.stats.winpercentage, true)
                 .addField('First Bloods', response.data.stats.firstbloods, true)

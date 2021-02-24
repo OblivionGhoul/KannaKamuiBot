@@ -23,6 +23,20 @@ module.exports = {
                 kd5 = kd5.toFixed(2)
                 let kd6 = response.data.agents[5].kills / response.data.agents[5].deaths
                 kd6 = kd6.toFixed(2)
+
+                let hs1 = (response.data.agents[0].headshots / response.data.agents[0].kills) 
+                hs1 = hs1.toFixed(2) * 100
+                let hs2 = (response.data.agents[1].headshots / response.data.agents[1].kills)
+                hs2 = hs2.toFixed(2) * 100
+                let hs3 = (response.data.agents[2].headshots / response.data.agents[2].kills) 
+                hs3 = hs3.toFixed(2) * 100
+                let hs4 = (response.data.agents[3].headshots / response.data.agents[3].kills)
+                hs4 = hs4.toFixed(2) * 100 
+                let hs5 = (response.data.agents[4].headshots / response.data.agents[4].kills)
+                hs5 = hs5.toFixed(2) * 100
+                let hs6 = (response.data.agents[5].headshots / response.data.agents[5].kills) 
+                hs6 = hs6.toFixed(2) * 100
+
                 const embed = new Discord.MessageEmbed()
                 .setTitle(`${response.data.user}'s Agent Stats`)
                 .addField(response.data.agents[0].agent, `
@@ -33,7 +47,7 @@ module.exports = {
                 **Assists**: ${response.data.agents[0].assists}
                 **K/D**: ${kd1}
                 **Headshots**: ${response.data.agents[0].headshots}
-                **Headshot Percentage**: ${response.data.agents[0].headshotpercentage}
+                **Headshot Percentage**: ${hs1}
                 **Wins**: ${response.data.agents[0].wins}
                 **Win Percentage**: ${response.data.agents[0].winpercentage}
                 **First Bloods**: ${response.data.agents[0].firstbloods}
@@ -49,7 +63,7 @@ module.exports = {
                 **Assists**: ${response.data.agents[1].assists}
                 **K/D**: ${kd2}
                 **Headshots**: ${response.data.agents[1].headshots}
-                **Headshot Percentage**: ${response.data.agents[1].headshotpercentage}
+                **Headshot Percentage**: ${hs2}
                 **Wins**: ${response.data.agents[1].wins}
                 **Win Percentage**: ${response.data.agents[1].winpercentage}
                 **First Bloods**: ${response.data.agents[1].firstbloods}
@@ -65,7 +79,7 @@ module.exports = {
                 **Assists**: ${response.data.agents[2].assists}
                 **K/D**: ${kd3}
                 **Headshots**: ${response.data.agents[2].headshots}
-                **Headshot Percentage**: ${response.data.agents[2].headshotpercentage}
+                **Headshot Percentage**: ${hs3}
                 **Wins**: ${response.data.agents[2].wins}
                 **Win Percentage**: ${response.data.agents[2].winpercentage}
                 **First Bloods**: ${response.data.agents[2].firstbloods}
@@ -81,7 +95,7 @@ module.exports = {
                 **Assists**: ${response.data.agents[3].assists}
                 **K/D**: ${kd4}
                 **Headshots**: ${response.data.agents[3].headshots}
-                **Headshot Percentage**: ${response.data.agents[3].headshotpercentage}
+                **Headshot Percentage**: ${hs4}
                 **Wins**: ${response.data.agents[3].wins}
                 **Win Percentage**: ${response.data.agents[3].winpercentage}
                 **First Bloods**: ${response.data.agents[3].firstbloods}
@@ -97,7 +111,7 @@ module.exports = {
                 **Assists**: ${response.data.agents[4].assists}
                 **K/D**: ${kd5}
                 **Headshots**: ${response.data.agents[4].headshots}
-                **Headshot Percentage**: ${response.data.agents[4].headshotpercentage}
+                **Headshot Percentage**: ${hs5}
                 **Wins**: ${response.data.agents[4].wins}
                 **Win Percentage**: ${response.data.agents[4].winpercentage}
                 **First Bloods**: ${response.data.agents[4].firstbloods}
@@ -113,7 +127,7 @@ module.exports = {
                 **Assists**: ${response.data.agents[5].assists}
                 **K/D**: ${kd6}
                 **Headshots**: ${response.data.agents[5].headshots}
-                **Headshot Percentage**: ${response.data.agents[5].headshotpercentage}
+                **Headshot Percentage**: ${hs6}
                 **Wins**: ${response.data.agents[5].wins}
                 **Win Percentage**: ${response.data.agents[5].winpercentage}
                 **First Bloods**: ${response.data.agents[5].firstbloods}

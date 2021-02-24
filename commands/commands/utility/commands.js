@@ -26,8 +26,8 @@ module.exports = {
             .setDescription(
                 'Invite Me To Your Server [Here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)\nPlease Vote For My Bot [Here](https://top.gg/bot/757066313406611477)\nPlease Consider Donating [Here](https://www.paypal.com/paypalme/kannabot) To Keep It Running\nAny Issues Or Suggestions? Join My Support Server [Here](https://discord.gg/QpMWndNpse)\nMy Default Prefix Is [-]'
             )
-            .addField('Ban', 'Bans a user (usage: -ban @usertag)')
-            .addField('Kick', 'Kicks a user (usage: -kick @usertag)')
+            .addField('Ban', 'Bans a user (usage: -ban [@usertag] [reason])')
+            .addField('Kick', 'Kicks a user (usage: -kick [@usertag] [reason])')
             .addField('Poll', 'Creates a poll (usage: -poll [#channelname] [Question])')
             .addField('Close', 'Deletes a channel (usage: -close)')
             .addField('Nickname', 'Changes a user nickname (usage: -nickname [@usertag])')
@@ -134,7 +134,6 @@ module.exports = {
             )
             .addField('Docs', 'Sends discord.js documentation (usage: -docs [search query])')
             .addField('Channel', 'Sends ID of channel command is used in (usage: -channel)')
-            .addField('Execute', 'Use terminal commands in Discord (usage: -execute [command])')
         if (content.includes("dev")) return message.channel.send(dev)
 
         const val = new Discord.MessageEmbed()
