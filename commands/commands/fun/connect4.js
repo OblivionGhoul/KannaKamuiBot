@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js')
 
 module.exports = {
     commands: ['connect4'],
-    callback: async (message, args, txt) => {
+    callback: async (message, args) => {
         const challenger = message.member;
         const oppenent = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
@@ -120,7 +120,7 @@ module.exports = {
 
             const checks = [horizontalCheck, verticalCheck, diagonal1, diagonal2];
 
-            gameCollector.on("collect", (reaction, user) => {
+            gameCollector.on("collect", async (reaction, user) => {
 
                 if (user.id === gameData[player].member.id) {
 
@@ -130,22 +130,22 @@ module.exports = {
                     switch (reaction.emoji.name) {
 
                         case "1️⃣":
-
                             for (let i = 5; i > -1; i--) {
                                 if (board[i][0] === "⚪") openSpaces.push({ i, j: 0 });
                             }
                             if (openSpaces.length === 0) return message.channel.send(`${gameData[player].member}, that column is already full. Choose a differnt one.`);
                             else board[openSpaces[0].i][openSpaces[0].j] = gameData[player].playerColor;
-
+                            await reaction.users.remove(message.author.id);
+                            await reaction.users.remove(oppenent.id);
                             break;
                         case "2️⃣":
-
                             for (let i = 5; i > -1; i--) {
                                 if (board[i][1] === "⚪") openSpaces.push({ i, j: 1 });
                             }
                             if (openSpaces.length === 0) return message.channel.send(`${gameData[player].member}, that column is already full. Choose a differnt one.`);
                             else board[openSpaces[0].i][openSpaces[0].j] = gameData[player].playerColor;
-
+                            await reaction.users.remove(message.author.id);
+                            await reaction.users.remove(oppenent.id);
                             break;
                         case "3️⃣":
                             for (let i = 5; i > -1; i--) {
@@ -153,6 +153,8 @@ module.exports = {
                             }
                             if (openSpaces.length === 0) return message.channel.send(`${gameData[player].member}, that column is already full. Choose a differnt one.`);
                             else board[openSpaces[0].i][openSpaces[0].j] = gameData[player].playerColor;
+                            await reaction.users.remove(message.author.id);
+                            await reaction.users.remove(oppenent.id);
                             break;
                         case "4️⃣":
                             for (let i = 5; i > -1; i--) {
@@ -160,6 +162,8 @@ module.exports = {
                             }
                             if (openSpaces.length === 0) return message.channel.send(`${gameData[player].member}, that column is already full. Choose a differnt one.`);
                             else board[openSpaces[0].i][openSpaces[0].j] = gameData[player].playerColor;
+                            await reaction.users.remove(message.author.id);
+                            await reaction.users.remove(oppenent.id);
                             break;
                         case "5️⃣":
                             for (let i = 5; i > -1; i--) {
@@ -167,6 +171,8 @@ module.exports = {
                             }
                             if (openSpaces.length === 0) return message.channel.send(`${gameData[player].member}, that column is already full. Choose a differnt one.`);
                             else board[openSpaces[0].i][openSpaces[0].j] = gameData[player].playerColor;
+                            await reaction.users.remove(message.author.id);
+                            await reaction.users.remove(oppenent.id);
                             break;
                         case "6️⃣":
                             for (let i = 5; i > -1; i--) {
@@ -174,6 +180,8 @@ module.exports = {
                             }
                             if (openSpaces.length === 0) return message.channel.send(`${gameData[player].member}, that column is already full. Choose a differnt one.`);
                             else board[openSpaces[0].i][openSpaces[0].j] = gameData[player].playerColor;
+                            await reaction.users.remove(message.author.id);
+                            await reaction.users.remove(oppenent.id);
                             break;
                         case "7️⃣":
                             for (let i = 5; i > -1; i--) {
@@ -181,8 +189,9 @@ module.exports = {
                             }
                             if (openSpaces.length === 0) return message.channel.send(`${gameData[player].member}, that column is already full. Choose a differnt one.`);
                             else board[openSpaces[0].i][openSpaces[0].j] = gameData[player].playerColor;
+                            await reaction.users.remove(message.author.id);
+                            await reaction.users.remove(oppenent.id);
                             break;
-
                     }
 
                     if (tieCheck()) {
