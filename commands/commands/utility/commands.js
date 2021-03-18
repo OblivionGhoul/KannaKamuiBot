@@ -44,7 +44,6 @@ module.exports = {
             .addField('Advice', 'Gives user advice (usage: -advice)')
             .addField('Joke', 'Sends user a joke (usage: -joke)')
             .addField('Coin', 'Flips a coin (usage: -coin)')
-            .addField('Kpop', 'Sends a random kpop artist picture and name (usage: -kpop)')
             .addField('8ball', 'Answers a question (usage: -8ball [question with ?])')
             .addField('PP', 'Sends a user\'s pp size (usage: -pp [@usertag]')
             .addField('RPS', 'Sends a game of rock, paper, scissors (usage: -rps rock')

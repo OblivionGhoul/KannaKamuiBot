@@ -1,6 +1,6 @@
 module.exports = {
     commands: ['andy'],
     callback: async (message) => {
-      message.channel.send('Braulio is stupid')
+      message.channel.send('Hanna is cute')
     },
 }

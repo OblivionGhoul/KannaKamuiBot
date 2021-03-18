@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
     commands: ['valstats', 'valorantstats', 'valorant-stats'],
     callback: (message, args) => {
+        return message.channel.send('The API is currently deprecated, please wait for a fix.')
         const profile = args[0]
         const tag = args[1]
         if (!args[0] || !args[1]) {
