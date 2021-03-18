@@ -37,7 +37,6 @@
     "txtgen": "^2.2.8",
     "valorant-fetch": "^1.0.3",
     "weather-js": "^2.0.0",
-    "yt-search": "^2.7.4",
     "ytdl-core": "^4.5.0",
     "ytpl": "^2.0.5"
   },
