@@ -12,7 +12,6 @@
   "dependencies": {
     "@discordjs/opus": "^0.4.0",
     "aki-api": "^5.2.1",
-    "alexflipnote.js": "^2.4.1",
     "animequotes": "^1.1.2",
     "atob": "^2.1.2",
     "axios": "^0.21.1",
