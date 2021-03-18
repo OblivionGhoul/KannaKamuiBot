@@ -130,8 +130,6 @@ module.exports = (client, commandOptions) => {
           }
         }
 
-        // Ensure the user has not ran this command too frequently
-        //guildId-userId-command
         let cooldownString = `${guild.id}-${member.id}-${commands[0]}`
 
         if (cooldown > 0 && recentlyRan.includes(cooldownString)) {
