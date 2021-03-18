@@ -20,7 +20,6 @@
     "figlet": "^1.5.0",
     "is-url": "^1.2.4",
     "lyrics-finder": "^21.7.0",
-    "mathjs": "^9.3.0",
     "module-alias": "^2.2.2",
     "moment": "^2.29.1",
     "mongoose": "^5.12.0",
