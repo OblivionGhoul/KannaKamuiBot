@@ -74,4 +74,4 @@ client.on('guildCreate', (guild) => {
   channel.send(embed)
 })
 
-client.login(process.env.token)
+client.login("")
