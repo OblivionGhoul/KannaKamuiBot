@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 const { inspect } = require('util');
 const fs = require('fs')
-const config = require('../../config/config.json');
+const config = require('../../config.json');
 const { MessageEmbed } = require('discord.js')
 
 module.exports = {
