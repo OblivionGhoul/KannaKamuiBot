@@ -1,5 +1,4 @@
-const { Random } = require('something-random-on-discord');
-const random = new Random();
+const random = require("something-random-on-discord").Random
 
 module.exports = {
   commands: ['advice'],

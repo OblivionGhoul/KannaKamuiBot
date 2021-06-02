@@ -4,10 +4,11 @@ module.exports = (client, aliases, callback) => {
   }
 
   client.on('message', (message) => {
+    const prefix = "-"
     const { content } = message
 
     aliases.forEach((alias) => {
-      const command = `${process.env.prefix}${alias}`
+      const command = `${prefix}${alias}`
 
       if (content.startsWith(`${command} `) || content === command) {
         console.log(`Running the command ${command}`)

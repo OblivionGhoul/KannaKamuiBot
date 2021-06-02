@@ -1,0 +1,22 @@
+{
+    "eslint.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "prettier.singleQuote": true,
+    "prettier.useTabs": true,
+    "npm.enableScriptExplorer": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "formatContextMenu.closeAfterSave": true,
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
+    "prettier.eslintIntegration": true,
+    "spellright.language": [
+        "en"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "latex",
+        "plaintext"
+    ]
+}

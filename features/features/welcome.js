@@ -60,8 +60,7 @@ module.exports = (client) => {
 
       await mongo().then(async (mongoose) => {
         try {
-          const result = await welcomeSchema.findOne({ _id: guild.id })
-
+          result = await welcomeSchema.findOne({ _id: guild.id })
           cache[guild.id] = data = [result.channelId, result.text]
         } finally {
           mongoose.connection.close()
