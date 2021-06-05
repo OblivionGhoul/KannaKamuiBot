@@ -55,6 +55,8 @@ module.exports = {
             .addField('Hug', 'Hugs someone (usage: -hug [@usertag])')
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game (usage: -ttt [@usertag])')
             .addField('Fast Type', 'Sends a fast type game (usage: -fasttype)')
+            .addField('Chaos Words', 'Find words in a sentence game (usage: -chaoswords)')
+            .addField('Fight', 'Fights someone (usage: -fight [@usertag])')
             .addField('Spank', 'Spanks a User (usage: -spank [@usertag])')
             .addField('Aki', 'Sends an Akinator Game (usage: -aki)')
             .addField('PH', 'Creates a PH comment (usage: -ph [text])')
@@ -73,7 +75,7 @@ module.exports = {
                 'Invite Me To Your Server [Here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)\nPlease Vote For My Bot [Here](https://top.gg/bot/757066313406611477)\nPlease Consider Donating [Here](https://www.paypal.com/paypalme/kannabot) To Keep It Running\nAny Issues Or Suggestions? Join My Support Server [Here](https://discord.gg/QpMWndNpse)\nMy Default Prefix Is [-]'
             )
             .addField('Spotify', 'Sends A User\'s Spotify Discord Status (usage: -spotify [@usertag])')
-            .addField('Cal', 'Calculator (ex: -cal 234+23432)')
+            .addField('Calc', 'Opens a calculator (ex: -calc')
             .addField('UserInfo', 'Gets the info of a user (usage: -userinfo @usertag)')
             .addField('Avatar', 'Sends avatar of a user (usage: -avatar [@usertag (optional)])')
             .addField('Weather', 'Sends the weather forecast of a city (usage: -weather [city name])')

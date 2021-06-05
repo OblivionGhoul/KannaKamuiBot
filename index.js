@@ -5,8 +5,7 @@ const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
 const loadFeatures = require('@root/features/load-features')
 client.queue = new Map()
-//const EventEmitter = require('events')
-//EventEmitter.defaultMaxListeners = 100
+const disbut = require('discord-buttons')(client);
 
 client.on('ready', async () => {
   try {
