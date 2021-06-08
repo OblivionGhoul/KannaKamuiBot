@@ -1,6 +1,6 @@
 {
   "name": "kannakamui",
-  "version": "3.0.2",
+  "version": "3.0.5",
   "description": "A Discord Bot ",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "animequotes": "^1.1.2",
     "atob": "^2.1.2",
     "axios": "^0.21.1",
-    "discord-buttons": "^3.1.1",
+    "discord-buttons": "^3.2.1",
     "discord-reply": "^0.1.2",
     "discord.js": "^12.5.3",
     "discord.js-pagination": "^1.0.3",
