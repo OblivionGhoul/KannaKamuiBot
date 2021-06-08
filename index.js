@@ -1,11 +1,12 @@
 require('module-alias/register')
 const Discord = require('discord.js')
+require('discord-reply')
 const client = new Discord.Client()
 const loadCommands = require('@root/commands/load-commands')
 const commandBase = require('@root/commands/command-base')
 const loadFeatures = require('@root/features/load-features')
 client.queue = new Map()
-const disbut = require('discord-buttons')(client);
+require('discord-buttons')(client);
 
 client.on('ready', async () => {
   try {

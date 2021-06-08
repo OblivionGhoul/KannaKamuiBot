@@ -60,6 +60,8 @@ module.exports = {
             .addField('Spank', 'Spanks a User (usage: -spank [@usertag])')
             .addField('Aki', 'Sends an Akinator Game (usage: -aki)')
             .addField('PH', 'Creates a PH comment (usage: -ph [text])')
+            .addField('Chat', 'Chats with the bot (usage: -chat [message])')
+            .addField('Snake', 'Creates a snake game (usage: -snake)')
         if (content.includes("fun")) return message.channel.send(fun)
 
         const nsfw = new Discord.MessageEmbed()
