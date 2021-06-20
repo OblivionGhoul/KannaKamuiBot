@@ -65,5 +65,3 @@ Join my discord server above for support. You can also open an issue on GitHub.
 All contributions are welcome! I am new to GitHub and Javascript, so any advice would be great! I will also accept recommendations on new commands.
 
 Special thanks to [Henrik](https://github.com/Henrik-3) for letting me use his unofficial [ValorantAPI](https://github.com/Henrik-3/unofficial-valorant-api)!
-# Known Issues
-To view the list of current known issues, click [here](https://docs.google.com/document/d/1SneXDKNzDz6jo-uTPfFF6eHd9hJqIlqtMSgvmGQs-mY/edit?usp=sharing).
