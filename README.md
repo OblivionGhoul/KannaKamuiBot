@@ -5,11 +5,11 @@ Join my support server [here](https://discord.gg/QpMWndNpse) if you have issues 
 
 Invite the bot to your server [here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)!
 
-Visit my website [here](https://oblivionghoul.com/)!
+Visit the bot website [here](https://oblivionghoul.github.io/KannaKamuiWebsite/)!
 
 This bot is still a work in progress so the command list below might not be the up to date!
 
-The default prefix for this bot is [-].
+The default prefix for this bot is `-`.
 
 # Bot Commands
 Use the help command to get the most updated list of bot commands. (`-help`)
@@ -17,7 +17,7 @@ Use the help command to get the most updated list of bot commands. (`-help`)
 Meme, Roast, Ascii, Advice, Joke, Coin, 8Ball, PP, RPS, Christmas, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Spank, Anime Trivia, Akinator, Ship, Pat, Fast Type, Chaos Words, Fight, Chat, Snake.
 
 ## Utility 
-Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, Anime, ServerPicture, QR Code.
+Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, Anime, ServerPicture, QR Code, MC.
 
 ## Moderation
 Ban, Kick, Poll, Close, DM, Nickname, Setprefix.
