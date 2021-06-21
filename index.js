@@ -53,29 +53,4 @@ client.on('voiceStateUpdate', (oldState, newState) => {
   return client.queue.delete(oldState.guild.id);
 });
 
-const express = require('express');
-const app = express();
-const { version } = require('@root/package.json')
-const { version: djsversion } = require('discord.js')
-const port = 3000
-
-app.set('json spaces', 1);
-
-app.get('/', function (req, res) {
-    res.json({
-        name: client.user.tag,
-        guilds: client.guilds.cache.size,
-        users: client.users.cache.size,
-        channels: client.channels.cache.size.toLocaleString(),
-        dateCreated: client.user.createdAt,
-        nodeVersion: process.version,
-        botVersion: version,
-        discordJSVersion: djsversion,
-    })
-})
-
-app.listen(port, () => {
-    console.log(`Server Started On http://localhost:${port}`);
-});
-
 client.login(process.env.token)
