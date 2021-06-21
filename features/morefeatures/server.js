@@ -3,7 +3,7 @@ module.exports = (client) => {
     const app = express();
     const { version } = require('@root/package.json')
     const { version: djsversion } = require('discord.js')
-    const port = 80
+    const port = 3000
 
     app.set('json spaces', 1);
 
