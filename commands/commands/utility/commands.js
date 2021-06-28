@@ -42,7 +42,7 @@ module.exports = {
             .addField('Dog', 'Sends a picture of a dog\n`-dog`', true)
             .addField('Ship', 'Ships 2 users\n`-ship [@usertag] [@usertag]`', true)
             .addField('Pat', 'Pats a user\n`-pat [@usertag]`', true)
-            .addField('Cat', 'Sends a picture of a cat\`-cat`', true)
+            .addField('Cat', 'Sends a picture of a cat\n`-cat`', true)
             .addField('Hug', 'Hugs someone\n`-hug [@usertag]`', true)
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game\n`-ttt [@usertag]`', true)
             .addField('Fast Type', 'Sends a fast type game\n`-fasttype`', true)
