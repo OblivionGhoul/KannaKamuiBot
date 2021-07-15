@@ -14,7 +14,7 @@ The default prefix for this bot is `-`.
 # Bot Commands
 Use the help command to get the most updated list of bot commands. (`-help`)
 ## Fun
-Meme, Roast, Ascii, Advice, Joke, Coin, 8Ball, PP, RPS, Christmas, Dog, Cat, Hug, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Spank, Anime Trivia, Akinator, Ship, Pat, Fast Type, Chaos Words, Fight, Chat, Snake.
+Meme, Roast, Ascii, Advice, Joke, Coin, 8Ball, PP, RPS, Christmas, Dog, Cat, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Anime Trivia, Ship, Fast Type, Chaos Words, Fight, Chat, Snake.
 
 ## Utility 
 Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, Anime, ServerPicture, QR Code, MC.
@@ -33,6 +33,9 @@ Hass, Hmidriff, Pgif, 4k, Hentai, Hneko, Hkitsune, Anal, Hanal, Gonewild, Ass, P
 
 ## Valorant
 Valorant Stats, Valorant Matches, Valorant Map, Valorant Agent, Agent-Stats, Map-Stats, Annoucements, Dev, Esports, Leaderboard, MMR, Server-Status, Updates. 
+
+## Emotes
+Alarm, Amazing, Ask, Baka, Bite, Blush, Blyat, Boop, Clap, Coffee, Confused, Cry, Cuddle, Cute, Dance, Destroy, Die, Disappear, Dodge, Error, Facedesk, Facepalm, FBI, Fight, Happy, Hide, Highfive, Hug, Kill, Kiss, Laugh, Lick, Lonely, Love, Mad, Money, Nom, Nosebleed, Ok, Party, Pat, Peek, Poke, Pout, Protect, Puke, Punch, Purr, Pusheen, Run, Scared, Scream, Shame, Shocked, Shoot, Shrug, Sip, Slap, Sleepy, Smile, Smoke, Smug, Spank, Spin, Stare, Stomp, Tickle, Trap, Triggered, Uwu, Wasted, Wave, Wiggle, Yeet
 
 # Setting Up Welcome Messages
 Use this command in the welcome channel to set up welcome messages. (Please note that you can do "<@>" to send the username of the user that just joined. You can also do `-simwelcome` to test welcome messages.)

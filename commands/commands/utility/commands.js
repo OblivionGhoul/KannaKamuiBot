@@ -23,7 +23,6 @@ module.exports = {
             .addField('Ban', 'Bans a user\n`-ban [@usertag] [reason]`', true)
             .addField('Kick', 'Kicks a user\n`-kick [@usertag] [reason]`', true)
             .addField('Poll', 'Creates a poll\n`-poll [#channelname] [Question]`', true)
-            .addField('Close', 'Deletes a channel\n`-close`', true)
             .addField('Nickname', 'Changes a user nickname\n`-nickname [@usertag]`', true)
         if (content.includes("mod")) return message.channel.send(moderation)
 
@@ -41,15 +40,11 @@ module.exports = {
             .addField('Christmas', 'Sends the amount of days until Christmas\n`-christmas`', true)
             .addField('Dog', 'Sends a picture of a dog\n`-dog`', true)
             .addField('Ship', 'Ships 2 users\n`-ship [@usertag] [@usertag]`', true)
-            .addField('Pat', 'Pats a user\n`-pat [@usertag]`', true)
             .addField('Cat', 'Sends a picture of a cat\n`-cat`', true)
-            .addField('Hug', 'Hugs someone\n`-hug [@usertag]`', true)
             .addField('Tic-Tac-Toe', 'Sends a Tic-Tac-Toe game\n`-ttt [@usertag]`', true)
             .addField('Fast Type', 'Sends a fast type game\n`-fasttype`', true)
             .addField('Chaos Words', 'Find words in a sentence game\n`-chaoswords`', true)
             .addField('Fight', 'Fights someone\n`-fight [@usertag]`', true)
-            .addField('Spank', 'Spanks a User\n`-spank [@usertag]`', true)
-            .addField('Aki', 'Sends an Akinator Game\n`-aki`', true)
             .addField('PH', 'Creates a PH comment\n`-ph [text]`', true)
             .addField('Chat', 'Chats with the bot\n`-chat [message]`', true)
             .addField('Snake', 'Creates a snake game\n`-snake`', true)
@@ -137,5 +132,11 @@ module.exports = {
             .addField('Sign', 'Creates a picture of Hifumi with a sign\n`-sign [text]`', true)
             .addField('Anime', 'Sends info about an anime\n`-anime [anime name]`', true)
         if (content.includes("anime")) return message.channel.send(anime)
+
+        const emotes = new Discord.MessageEmbed()
+            .setTitle('Emotes')
+            .addField('GIFs', '`alarm`, `amazing`, `ask`, `baka`, `blush`, `blyat`, `clap`, `coffee`, `confused`, `cry`, `cute`, `dance`, `die`, `disappear`, `dodge`, `error`, `facedesk`, `facepalm`, `fbi`, `happy`, `hide`, `laugh`, `lonely`, `love`, `mad`, `money`, `nom`, `nosebleed`, `ok`, `party`, `peek`, `pout`, `puke`, `purr`, `pusheen`, `run`, `scared`, `scream`, `shame`, `shocked`, `shrug`, `sip`, `sleepy`, `smile`, `smoke`, `smug`, `spin`, `stomp`, `trap`, `triggered`, `uwu`, `wasted`, `wiggle`, `yeet`', true)
+            .addField('Actions', '`bite`, `boop`, `cuddle`, `destroy`, `highfive`, `hit`, `hug`, `kill`, `kiss`, `lick`, `pat`, `poke`, `protect`, `punch`, `shoot`, `slap`, `spank`, `stare`, `tickle`, `wave`', true)
+        if (content.includes("emote")) return message.channel.send(emotes)
     },
 }
