@@ -10,7 +10,7 @@ module.exports = {
             .setDescription(
                 'Invite Me To Your Server [Here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)\nVisit The Bot Website [Here](https://oblivionghoul.github.io/KannaKamuiWebsite/)\nPlease Vote For My Bot [Here](https://top.gg/bot/757066313406611477)\nPlease Consider Donating [Here](https://www.paypal.com/paypalme/kannabot) To Keep It Running\nJoin My Support Server [Here](https://discord.gg/QpMWndNpse)\nMy Default Prefix Is `-`'
             )
-            .addField('Help Categories', '`Fun`, `Utility`, `Anime`, `Music`, `Valorant`, `Moderation`, `Dev`, `NSFW`, `Setup`', true)
+            .addField('Help Categories', '`Fun`, `Utility`, `Anime`, `Emotes`, `Music`, `Valorant`, `Moderation`, `Dev`, `NSFW`, `Setup`', true)
             .addField('Usage', '`(-help [category])`', true)
             .setColor('RANDOM')
             .setFooter('Bot Made By OblivionGhoul#5842', 'https://i.imgur.com/Ivtf7GP.png')
