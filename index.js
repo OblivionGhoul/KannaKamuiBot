@@ -13,7 +13,8 @@ client.on('ready', async () => {
   try {
     console.log('I am ready!');
     function pickStatus() {
-      let status = [`over ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users!`, `over ${client.guilds.cache.size.toLocaleString()} servers!`]; //change change status
+      // `over ${client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()} users!`, `over ${client.guilds.cache.size.toLocaleString()} servers!`
+      let status = ['over Kobayashi', 'over Tohru', 'over Ilulu', 'over Makoto Takiya', 'over Quetzalcoatl', 'over Elma', 'over Shouta Magatsuchi', 'over Fafnir'];
       let Status = Math.floor(Math.random() * status.length);
 
       client.user.setActivity(status[Status], {
