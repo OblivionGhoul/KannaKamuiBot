@@ -3,7 +3,7 @@ const somethingRandom = require('some-random-cat').Random
 
 module.exports = {
     commands: ['animemes', 'animeme', 'animememe', 'anime-meme'],
-    callback: async (message, args, client) => {
+    callback: async (message) => {
         const subreddits = ["Animemes"]
         let randomSubReddit = subreddits[Math.floor(Math.random() * subreddits.length)]
         somethingRandom.getMeme(randomSubReddit).then(res => {

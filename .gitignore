@@ -1,5 +1,8 @@
+# NPM Packages
 node_modules
 
+# VSCode Settings
 .vscode
 
+# Environment Variables
 .env

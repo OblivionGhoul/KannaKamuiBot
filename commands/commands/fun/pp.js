@@ -28,7 +28,6 @@ module.exports = {
                 .setDescription(`*${ppuser}'s pp size is:*`)
                 .addField(`Result:`, responses[answer], true)
                 .setColor("RED")
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             message.channel.send(ppuser)
         } catch (err) {
             var bug = new Discord.MessageEmbed()

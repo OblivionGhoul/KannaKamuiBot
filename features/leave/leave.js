@@ -9,8 +9,8 @@ module.exports = (client) => {
     command(client, 'setleave', async (message) => {
         const { member, channel, content, guild } = message
 
-        if (!member.hasPermission('BAN_MEMBERS')) {
-            channel.send('You do not have permission to run this command.')
+        if (!member.hasPermission('ADMINISTRATOR')) {
+            channel.send('You need the admin permission to use this command.')
             return
         }
 

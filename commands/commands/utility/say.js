@@ -1,7 +1,7 @@
 module.exports = {
     commands: ['say'],
     callback: async (message, args) => {
-        if (message.member.hasPermission('BAN_MEMBERS')) {
+        if (message.member.hasPermission('ADMINISTRATOR')) {
             let msg;
             let textChannel = message.mentions.channels.first()
             message.delete()
@@ -15,7 +15,7 @@ module.exports = {
             }
         } else {
             message.delete().catch(err => console.log(err));
-            message.reply('You do not have permissions for that command.')
+            message.reply('You need the admin permission to use this command.')
             return;
         }
     },

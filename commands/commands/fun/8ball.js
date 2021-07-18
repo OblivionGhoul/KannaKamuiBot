@@ -33,14 +33,12 @@ module.exports = {
         .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
         .setTitle('🎱 8Ball 🎱')
         .setDescription(`${answers[Math.floor(Math.random() * answers.length)]}`)
-        .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
 
         const error = new Discord.MessageEmbed()
         .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
         .setTitle('🎱 8Ball 🎱')
         .setDescription(`Please provide a question.`)
         .setColor('RED')
-        .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
 
         if (!args) return message.channel.send(error)
 
