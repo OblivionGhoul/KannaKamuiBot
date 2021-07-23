@@ -1,5 +1,5 @@
 module.exports = {
-    commands: ['youtube-together', 'yt-together', 'yt', 'youtubetogether', 'yttogether'],
+    commands: ['youtube-together', 'yt-together', 'yt', 'youtubetogether', 'yttogether', 'youtube'],
     callback: async (message, args, arguments, client) => {
         if (message.member.voice.channel) {
             client.discordTogether.createTogetherCode(message.member.voice.channelID, 'youtube').then(async invite => {
