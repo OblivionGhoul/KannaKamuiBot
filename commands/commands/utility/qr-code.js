@@ -14,7 +14,6 @@ module.exports = {
                 .attachFiles(attachment)
                 .setColor('RANDOM')
                 .setImage('attachment://qrcode.png')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             message.channel.send(embed);
         } else { message.channel.send('Error! The input is not a valid link! Please make sure it is a valid link.\nWhen inputting the link please add `https://`!'); }
     }

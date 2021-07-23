@@ -11,7 +11,7 @@ module.exports = (client) => {
             .setColor('RANDOM')
             .addField('Help', 'Use this Command get the full command list\n`-help`', true)
             .addField('SetPrefix', 'Use this Command to change the default prefix\n`-setprefix [new prefix]`', true)
-            .setFooter('Bot Made By OblivionGhoul#5842', 'https://i.imgur.com/Ivtf7GP.png')
+            .setFooter('Bot Made By OblivionGhoul', 'https://i.imgur.com/Ivtf7GP.png')
             .setThumbnail('https://i.imgur.com/Zmr7TLZ.png')
             .setURL('https://oblivionghoul.github.io/KannaKamuiWebsite/')
 

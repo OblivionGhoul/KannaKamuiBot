@@ -13,7 +13,7 @@ module.exports = {
                 .setURL('https://blitz.gg/valorant/maps/ascent')
                 .setImage('https://i.imgur.com/BB0K2AI.png')
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
             message.channel.send(ascent)
         }
 
@@ -24,7 +24,7 @@ module.exports = {
                 .setURL('https://blitz.gg/valorant/maps/bind')
                 .setImage('https://i.imgur.com/PNuTJl5.png')
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
             message.channel.send(bind)
         }
 
@@ -35,7 +35,7 @@ module.exports = {
                 .setURL('https://blitz.gg/valorant/maps/haven')
                 .setImage('https://i.imgur.com/I2TUFhy.png')
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
             message.channel.send(haven)
         }
 
@@ -46,7 +46,7 @@ module.exports = {
                 .setURL('https://blitz.gg/valorant/maps/split')
                 .setImage('https://i.imgur.com/OMHAW47.png')
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
             message.channel.send(split)
         }
 
@@ -57,7 +57,7 @@ module.exports = {
                 .setURL('https://blitz.gg/valorant/maps/icebox')
                 .setImage('https://i.imgur.com/PDhlT5o.png')
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
             message.channel.send(icebox)
         }
     },

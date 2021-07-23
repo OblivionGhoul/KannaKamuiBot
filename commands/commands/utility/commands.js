@@ -13,7 +13,7 @@ module.exports = {
             .addField('Help Categories', '`Fun`, `Utility`, `Anime`, `Emotes`, `Music`, `Valorant`, `Moderation`, `Dev`, `NSFW`, `Setup`', true)
             .addField('Usage', '`(-help [category])`', true)
             .setColor('RANDOM')
-            .setFooter('Bot Made By OblivionGhoul#5842', 'https://i.imgur.com/Ivtf7GP.png')
+            .setFooter('Bot Made By OblivionGhoul', 'https://i.imgur.com/Ivtf7GP.png')
             .setThumbnail('https://i.imgur.com/Zmr7TLZ.png')
             .setURL('https://oblivionghoul.github.io/KannaKamuiWebsite/')
         if (content.includes("help") || content.includes("commands")) return message.channel.send(menu)

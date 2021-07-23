@@ -37,7 +37,7 @@ module.exports = {
                 .addField('# Agents Unlocked', (response.data.agents).length, true)
                 .setThumbnail(response.data.stats.playercard)
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
                 message.channel.send(embed)
             })
             .catch(function (error) {

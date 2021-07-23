@@ -18,7 +18,6 @@ module.exports = {
             const embed = new MessageEmbed()
                 .setColor("RANDOM")
                 .addField(`Quoted from ${quote.anime}`, `**"${quote.quote}"**\n\n-*${quote.name}*`)
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
 
             if (!results) {
             } else if (!results[0].attributes) {

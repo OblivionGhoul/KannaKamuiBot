@@ -46,7 +46,6 @@ module.exports = {
                 `**❯ Server Join Date:** ${moment(member.joinedAt).format('LL LTS')}`,
                 `\u200b`
             ])
-            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
         return message.channel.send(embed);
     },
 }

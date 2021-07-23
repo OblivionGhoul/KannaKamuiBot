@@ -27,7 +27,6 @@ module.exports = {
                 .addField(`11. ${response.data.data[10].gameName}`, `Number of Wins: ${response.data.data[10].numberOfWins}`, true)
                 .addField(`12. ${response.data.data[11].gameName}`, `Number of Wins: ${response.data.data[11].numberOfWins}`, true)
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 message.channel.send(embed)
             })
             .catch(function (error) {

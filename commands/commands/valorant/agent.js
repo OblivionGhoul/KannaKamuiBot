@@ -23,7 +23,6 @@ module.exports = {
             let data = await valorant.getAgent(agent)
 
             const embed = new MessageEmbed()
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
                 .setAuthor(message.member.displayName, message.author.displayAvatarURL({ dynamic: true }))
                 .setTitle(`${data.name} Agent Info`)
                 .setThumbnail(data.photos.icon)

@@ -31,7 +31,6 @@ module.exports = {
                 { name: "Id:", value: x + id + x, inline: true },
                 { name: "Animated:", value: emoji.animated ? "Animated" : "Not Animated", inline: false }
             )
-            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
         b.setURL(link)
         b.setColor('RANDOM')
         message.channel.send(b)

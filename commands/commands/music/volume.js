@@ -17,7 +17,6 @@ module.exports = {
             .setDescription(`I set the volume to: **${args[0] / 1}/100**`)
             .setAuthor("Server Volume Manager")
             .setColor("BLUE")
-            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
         return message.channel.send(xd);
     },
 }

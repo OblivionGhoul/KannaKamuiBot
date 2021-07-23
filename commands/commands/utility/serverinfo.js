@@ -73,7 +73,6 @@ module.exports = {
                 `**❯ Offline:** ${members.filter(member => member.presence.status === 'offline').size}`,
                 '\u200b'
             ])
-            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
             .setTimestamp();
         message.channel.send(embed);
     },

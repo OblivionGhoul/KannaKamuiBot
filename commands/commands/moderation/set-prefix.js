@@ -10,7 +10,6 @@ module.exports = {
   minArgs: 1,
   maxArgs: 1,
   expectedArgs: "<This bot's new command prefix>",
-  permissions: 'BAN_MEMBERS',
   callback: async (message, arguments, text) => {
     await mongo().then(async (mongoose) => {
       try {

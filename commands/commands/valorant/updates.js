@@ -14,7 +14,7 @@ module.exports = {
                 .addField(response.data.data[2].title, response.data.data[2].url)
                 .setThumbnail(response.data.data[0].banner_url)
                 .setColor('RANDOM')
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
                 message.channel.send(embed)
             })
             .catch(function (error) {

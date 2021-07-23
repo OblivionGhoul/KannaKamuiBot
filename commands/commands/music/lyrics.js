@@ -22,7 +22,6 @@ module.exports = {
             .setThumbnail(queue.songs[0].img)
             .setColor("YELLOW")
             .setDescription(lyrics)
-            .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
 
         if (lyricsEmbed.description.length >= 2048)
             lyricsEmbed.description = `${lyricsEmbed.description.substr(0, 2045)}...`;

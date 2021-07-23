@@ -37,7 +37,7 @@ module.exports = {
 
                 .setThumbnail('https://i.imgur.com/4GPTAgh.jpg')
                 .setColor(color1)
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
                 message.channel.send(embed1)
 
                 const embed2 = new Discord.MessageEmbed()
@@ -57,7 +57,7 @@ module.exports = {
 
                 .setThumbnail('https://i.imgur.com/4GPTAgh.jpg')
                 .setColor(color2)
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
                 message.channel.send(embed2)
 
                 const embed3 = new Discord.MessageEmbed()
@@ -77,7 +77,7 @@ module.exports = {
 
                 .setThumbnail('https://i.imgur.com/4GPTAgh.jpg')
                 .setColor(color3)
-                .setFooter("Bot Made By OblivionGhoul#5842", "https://i.imgur.com/Ivtf7GP.png")
+                
                 message.channel.send(embed3)
             })
             .catch(function (error) {
