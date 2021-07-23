@@ -8,9 +8,11 @@ require('discord-reply')
 
 const loadCommands = require('@root/commands/load-commands')
 const loadFeatures = require('@root/features/load-features')
+const { DiscordTogether } = require('discord-together');
 
 client.setMaxListeners(200)
 client.queue = new Map()
+client.discordTogether = new DiscordTogether(client);
 
 loadCommands(client)
 loadFeatures(client)

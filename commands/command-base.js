@@ -190,9 +190,7 @@ module.exports.loadPrefixes = async (client) => {
         guildPrefixes[guildId] = result ? result.prefix : process.env.prefix
       }
 
-      for (let i; i < 10; i++) {
-        console.log(guildPrefixes[i])
-      }
+      console.log("Loaded Prefixes!")
       
     } finally {
       mongoose.connection.close()

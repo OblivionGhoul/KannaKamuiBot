@@ -48,6 +48,11 @@ module.exports = {
             .addField('PH', 'Creates a PH comment\n`-ph [text]`', true)
             .addField('Chat', 'Chats with the bot\n`-chat [message]`', true)
             .addField('Snake', 'Creates a snake game\n`-snake`', true)
+            .addField('Betrayal (BETA)', 'Creates a vc betrayal game\n`-betrayal`', true)
+            .addField('Chess (BETA)', 'Creates a vc chess game\n`-chess`', true)
+            .addField('Fishing (BETA)', 'Creates a vc fishing game\n`-fishing`', true)
+            .addField('Poker (BETA)', 'Creates a vc poker game (18+)\n`-poker`', true)
+            .addField('YoutubeTogether (BETA)', 'Watch YT together in vc\n`-yt`', true)
         if (content.includes("fun")) return message.channel.send(fun)
 
         const nsfw = new Discord.MessageEmbed()

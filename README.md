@@ -14,7 +14,7 @@ The default prefix for this bot is `-`.
 # Bot Commands
 Use the help command to get the most updated list of bot commands. (`-help`)
 ## Fun
-Meme, Roast, Ascii, Advice, Joke, Coin, 8Ball, PP, RPS, Christmas, Dog, Cat, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Anime Trivia, Ship, Fast Type, Chaos Words, Fight, Chat, Snake.
+Meme, Roast, Ascii, Advice, Joke, Coin, 8Ball, PP, RPS, Christmas, Dog, Cat, Kanna, Tic-Tac-Toe, ChangeMyMind, Sign, PH, Animemes, Waifus, AnimeQuote, Anime Trivia, Ship, Fast Type, Chaos Words, Fight, Chat, Snake, Betrayal (BETA), Chess (ALPHA), Fishing (BETA), Poker (BETA), YoutubeTogether (BETA).
 
 ## Utility 
 Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, Anime, ServerPicture, QR Code, MC.
