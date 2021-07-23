@@ -136,7 +136,6 @@ module.exports = {
             .addField('AnimeQuote', 'Sends a quote from a random anime\n`-animequote`', true)
             .addField('Sign', 'Creates a picture of Hifumi with a sign\n`-sign [text]`', true)
             .addField('Anime', 'Sends info about an anime\n`-anime [anime name]`', true)
-            .addField('Animeme', 'Sends an anime meme\n`-animeme`', true)
         if (content.includes("anime")) return message.channel.send(anime)
 
         const emotes = new Discord.MessageEmbed()
