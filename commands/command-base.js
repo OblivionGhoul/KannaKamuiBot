@@ -1,5 +1,6 @@
 const mongo = require('@util/mongo')
 const commandPrefixSchema = require('@schemas/command-prefix-schema')
+const { i } = require('mathjs')
 const guildPrefixes = {} // { 'guildId' : 'prefix' }
 
 const validatePermissions = (permissions) => {
@@ -82,7 +83,7 @@ module.exports = (client, commandOptions) => {
   client.on('message', async (message) => {
     const { member, content, guild, channel } = message
 
-    const prefix = guildPrefixes[guild.id] || "-"
+    const prefix = guildPrefixes[guild.id] || process.env.prefix
 
     for (const alias of commands) {
       const command = `${prefix}${alias.toLowerCase()}`
@@ -189,7 +190,10 @@ module.exports.loadPrefixes = async (client) => {
         guildPrefixes[guildId] = result ? result.prefix : process.env.prefix
       }
 
-      console.log(guildPrefixes)
+      for (let i; i < 10; i++) {
+        console.log(guildPrefixes[i])
+      }
+      
     } finally {
       mongoose.connection.close()
     }
