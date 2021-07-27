@@ -23,7 +23,7 @@
     "axios": "^0.21.1",
     "discord-buttons": "^4.0.0",
     "discord-reply": "^0.1.2",
-    "discord-together": "^1.1.31",
+    "discord-together": "^1.1.4",
     "discord.js": "^12.5.3",
     "discord.js-pagination": "^1.0.3",
     "dotenv": "^10.0.0",
@@ -51,7 +51,7 @@
     "valorant-fetch": "^1.0.3",
     "weather-js": "^2.0.0",
     "weky": "^3.1.0",
-    "yt-search": "^2.9.0",
+    "yt-search": "^2.10.0",
     "ytdl-core": "^4.9.0",
     "ytpl": "^2.2.1"
   },

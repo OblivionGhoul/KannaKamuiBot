@@ -32,7 +32,7 @@ Docs, Channel.
 Hass, Hmidriff, Pgif, 4k, Hentai, Hneko, Hkitsune, Anal, Hanal, Gonewild, Ass, Pussy, Thigh, Hthigh, Paizuri, Tentacle, Boobs, Hboobs.
 
 ## Valorant
-Valorant Stats, Valorant Matches, Valorant Map, Valorant Agent, Agent-Stats, Map-Stats, Annoucements, Dev, Esports, Leaderboard, MMR, Server-Status, Updates. 
+Valorant Map, Valorant Agent, Annoucements, Dev, Esports, MMR, Updates.
 
 ## Emotes
 Alarm, Amazing, Ask, Baka, Bite, Blush, Blyat, Boop, Clap, Coffee, Confused, Cry, Cuddle, Cute, Dance, Destroy, Die, Disappear, Dodge, Error, Facedesk, Facepalm, FBI, Fight, Happy, Hide, Highfive, Hug, Kill, Kiss, Laugh, Lick, Lonely, Love, Mad, Money, Nom, Nosebleed, Ok, Party, Pat, Peek, Poke, Pout, Protect, Puke, Punch, Purr, Pusheen, Run, Scared, Scream, Shame, Shocked, Shoot, Shrug, Sip, Slap, Sleepy, Smile, Smoke, Smug, Spank, Spin, Stare, Stomp, Tickle, Trap, Triggered, Uwu, Wasted, Wave, Wiggle, Yeet
