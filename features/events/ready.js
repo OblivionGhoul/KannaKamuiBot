@@ -18,8 +18,10 @@ module.exports = (client) => {
       console.log(error)
     }
 
-    AutoPoster(process.env.topggtoken, client).on('posted', () => {
-      console.log('Added Stats To Top.gg!')
+    const poster = AutoPoster(process.env.topggtoken, client)
+
+    poster.on('posted', (stats) => {
+      console.log(`Posted stats to Top.gg!`)
     })
 
     commandBase.loadPrefixes(client)
