@@ -30,7 +30,7 @@ module.exports = {
                 **Type:** ${data.tags}\n
                 **Story:** ${data.biography.story}\n
                 **About:** ${data.biography.agent_about}\n
-                **Origin:** ${data.biography.region}\n 
+                **Origin:** ${data.biography.region}\n
                 `)
                 .addField('Abilities', `\`Q\`: ${data.stats.Q}\n\`E\`: ${data.stats.E}\n\`C\`: ${data.stats.C} - **Signature**\n\`X\`: ${data.stats.X} - **Ultimate**`)
 
@@ -40,4 +40,4 @@ module.exports = {
         }
 
     },
-} 
+}

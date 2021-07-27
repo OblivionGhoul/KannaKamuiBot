@@ -22,10 +22,10 @@ Alarm, Amazing, Ask, Baka, Bite, Blush, Blyat, Boop, Clap, Coffee, Confused, Cry
 ## Anime
 Anime Trivia, Kanna, AnimeQuote, Sign, Anime.
 
-## Utility 
+## Utility
 Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, ServerPicture, QR Code, Minecraft.
 
-## Music 
+## Music
 Play, Pause, Resume, Stop, Skip, Queue, Volume, NowPlaying, Leave, Loop, Lyrics, Remove, Shuffle, SkipTo, Playlist.
 
 ## Nsfw
@@ -49,7 +49,7 @@ Use this command in the welcome channel to set up welcome messages. (Please note
 
 `-setwelcome Welcome to the server, <@>!`
 
-**Output**: 
+**Output**:
 
 `Welcome to the server, @OblivionGhoul!`
 
@@ -62,11 +62,11 @@ Use this command in the leave channel to set up leave messages. (Please note tha
 
 `-setleave Goodbye, <@>!`
 
-**Output**: 
+**Output**:
 
 `Goodbye, @OblivionGhoul!`
 # Support
-Join my discord server above for support. You can also open an issue on GitHub. 
+Join my discord server above for support. You can also open an issue on GitHub.
 # Contributions
 All contributions are welcome! I am new to GitHub and Javascript, so any advice would be great! I will also accept recommendations on new commands.
 

@@ -23,7 +23,7 @@ module.exports = {
                 .addField('Last MMR Change', response.data.data.mmr_change_to_last_game)
                 .addField('Current Elo', response.data.data.elo)
                 .setColor('RANDOM')
-                
+
                 message.channel.send(embed)
             })
             .catch(function (error) {

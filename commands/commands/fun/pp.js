@@ -8,12 +8,12 @@ module.exports = {
 
             let responses = [
             "No PP detected.",
-            "Can't Find Your PP Cuz It\'s Too Small.", 
-            "8D \n Can You See That?", 
-            "8=D \n Thats Kinda Cute.", 
-            "8===D \n Not Bad.", 
+            "Can't Find Your PP Cuz It\'s Too Small.",
+            "8D \n Can You See That?",
+            "8=D \n Thats Kinda Cute.",
+            "8===D \n Not Bad.",
             "8========D \n Damnnnnn Nice.",
-            "8==============D \n Woahhhhhhhh",  
+            "8==============D \n Woahhhhhhhh",
             "8====================D \n Nice Shlong.",
             "8-D \n Damn, skinny and short...",
             "8-----------D \n You can do better.",

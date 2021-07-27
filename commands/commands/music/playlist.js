@@ -44,7 +44,7 @@ module.exports = {
                 const playlist = await ytpl(listurl)
                 const videos = await playlist.items;
                 for (const video of videos) {
-                    await handleVideo(video, message, channel, true); 
+                    await handleVideo(video, message, channel, true);
                 }
                 let thing = new MessageEmbed()
                     .setAuthor("Playlist has been added to queue")

@@ -14,7 +14,7 @@ module.exports = {
                 .addField(response.data.data[2].title, response.data.data[2].url)
                 .setThumbnail(response.data.data[0].banner_url)
                 .setColor('RANDOM')
-                
+
                 message.channel.send(embed)
             })
             .catch(function (error) {
