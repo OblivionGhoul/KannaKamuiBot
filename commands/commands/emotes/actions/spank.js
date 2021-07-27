@@ -5,7 +5,7 @@ module.exports = {
     callback: async (message) => {
         const author = message.author;
         const user = message.mentions.members.first();
-        
+
         const gif = [
             'https://media.giphy.com/media/6BZaFXBVPBtok/giphy.gif',
             'https://media.giphy.com/media/OdU7sLNRksbq8/giphy.gif',

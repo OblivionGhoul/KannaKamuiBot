@@ -191,7 +191,7 @@ module.exports.loadPrefixes = async (client) => {
       }
 
       console.log("Loaded Prefixes!")
-      
+
     } finally {
       mongoose.connection.close()
     }

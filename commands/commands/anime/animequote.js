@@ -6,7 +6,7 @@ module.exports = {
     commands: ['animequote', 'anime-quote'],
     callback: async (message) => {
         let quote;
-        
+
         quote = animeQuotes.randomQuote();
 
         if (quote.length > 1) {

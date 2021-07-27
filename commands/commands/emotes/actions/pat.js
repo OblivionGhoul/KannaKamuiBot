@@ -12,7 +12,7 @@ module.exports = {
             .then(function (response) {
                 if (!personslap) {
                     let personslap = 'nobody';
-        
+
                     let embed = new Discord.MessageEmbed()
                         .setDescription(`**<@${message.author.id}> just patted ${personslap}! ${quoter}!**`)
                         .setImage(response.data.response)
@@ -20,7 +20,7 @@ module.exports = {
                     message.channel.send(embed);
                     return;
                 }
-        
+
                 if (personslap.id === message.author.id) {
                     let personslap = 'them own damnselves!';
                     let embed = new Discord.MessageEmbed()
@@ -30,7 +30,7 @@ module.exports = {
                     message.channel.send(embed);
                     return;
                 }
-        
+
                 let embed = new Discord.MessageEmbed()
                     .setDescription(`**<@${message.author.id}> just patted ${personslap}! ${quoter}!**`)
                     .setImage(response.data.response)

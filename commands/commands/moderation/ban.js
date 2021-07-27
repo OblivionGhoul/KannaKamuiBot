@@ -8,11 +8,11 @@ module.exports = {
 
         const user = message.mentions.members.first() || message.guild.members.cache.get(args[0])
         if (!user) return message.channel.send('Please make sure you enter a valid user!')
-        
+
         const reason = args.slice(1).join(" ") || "No reason provided."
         if ((message.member.roles.highest.position <= user.roles.highest.position) && message.guild.ownerID != message.author.id) return message.channel.send('You do not have a high enough role to ban this user!')
         if (message.guild.me.roles.highest.position <= user.roles.highest.position) return message.channel.send('I do not have a high enough role to ban this user!')
-        
+
         try {
             await message.guild.members.ban(user.id, {reason})
             const embed = new MessageEmbed()

@@ -7,7 +7,7 @@ module.exports = {
         const res = ['Scissors :scissors:', 'Rock :rock:', 'Paper :newspaper:'];
         let userChoice;
         if (args.length) userChoice = args[0].toLowerCase();
-        if (!rps.includes(userChoice)) 
+        if (!rps.includes(userChoice))
             return message.channel.send('Please enter rock, paper, or scissors (ex: -rps rock)');
         userChoice = rps.indexOf(userChoice);
         const botChoice = Math.floor(Math.random() * 3);
