@@ -1,4 +1,5 @@
 const commandBase = require('@root/commands/command-base')
+const { AutoPoster } = require('topgg-autoposter')
 
 module.exports = (client) => {
   client.on('ready', async () => {
@@ -16,6 +17,10 @@ module.exports = (client) => {
     } catch (err) {
       console.log(error)
     }
+
+    AutoPoster(process.env.topggtoken, client).on('posted', () => {
+      console.log('Added Stats To Top.gg!')
+    })
 
     commandBase.loadPrefixes(client)
 
