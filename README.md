@@ -5,7 +5,7 @@ Join my support server [here](https://discord.gg/QpMWndNpse) if you have issues 
 
 Invite the bot to your server [here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)!
 
-Visit the bot website [here](https://oblivionghoul.github.io/KannaKamuiWebsite/)!
+Visit the bot website [here](https://www.kannakamuibot.xyz/)!
 
 This bot is still a work in progress so the command list below might not be the up to date!
 
