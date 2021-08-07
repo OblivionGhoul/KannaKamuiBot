@@ -77,6 +77,7 @@ module.exports = {
             .addField('Server Picture', 'Sends the pfp of the server\n`-serverpicture`', true)
             .addField('QR Code', 'Generates a QR Code for a link\n`-qr [link]`', true)
             .addField('MC', 'Sends an MC user profile\n`-mc [mc username]`', true)
+            .addField('Banner', 'Sends a user\'s banner\n`-banner [@usertag]`', true)
             .addField('Setprefix', 'Changes the prefix of the bot\n`-setprefix [new prefix]`', true)
         if (content.includes("util")) return message.channel.send(utility)
 

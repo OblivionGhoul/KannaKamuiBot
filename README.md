@@ -23,7 +23,7 @@ Alarm, Amazing, Ask, Baka, Bite, Blush, Blyat, Boop, Clap, Coffee, Confused, Cry
 Anime Trivia, Kanna, AnimeQuote, Sign, Anime.
 
 ## Utility
-Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, ServerPicture, QR Code, Minecraft.
+Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Verse, ServerPicture, QR Code, Minecraft, Banner.
 
 ## Music
 Play, Pause, Resume, Stop, Skip, Queue, Volume, NowPlaying, Leave, Loop, Lyrics, Remove, Shuffle, SkipTo, Playlist.
