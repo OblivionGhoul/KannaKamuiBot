@@ -47,7 +47,7 @@ module.exports = {
                 `**❯ ID:** ${message.guild.id}`,
                 `**❯ Owner:** ${message.guild.owner.user.tag} (${message.guild.ownerID})`,
                 `**❯ Region:** ${regions[message.guild.region]}`,
-                `**❯ Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : 'None'}`,
+                `**❯ Boost Tier:** ${message.guild.premiumTier ? `Tier ${message.guild.premiumTier}` : '0'}`,
                 `**❯ Explicit Filter:** ${filterLevels[message.guild.explicitContentFilter]}`,
                 `**❯ Verification Level:** ${verificationLevels[message.guild.verificationLevel]}`,
                 `**❯ Day Created:** ${message.guild.createdAt}`,
