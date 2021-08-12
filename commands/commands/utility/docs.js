@@ -18,7 +18,7 @@ module.exports = {
                 if (data && !data.error) {
                     message.channel.send({ embed: data })
                 } else {
-                    message.reply('Could not find that documentation')
+                    message.reply('Could not find that in the documentation!')
                 }
             })
             .catch((err) => {

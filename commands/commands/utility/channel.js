@@ -19,6 +19,6 @@ module.exports = {
                 .addField(':arrow_right: Category', channel.parent ? channel.parent.name : 'None', true)
                 .addField(':arrow_right: Topic', channel.topic || 'None', true);
 
-        message.channel.send(channelEmbed);
+        message.channel.send(channelEmbed); // its pog aint it *smirk*
     }
 }
