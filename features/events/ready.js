@@ -13,7 +13,7 @@ module.exports = (client) => {
           type: "WATCHING"
         });
       };
-      setInterval(pickStatus, 5000);
+      setInterval(pickStatus, 13000);
     } catch (err) {
       console.log(error)
     }
