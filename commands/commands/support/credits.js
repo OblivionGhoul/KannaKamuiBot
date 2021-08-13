@@ -1,4 +1,3 @@
-//Made by ChannelUndefined#0001
 module.exports = {
   command: "credits",
     callback(client, message, args) {
