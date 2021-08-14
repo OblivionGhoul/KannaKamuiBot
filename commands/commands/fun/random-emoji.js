@@ -1,4 +1,4 @@
-const emojiList = require('../../../extra/justEmojis.json')
+const emojiList = require('../../../jsonDatabases/emojis.json')
 const Discord = require('discord.js')
    module.exports = {
     command: "random-emoji",
