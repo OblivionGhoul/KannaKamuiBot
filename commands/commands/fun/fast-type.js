@@ -35,7 +35,7 @@ module.exports = {
             } else if (msg.first().content.toLowerCase().trim() === ogSentence.toLowerCase()) {
                 message.channel.send(`Good job!\nIt took you ${ms(Date.now() - time, { long: true })} to type it!`)
             } else {
-                message.channel.send(`You failed! Thanks for playing! Your score: **${i}**`)
+                message.channel.send(`You failed! Thanks for playing! Your total score: **${i}**`)
                 inGame.delete(message.author.id)
                 break
             }
