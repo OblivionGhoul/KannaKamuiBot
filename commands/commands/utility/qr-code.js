@@ -15,6 +15,6 @@ module.exports = {
                 .setColor('RANDOM')
                 .setImage('attachment://qrcode.png')
             message.channel.send(embed);
-        } else { message.channel.send('Error! The input is not a valid link! Please make sure it is a valid link.\nWhen inputting the link please add `https://`!'); }
+        } else { message.channel.send('Error! The input is not a valid link! Please make sure it is a valid link.\nWhen inputting the link please add `https://`! (Example: (prefix)qr https://discord.com/app)'); }
     }
 }

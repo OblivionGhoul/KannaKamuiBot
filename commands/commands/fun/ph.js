@@ -15,7 +15,7 @@ module.exports = {
 
         let json = await res.json();
 
-        if (!json.message) throw new Error("Something Went Wrong, Try Again Later!");
+        if (!json.message) throw new Error("Something went wrong with the api, try again in few seconds!");
 
         let Data = {
             embed: {

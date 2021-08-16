@@ -104,14 +104,14 @@ module.exports = (client, commandOptions) => {
           message.reply(
             `You can only run this command inside of <#${foundChannel.id}>.`
           )
-          return
+          return;
         }
 
         // Ensure the user has the required permissions
         for (const permission of permissions) {
           if (!member.hasPermission(permission)) {
             message.reply(permissionError)
-            return
+            return;
           }
         }
 
@@ -125,7 +125,7 @@ module.exports = (client, commandOptions) => {
             message.reply(
               `You must have the "${requiredRole}" role to use this command.`
             )
-            return
+            return;
           }
         }
 
@@ -133,7 +133,7 @@ module.exports = (client, commandOptions) => {
 
         if (cooldown > 0 && recentlyRan.includes(cooldownString)) {
           message.reply('You cannot use that command so soon, please wait.')
-          return
+          return;
         }
 
         // Split on any number of spaces
@@ -148,9 +148,9 @@ module.exports = (client, commandOptions) => {
           (maxArgs !== null && arguments.length > maxArgs)
         ) {
           message.reply(
-            `Incorrect syntax! Use ${prefix}${alias} ${expectedArgs}`
+            `Incorrect usage! Try using \`${prefix}${alias} ${expectedArgs}\` !`
           )
-          return
+          return;
         }
 
         if (cooldown > 0) {
@@ -170,7 +170,7 @@ module.exports = (client, commandOptions) => {
         // Handle the custom command code
         callback(message, arguments, arguments.join(' '), client)
 
-        return
+        return;
       }
     }
   })

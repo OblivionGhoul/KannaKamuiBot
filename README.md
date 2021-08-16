@@ -1,4 +1,6 @@
 # Notes
+(THIS IS A FORK FOR DEVELOPMENT! PLEASE GO TO ORIGINAL RESPRETORY TO GET THE STABLE VERSION)
+
 If you enjoy the bot and want it to keep running, please consider donating [here](https://www.paypal.com/paypalme/kannabot)!
 
 Join my support server [here](https://discord.gg/QpMWndNpse) if you have issues or suggestions!

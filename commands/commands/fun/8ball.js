@@ -24,6 +24,7 @@ const answers = [
     'Yes!',
     'Don\'t ask me this ever again.',
     'Don\'t worry about it.',
+    'fuck off',
 ];
 
 module.exports = {

@@ -11,11 +11,19 @@ module.exports = {
   maxArgs: 1,
   expectedArgs: "<This bot's new command prefix>",
   callback: async (message, arguments, text) => {
+    
+    if(!message.author.hasPermission('MANAGE_GUILD' || 'ADMINISTRATOR')) {
+     return message.channel.send('You must have permissions to use this command! (`Manage guild`, `Administrator`)') 
+    }
+    
+     const prefix = arguments[0]
+    if(prefix > 5) {
+    return message.channel.send('The prefix cannot be over 5 charecters!')
+    }
+
     await mongo().then(async (mongoose) => {
       try {
         const guildId = message.guild.id
-        const prefix = arguments[0]
-
         await commandPrefixSchema.findOneAndUpdate(
           {
             _id: guildId,

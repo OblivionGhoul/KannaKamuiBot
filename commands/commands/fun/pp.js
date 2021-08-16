@@ -8,7 +8,7 @@ module.exports = {
 
             let responses = [
             "No PP detected.",
-            "Can't Find Your PP Cuz It\'s Too Small.",
+            "Can\'t find your PP cuz it\'s wayy too small for me to see.",
             "8D \n Can You See That?",
             "8=D \n Thats Kinda Cute.",
             "8===D \n Not Bad.",
@@ -18,7 +18,7 @@ module.exports = {
             "8-D \n Damn, skinny and short...",
             "8-----------D \n You can do better.",
             "8---------------------D \n Skinny but long... 😏",
-            "Your PP is too big for me to comprehend."
+            "Your PP is too big for me to comprehend. \n ||Joking looser its small af and I can\'t even see your head from waayy up here||"
             ]
 
             let answer = Math.floor((Math.random() * responses.length))
