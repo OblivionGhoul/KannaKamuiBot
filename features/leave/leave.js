@@ -72,12 +72,15 @@ module.exports = (client) => {
                     }
                 })
             }
+            try {
+                const channelId = data[0]
+                const text = data[1]
 
-            const channelId = data[0]
-            const text = data[1]
-
-            const channel = guild.channels.cache.get(channelId)
-            channel.send(text.replace(/<@>/g, `<@${member.id}>`))
+                const channel = guild.channels.cache.get(channelId)
+                channel.send(text.replace(/<@>/g, `<@${member.id}>`))
+            } catch {
+                return console.log("Leave message error")
+            }
         }
 
         command(client, 'simleave', (message) => {
