@@ -45,6 +45,7 @@
     "nekobot-api": "^2.1.0",
     "node-fetch": "^2.6.1",
     "node-kitsu": "^1.1.1",
+    "path": "^0.12.7",
     "random-words": "^1.1.1",
     "request-promise-native": "^1.0.9",
     "sakuranpm": "^1.1.0",
