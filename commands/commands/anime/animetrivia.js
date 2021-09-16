@@ -1,6 +1,6 @@
 const discord = require('discord.js')
 const atob = require('atob')
-import fetch from 'node-fetch'
+const fetch = require('node-fetch')
 
 module.exports = {
     commands: ['animet', 'atrivia', 'animetrivia', 'anime-trivia', 'at'],
