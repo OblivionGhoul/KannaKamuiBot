@@ -1,4 +1,6 @@
 # Notes
+I am working on updating the bot to Discord.js v13.
+
 If you enjoy the bot and want it to keep running, please consider donating [here](https://www.paypal.com/paypalme/kannabot)!
 
 Join my support server [here](https://discord.gg/QpMWndNpse) if you have issues or suggestions!
