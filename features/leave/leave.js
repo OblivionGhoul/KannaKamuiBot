@@ -56,15 +56,12 @@ module.exports = (client) => {
             let data = cache[guild.id]
 
             if (!data) {
-                console.log('FETCHING FROM DATABASE')
-
                 await mongo().then(async (mongoose) => {
                     try {
                         const result = await welcomeSchema.findOne({ _id: guild.id })
                         try {
                             cache[guild.id] = data = [result.channelId, result.text]
                         } catch {
-                            console.log("Channel is null!")
                             return
                         }
                     } finally {
@@ -72,12 +69,15 @@ module.exports = (client) => {
                     }
                 })
             }
+            try {
+                const channelId = data[0]
+                const text = data[1]
 
-            const channelId = data[0]
-            const text = data[1]
-
-            const channel = guild.channels.cache.get(channelId)
-            channel.send(text.replace(/<@>/g, `<@${member.id}>`))
+                const channel = guild.channels.cache.get(channelId)
+                channel.send(text.replace(/<@>/g, `<@${member.id}>`))
+            } catch {
+                return
+            }
         }
 
         command(client, 'simleave', (message) => {
@@ -88,6 +88,6 @@ module.exports = (client) => {
             onLeave(member)
         })
     } catch {
-        return console.log("Leave message error")
+        return
     }
 }
