@@ -3,84 +3,91 @@ const command = require('@util/command')
 const welcomeSchema = require('@schemas/leave-schema')
 
 module.exports = (client) => {
-    //!setwelcome <message>
-    const cache = {} // guildId: [channelId, text]
+    try {
+        const cache = {} // guildId: [channelId, text]
 
-    command(client, 'setleave', async (message) => {
-        const { member, channel, content, guild } = message
+        command(client, 'setleave', async (message) => {
+            const { member, channel, content, guild } = message
 
-        if (!member.hasPermission('ADMINISTRATOR')) {
-            channel.send('You need the admin permission to use this command.')
-            return
-        }
-
-        let text = content
-
-        const split = text.split(' ')
-
-        if (split.length < 2) {
-            channel.send('Please provide a leave message')
-            return
-        }
-
-        split.shift()
-        text = split.join(' ')
-
-        cache[guild.id] = [channel.id, text]
-
-        await mongo().then(async (mongoose) => {
-            channel.send('Leave channel set!')
-            try {
-                await welcomeSchema.findOneAndUpdate(
-                    {
-                        _id: guild.id,
-                    },
-                    {
-                        _id: guild.id,
-                        channelId: channel.id,
-                        text,
-                    },
-                    {
-                        upsert: true,
-                    }
-                )
-            } finally {
-                mongoose.connection.close()
+            if (!member.hasPermission('ADMINISTRATOR')) {
+                channel.send('You need the admin permission to use this command.')
+                return
             }
-        })
-    })
 
-    const onLeave = async (member) => {
-        const { guild } = member
+            let text = content
 
-        let data = cache[guild.id]
+            const split = text.split(' ')
 
-        if (!data) {
-            console.log('FETCHING FROM DATABASE')
+            if (split.length < 2) {
+                channel.send('Please provide a leave message')
+                return
+            }
+
+            split.shift()
+            text = split.join(' ')
+
+            cache[guild.id] = [channel.id, text]
 
             await mongo().then(async (mongoose) => {
+                channel.send('Leave channel set!')
                 try {
-                    const result = await welcomeSchema.findOne({ _id: guild.id })
-
-                    cache[guild.id] = data = [result.channelId, result.text]
+                    await welcomeSchema.findOneAndUpdate(
+                        {
+                            _id: guild.id,
+                        },
+                        {
+                            _id: guild.id,
+                            channelId: channel.id,
+                            text,
+                        },
+                        {
+                            upsert: true,
+                        }
+                    )
                 } finally {
                     mongoose.connection.close()
                 }
             })
+        })
+
+        const onLeave = async (member) => {
+            const { guild } = member
+
+            let data = cache[guild.id]
+
+            if (!data) {
+                console.log('FETCHING FROM DATABASE')
+
+                await mongo().then(async (mongoose) => {
+                    try {
+                        const result = await welcomeSchema.findOne({ _id: guild.id })
+                        try {
+                            cache[guild.id] = data = [result.channelId, result.text]
+                        } catch {
+                            console.log("Channel is null!")
+                            return
+                        }
+                    } finally {
+                        mongoose.connection.close()
+                    }
+                })
+            }
+
+            const channelId = data[0]
+            const text = data[1]
+
+            const channel = guild.channels.cache.get(channelId)
+            channel.send(text.replace(/<@>/g, `<@${member.id}>`))
         }
 
-        const channelId = data[0]
-        const text = data[1]
+        command(client, 'simleave', (message) => {
+            onLeave(message.member)
+        })
 
-        const channel = guild.channels.cache.get(channelId)
-        channel.send(text.replace(/<@>/g, `<@${member.id}>`))
+        client.on('guildMemberRemove', (member) => {
+            onLeave(member)
+        })
+    } catch {
+        return console.log("Leave message error")
     }
-
-    command(client, 'simleave', (message) => {
-        onLeave(message.member)
-    })
-
-    client.on('guildMemberRemove', (member) => {
-        onLeave(member)
-    })
 }
