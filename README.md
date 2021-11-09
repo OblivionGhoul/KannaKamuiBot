@@ -9,6 +9,8 @@ Invite the bot to your server [here](https://discord.com/api/oauth2/authorize?cl
 
 Visit the bot website [here](https://www.kannakamuibot.xyz/)!
 
+Use the bot help menu to check the NSFW commands. 
+
 This bot is still a work in progress so the command list below might not be the up to date!
 
 The default prefix for this bot is `-`.
@@ -29,9 +31,6 @@ Calc, Userinfo, Avatar, Weather, Serverinfo, Botinfo, EmojiInfo, Ping, Emoji, Ve
 
 ## Music
 Play, Pause, Resume, Stop, Skip, Queue, Volume, NowPlaying, Leave, Loop, Lyrics, Remove, Shuffle, SkipTo, Playlist.
-
-## Nsfw
-Hass, Hmidriff, Pgif, 4k, Hentai, Hneko, Hkitsune, Anal, Hanal, Gonewild, Ass, Pussy, Thigh, Hthigh, Paizuri, Tentacle, Boobs, Hboobs.
 
 ## Valorant
 Valorant Map, Valorant Agent, Annoucements, Dev, Esports, MMR, Updates.
