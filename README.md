@@ -1,17 +1,5 @@
 # Notes
-I am working on updating the bot to Discord.js v13.
-
-If you enjoy the bot and want it to keep running, please consider donating [here](https://www.paypal.com/paypalme/kannabot)!
-
-Join my support server [here](https://discord.gg/QpMWndNpse) if you have issues or suggestions!
-
-Invite the bot to your server [here](https://discord.com/api/oauth2/authorize?client_id=757066313406611477&permissions=473427062&scope=bot)!
-
-Visit the bot website [here](https://www.kannakamuibot.xyz/)!
-
-Use the bot help menu to check the NSFW commands. 
-
-This bot is still a work in progress so the command list below might not be the up to date!
+Thank you for supporting the bot, but it has now been deprecated.
 
 The default prefix for this bot is `-`.
 
